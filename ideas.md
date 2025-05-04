@@ -13,23 +13,22 @@ Malleus Maleficarum
 
 Höllische Herausforderung
 
-- Meine 10 Lieblingsfoltermethoden (Spaßedition)
-- Ein Spa in der Hölle eröffnen- Businesstipps
-- Wie werde ich böse? Tipps und Tricks
+- Meine 10 Lieblingsfoltermethoden (Spaßedition) ✅
+- Ein Spa in der Hölle eröffnen- Businesstipps ✅
+- Wie werde ich böse? Tipps und Tricks ✅
 
 Goldfieber
 
-- Erbstreit eskaliert: Tipps und Tricks
-- 10 Tipps um reichen Mann zu verführen
-- Innovationen im Bestattungswesen
-- Hilfe, mein bester Freund ist ein Plüschhase!
+- Erbstreit eskaliert: Tipps und Tricks ✅
+- 10 Tipps um reichen Mann zu verführen ✅
+- Innovationen im Bestattungswesen ✅
+- Hilfe, mein bester Freund ist ein Plüschhase! ✅
 
 Traum von Freiheit
 
 - Mein Holzbein und ich
 - Wie steuert man ein Segelschiff? - Einsteigerkurs
 - Unterschied französische Kühe und deutsche Kühe
-
 
 Nexus
 

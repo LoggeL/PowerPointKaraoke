@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erbstreit eskaliert: Tipps und Tricks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <style>
+      .slide-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      .slide-image {
+        flex: 0 0 auto;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .slide-content {
+        flex: 0 0 auto;
+        width: 60%;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .slide-content > * {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+      }
+      .reveal h1,
+      .reveal h2 {
+        font-size: 1.1em;
+        margin-bottom: 0.3em;
+      }
+      .reveal h3 {
+        font-size: 0.9em;
+        margin-bottom: 0.3em;
+      }
+      .reveal ul,
+      .reveal p {
+        font-size: 0.65em;
+        margin: 0.2em 0;
+      }
+      .reveal ul {
+        padding-left: 20px;
+      }
+      .reveal li {
+        margin-bottom: 0.2em;
+      }
+      .reveal .icons {
+        font-size: 1.2em;
+        margin: 0.5em 0;
+      }
+      .reveal .icons i {
+        margin: 0 0.2em;
+      }
+      .chart-container {
+        width: 100%;
+        margin-top: 10px;
+      }
+      .timeline {
+        width: 100%;
+        height: 80px;
+        background-color: #333;
+        border-radius: 4px;
+        position: relative;
+        margin-top: 10px;
+        padding: 5px;
+      }
+      .timeline-point {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: #ff5555;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .timeline-label {
+        position: absolute;
+        font-size: 0.5em;
+        white-space: nowrap;
+        color: #fff;
+      }
+      .timeline-connector {
+        position: absolute;
+        height: 2px;
+        background-color: #ff5555;
+        top: 50%;
+      }
+      .bar-chart {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .bar-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .bar-label {
+        width: 40%;
+        font-size: 0.5em;
+        text-align: right;
+      }
+      .bar-track {
+        width: 60%;
+        height: 15px;
+        background-color: #333;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        background-color: #ff5555;
+      }
+      .pie-chart {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-image: conic-gradient(
+          #ff5555 0% 90%,
+          #55ff55 90% 95%,
+          #5555ff 95% 100%
+        );
+      }
+      .pie-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        font-size: 0.5em;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+      }
+      .legend-color {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Folie 1: Titel -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00001_.png" alt="Erbstreit Eskaliert" />
+            </div>
+            <div class="slide-content">
+              <h1>Erbstreit Eskaliert: Ihr Wegweiser durch das Minenfeld</h1>
+              <h3>
+                Strategien, Taktiken und die Kunst des subtilen (oder weniger
+                subtilen) Durchsetzens
+              </h3>
+              <p>
+                Willkommen zur ultimativen Masterclass! Lernen Sie, wie Sie
+                Familienbande... strategisch neu definieren. Es geht um mehr als
+                Geld – es geht ums Prinzip! Und Omas Silberbesteck.
+              </p>
+              <div class="icons">
+                <i class="fa-solid fa-tree"></i>
+                <i class="fa-solid fa-explosion"></i>
+                <i class="fa-solid fa-gavel"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 2: Bestandsaufnahme -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00002_.png" alt="Bestandsaufnahme" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Phase 1: Die Bestandsaufnahme – Wer kriegt was (und warum ICH
+                mehr?)
+              </h2>
+              <ul>
+                <li>
+                  Analyse des Testaments: Lücken, Interpretationsspielräume,
+                  Druckfehler?
+                </li>
+                <li>
+                  Bewertung des Nachlasses: Ist der "wertlose" Dachbodenfund
+                  wirklich wertlos? (Spoiler: Nein, wenn SIE ihn wollen!)
+                </li>
+                <li>
+                  Identifikation der "Gegner": Wer sind die Hauptkonkurrenten um
+                  die Beute... äh, das Erbe?
+                </li>
+              </ul>
+              <div class="chart-container">
+                <div
+                  style="
+                    font-size: 0.6em;
+                    margin-bottom: 5px;
+                    text-align: center;
+                  "
+                >
+                  Flussdiagramm: Weg zum maximalen Erbe
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 0.6em;
+                  "
+                >
+                  <div
+                    style="
+                      background-color: #444;
+                      border-radius: 5px;
+                      padding: 5px;
+                      text-align: center;
+                    "
+                  >
+                    Mein Anteil
+                  </div>
+                  <div style="font-size: 0.8em">→</div>
+                  <div
+                    style="
+                      background-color: #555;
+                      border-radius: 5px;
+                      padding: 5px;
+                      text-align: center;
+                    "
+                  >
+                    Emotionale Erpressung
+                  </div>
+                  <div style="font-size: 0.8em">→</div>
+                  <div
+                    style="
+                      background-color: #555;
+                      border-radius: 5px;
+                      padding: 5px;
+                      text-align: center;
+                    "
+                  >
+                    Juristische Spitzfindigkeiten
+                  </div>
+                  <div style="font-size: 0.8em">→</div>
+                  <div
+                    style="
+                      background-color: #ff5555;
+                      border-radius: 5px;
+                      padding: 5px;
+                      text-align: center;
+                    "
+                  >
+                    Maximaler Anteil
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 3: Kommunikationsoffensive -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00003_.png" alt="Kommunikationsoffensive" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Kommunikationsoffensive: Reden ist Silber, Schweigen ist
+                verdächtig
+              </h2>
+              <ul>
+                <li>
+                  Die Kunst des "konstruktiven" Gesprächs: Betonung liegt auf
+                  "konstruieren".
+                </li>
+                <li>
+                  Aktives Zuhören (selektiv): Nur hören, was Ihnen nützt. Nicken
+                  Sie verständnisvoll, während Sie Ihre Gegenstrategie planen.
+                </li>
+                <li>
+                  Subtile Hinweise auf eigene Ansprüche: "Ach, Tante Erna hat
+                  mir ja IMMER gesagt, diese Vase würde mir so gut stehen..."
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-comments"></i>
+                <i class="fa-solid fa-question"></i>
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 4: Anwaltsbrief -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00004_.png" alt="Anwaltsbrief" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Eskalationsstufe "Freundlicher Hinweis": Der Anwaltsbrief 1.0
+              </h2>
+              <ul>
+                <li>
+                  Formulierung ist alles: Höflich, aber bestimmt. Drohen, ohne
+                  zu drohen.
+                </li>
+                <li>
+                  Fristsetzung: Psychologischer Druck durch knappe Deadlines.
+                </li>
+                <li>
+                  CC an ALLE: Maximale Transparenz... und maximaler Druck auf
+                  alle Beteiligten. Der erste Schuss vor den Bug.
+                </li>
+              </ul>
+              <div class="timeline">
+                <div class="timeline-point" style="left: 5%"></div>
+                <div class="timeline-label" style="left: 5%; top: 10px">
+                  Erhalt des Erbes
+                </div>
+
+                <div
+                  class="timeline-connector"
+                  style="left: 5%; width: 20%"
+                ></div>
+                <div class="timeline-point" style="left: 25%"></div>
+                <div class="timeline-label" style="left: 25%; top: 10px">
+                  Erster Anwaltsbrief
+                </div>
+
+                <div
+                  class="timeline-connector"
+                  style="left: 25%; width: 30%"
+                ></div>
+                <div class="timeline-point" style="left: 55%"></div>
+                <div class="timeline-label" style="left: 55%; top: 10px">
+                  Panik beim Gegner
+                </div>
+
+                <div
+                  class="timeline-connector"
+                  style="left: 55%; width: 25%"
+                ></div>
+                <div class="timeline-point" style="left: 80%"></div>
+                <div class="timeline-label" style="left: 80%; top: 10px">
+                  Mein Vorteil
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 5: Digitale Front -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00005_.png" alt="Digitale Front" />
+            </div>
+            <div class="slide-content">
+              <h2>Die digitale Front: Cyber-Guerilla im Familienkreis</h2>
+              <ul>
+                <li>
+                  Social Media Shaming (subtil, versteht sich): Vage Andeutungen
+                  über "ungerechte Verteilung" in geschlossenen Gruppen.
+                </li>
+                <li>
+                  E-Mail-Archäologie: Alte Mails nach kompromittierenden
+                  Informationen durchforsten (natürlich nur zur "Klärung").
+                </li>
+                <li>
+                  Gerüchteküche 2.0: Digitale Flüsterpost mit strategischer
+                  Platzierung von Fehlinformationen.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-mouse"></i>
+                <i class="fa-solid fa-heart-crack"></i>
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 6: Physische Präsenz -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00006_.png" alt="Physische Präsenz" />
+            </div>
+            <div class="slide-content">
+              <h2>Physische Präsenz: Das Territorium markieren</h2>
+              <ul>
+                <li>
+                  Der Post-It Krieg: Kleben Sie Besitzansprüche auf ALLES. Farbe
+                  codieren nach Priorität.
+                </li>
+                <li>
+                  Strategisches "Aufräumen": Unliebsame Gegenstände
+                  "versehentlich" entsorgen oder an "sichere Orte" bringen.
+                </li>
+                <li>
+                  Die Besetzung: Verbringen Sie auffällig viel Zeit im geerbten
+                  Haus. Bringen Sie eigene Möbel mit. Zeigen Sie Dominanz.
+                </li>
+              </ul>
+              <div class="chart-container">
+                <div class="pie-chart"></div>
+                <div class="pie-legend">
+                  <div class="legend-item">
+                    <div
+                      class="legend-color"
+                      style="background-color: #ff5555"
+                    ></div>
+                    <div>Von mir markierte Gegenstände (90%)</div>
+                  </div>
+                  <div class="legend-item">
+                    <div
+                      class="legend-color"
+                      style="background-color: #55ff55"
+                    ></div>
+                    <div>Neutrale Zone (5%)</div>
+                  </div>
+                  <div class="legend-item">
+                    <div
+                      class="legend-color"
+                      style="background-color: #5555ff"
+                    ></div>
+                    <div>Vom Gegner beansprucht (5%, durchgestrichen)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 7: Der Mediator -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00007_.png" alt="Der Mediator" />
+            </div>
+            <div class="slide-content">
+              <h2>Der Mediator: Eine notwendige Farce?</h2>
+              <ul>
+                <li>
+                  Mediation als Bühne: Nutzen Sie die Sitzung zur
+                  Selbstdarstellung als das arme Opfer.
+                </li>
+                <li>
+                  Schein-Kompromisse anbieten: Bieten Sie Dinge an, die Sie eh
+                  nicht wollen, um kooperativ zu wirken.
+                </li>
+                <li>
+                  Dokumentation ist alles: Jedes Wort kann (und wird) später
+                  gegen Sie verwendet werden – stellen Sie sicher, dass es IHRE
+                  Worte sind.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <i class="fa-solid fa-sack-dollar"></i>
+                <i class="fa-solid fa-handshake-slash"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 8: Alternative Methoden -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00008_.png" alt="Alternative Methoden" />
+            </div>
+            <div class="slide-content">
+              <h2>Alternative Methoden: Wenn Logik versagt, hilft Voodoo?</h2>
+              <ul>
+                <li>
+                  Tierische Verbündete: Kann der Familienhund nicht bezeugen,
+                  wer ihn am meisten geliebt hat? Bestechung mit Leckerlis
+                  empfohlen.
+                </li>
+                <li>
+                  Energetische Reinigung: Vertreiben Sie "negative Energien"
+                  (und unliebsame Erben) mit Räucherstäbchen und Klangschalen.
+                </li>
+                <li>
+                  Feng Shui des Erbstreits: Platzieren Sie Objekte strategisch,
+                  um den "Energiefluss" (des Geldes) zu Ihnen zu lenken.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-gem"></i>
+                <i class="fa-solid fa-paw"></i>
+                <i class="fa-solid fa-yin-yang"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 9: Stufe ROT -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00009_.png" alt="Stufe ROT" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Stufe ROT: Der Gang vor Gericht – Die Arena der Schlammschlacht
+              </h2>
+              <ul>
+                <li>
+                  Anwaltswahl: Nicht der Beste, sondern der Bissigste gewinnt.
+                </li>
+                <li>
+                  Beweismittelbeschaffung: Alles ist erlaubt (solange es nicht
+                  beweisbar illegal ist). Fotos, Zeugen (auch gekaufte?), alte
+                  Tagebücher.
+                </li>
+                <li>
+                  Emotionale Kriegsführung im Gerichtssaal: Tränen, gespielte
+                  Empörung, dramatische Pausen. Oscar-reife Performance!
+                </li>
+              </ul>
+              <div class="bar-chart">
+                <div class="bar-item">
+                  <div class="bar-label">Anwaltskosten</div>
+                  <div class="bar-track">
+                    <div class="bar-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label">Emotionaler Schaden</div>
+                  <div class="bar-track">
+                    <div class="bar-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="bar-item">
+                  <div class="bar-label">Tatsächlicher Gewinn</div>
+                  <div class="bar-track">
+                    <div class="bar-fill" style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 10: Fazit -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00010_.png" alt="Fazit" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Fazit: Sieger schreiben Geschichte (und das Testament neu)
+              </h2>
+              <ul>
+                <li>Es ging nie nur ums Geld, es ging ums Gewinnen!</li>
+                <li>
+                  Nach dem Streit ist vor dem nächsten Streit: Familienfeste
+                  werden... interessant.
+                </li>
+                <li>
+                  Verwalten Sie Ihr "rechtmäßiges" Erbe weise. Und ändern Sie
+                  sofort alle Schlösser.
+                </li>
+                <li>
+                  Merke: Blut ist dicker als Wasser, aber Tinte auf dem
+                  richtigen Dokument ist dicker als beides.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-crown"></i>
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <i class="fa-solid fa-champagne-glasses"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        center: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        keyboard: true,
+        overview: true,
+      })
+    </script>
+  </body>
+</html>

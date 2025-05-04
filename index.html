@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerPoint Karaoke Übersicht</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #e0e0e0;
+        font-size: 2.5em;
+      }
+      .presentations {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .presentation-card {
+        background-color: #2a2a2a;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .presentation-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      }
+      .card-header {
+        background-color: #3a3a3a;
+        padding: 15px;
+        border-bottom: 1px solid #4a4a4a;
+      }
+      .card-header h2 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #f5f5f5;
+      }
+      .card-body {
+        padding: 15px;
+      }
+      .card-footer {
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #4a4a4a;
+      }
+      .btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .icon {
+        margin-right: 10px;
+      }
+      .footer {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 0.9em;
+        color: #888;
+      }
+      .coming-soon {
+        opacity: 0.6;
+      }
+      .coming-soon .btn {
+        background-color: #555;
+        cursor: not-allowed;
+      }
+      .coming-soon .btn:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fa-solid fa-display"></i> PowerPoint Karaoke Übersicht</h1>
+
+      <div class="presentations">
+        <!-- Präsentation 1 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-person-dress icon"></i>Präsentation 1</h2>
+          </div>
+          <div class="card-body">
+            <p>Als Frau im Mittelalter: 10 Überlebenstipps</p>
+          </div>
+          <div class="card-footer">
+            <a href="p1/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 2 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-handcuffs icon"></i>Präsentation 2</h2>
+          </div>
+          <div class="card-body">
+            <p>Vielfältige Verwendungszwecke für Streckbänke</p>
+          </div>
+          <div class="card-footer">
+            <a href="p2/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 3 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-coins icon"></i>Präsentation 3</h2>
+          </div>
+          <div class="card-body">
+            <p>Schnelles Geld im Mittelalter: Reichtum für Jedermann?</p>
+          </div>
+          <div class="card-footer">
+            <a href="p3/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 4 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-heart-crack icon"></i>Präsentation 4</h2>
+          </div>
+          <div class="card-body">
+            <p>Herzschmerz im Kettenhemd: Mein Ritter ist (fast) vergeben!</p>
+          </div>
+          <div class="card-footer">
+            <a href="p4/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 5 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-book icon"></i>Präsentation 5</h2>
+          </div>
+          <div class="card-body">
+            <p>Malleus Maleficarum: Fakt oder Fiktion?</p>
+          </div>
+          <div class="card-footer">
+            <a href="p5/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 6 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-broom icon"></i>Präsentation 6</h2>
+          </div>
+          <div class="card-body">
+            <p>Hexenjagd für Dummies: 10 untrügliche Zeichen!</p>
+          </div>
+          <div class="card-footer">
+            <a href="p6/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 7 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-dove icon"></i>Präsentation 7</h2>
+          </div>
+          <div class="card-body">
+            <p>Warum Tauben die Weltherrschaft übernehmen werden</p>
+          </div>
+          <div class="card-footer">
+            <a href="p7/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 8 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-user-tie icon"></i>Präsentation 8</h2>
+          </div>
+          <div class="card-body">
+            <p>Wie man ein Bewerbungsgespräch mit einem Gorilla überlebt</p>
+          </div>
+          <div class="card-footer">
+            <a href="p8/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 9 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-shoe-prints icon"></i>Präsentation 9</h2>
+          </div>
+          <div class="card-body">
+            <p>Die Geschichte der Flip-Flops</p>
+          </div>
+          <div class="card-footer">
+            <a href="p9/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 10 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2>
+              <i class="fa-solid fa-face-grimace icon"></i>Präsentation 10
+            </h2>
+          </div>
+          <div class="card-body">
+            <p>Meine 10 liebsten Foltermethoden (Fun Edition)</p>
+          </div>
+          <div class="card-footer">
+            <a href="p10/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 11 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-spa icon"></i>Präsentation 11</h2>
+          </div>
+          <div class="card-body">
+            <p>Ein Spa in der Hölle eröffnen - Businesstipps</p>
+          </div>
+          <div class="card-footer">
+            <a href="p11/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 12 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-ghost icon"></i>Präsentation 12</h2>
+          </div>
+          <div class="card-body">
+            <p>Wie werde ich böse? Tipps und Tricks</p>
+          </div>
+          <div class="card-footer">
+            <a href="p12/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 13 -->
+        <div class="presentation-card">
+          <div class="card-header">
+            <h2><i class="fa-solid fa-gavel icon"></i>Präsentation 13</h2>
+          </div>
+          <div class="card-body">
+            <p>Erbstreit eskaliert: Tipps und Tricks</p>
+          </div>
+          <div class="card-footer">
+            <a href="p13/index.html" class="btn"
+              >Ansehen <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Präsentation 14 (Coming Soon) -->
+        <div class="presentation-card coming-soon">
+          <div class="card-header">
+            <h2>
+              <i class="fa-solid fa-hourglass-half icon"></i>Präsentation 14
+            </h2>
+          </div>
+          <div class="card-body">
+            <p>In Vorbereitung...</p>
+          </div>
+          <div class="card-footer">
+            <span class="btn">Demnächst verfügbar</span>
+          </div>
+        </div>
+
+        <!-- Präsentation 15 (Coming Soon) -->
+        <div class="presentation-card coming-soon">
+          <div class="card-header">
+            <h2>
+              <i class="fa-solid fa-hourglass-half icon"></i>Präsentation 15
+            </h2>
+          </div>
+          <div class="card-body">
+            <p>In Vorbereitung...</p>
+          </div>
+          <div class="card-footer">
+            <span class="btn">Demnächst verfügbar</span>
+          </div>
+        </div>
+
+        <!-- Präsentation 16 (Coming Soon) -->
+        <div class="presentation-card coming-soon">
+          <div class="card-header">
+            <h2>
+              <i class="fa-solid fa-hourglass-half icon"></i>Präsentation 16
+            </h2>
+          </div>
+          <div class="card-body">
+            <p>In Vorbereitung...</p>
+          </div>
+          <div class="card-footer">
+            <span class="btn">Demnächst verfügbar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Erstellt mit Reveal.js und FontAwesome</p>
+      </div>
+    </div>
+  </body>
+</html>

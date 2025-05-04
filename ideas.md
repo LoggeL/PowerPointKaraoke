@@ -1,15 +1,15 @@
-- Warum Tauben die Weltherrschaft an sich reißen.
-- Wie man ein Bewerbungsgespräch mit einem Gorilla überlebt.
-- Die Geschichte der Flip Flops
+- Warum Tauben die Weltherrschaft an sich reißen. ✅
+- Wie man ein Bewerbungsgespräch mit einem Gorilla überlebt. ✅
+- Die Geschichte der Flip Flops ✅
 
 Malleus Maleficarum
 
-- Als Frau im Mittelalter: 10 Überlebenstipps
-- Vielfältige Verwendungszwecke für Streckbänke
-- 10 Möglichkeiten um im Mittelalter an schnelles Geld zu kommen.
-- Ich bin in einen verlobten Ritter verliebt. Was soll ich tun?
-- Ist der Hexenhammer doch wahr?
-- 10 Wege eine Hexe zu erkennen
+- Als Frau im Mittelalter: 10 Überlebenstipps ✅
+- Vielfältige Verwendungszwecke für Streckbänke ✅
+- 10 Möglichkeiten um im Mittelalter an schnelles Geld zu kommen. ✅
+- Ich bin in einen verlobten Ritter verliebt. Was soll ich tun? ✅
+- Ist der Hexenhammer doch wahr? ✅
+- 10 Wege eine Hexe zu erkennen ✅
 
 Traum von Freiheit
 
@@ -28,9 +28,9 @@ Nexus
 
 - Hilfe, meine KI übernimmt die Weltherrschaft!- Hilfreiche Überlebenstipps
 - Ich treffe mein Idol- Dos und Donts
-- Wie werde ich böse? Tipps und Tricks
 
 Höllische Herausforderung
 
 - Meine 10 Lieblingsfoltermethoden (Spaßedition)
 - Ein Spa in der Hölle eröffnen- Businesstipps
+- Wie werde ich böse? Tipps und Tricks

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovationen im Bestattungswesen</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <style>
+      .slide-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      .slide-image {
+        flex: 0 0 auto;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .slide-content {
+        flex: 0 0 auto;
+        width: 60%;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .slide-content > * {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+      }
+      .reveal h1,
+      .reveal h2 {
+        font-size: 1.1em;
+        margin-bottom: 0.3em;
+      }
+      .reveal h3 {
+        font-size: 0.9em;
+        margin-bottom: 0.3em;
+      }
+      .reveal ul,
+      .reveal p {
+        font-size: 0.65em;
+        margin: 0.2em 0;
+      }
+      .reveal ul {
+        padding-left: 20px;
+      }
+      .reveal li {
+        margin-bottom: 0.2em;
+      }
+      .reveal .icons {
+        font-size: 1.2em;
+        margin: 0.5em 0;
+      }
+      .reveal .icons i {
+        margin: 0 0.2em;
+      }
+      .chart-container {
+        width: 100%;
+        margin-top: 10px;
+      }
+      .line-chart {
+        width: 100%;
+        height: 100px;
+        background-color: #333;
+        border-radius: 4px;
+        position: relative;
+        margin-top: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .chart-line {
+        position: absolute;
+        stroke: #ff5555;
+        stroke-width: 2px;
+        fill: none;
+      }
+      .chart-line.secondary {
+        stroke: #55ff55;
+        stroke-dasharray: 4;
+      }
+      .chart-label {
+        position: absolute;
+        font-size: 0.5em;
+        color: #fff;
+      }
+      .flow-chart {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 0.6em;
+      }
+      .flow-item {
+        background-color: #444;
+        padding: 5px;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      .flow-connector {
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+      }
+      .timeline {
+        width: 100%;
+        height: 80px;
+        background-color: #333;
+        border-radius: 4px;
+        position: relative;
+        margin-top: 10px;
+        padding: 5px;
+      }
+      .timeline-point {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: #ff5555;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .timeline-label {
+        position: absolute;
+        font-size: 0.5em;
+        white-space: nowrap;
+        color: #fff;
+      }
+      .timeline-connector {
+        position: absolute;
+        height: 2px;
+        background-color: #ff5555;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Folie 1: Titel -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00021_.png" alt="Die letzte Reise 4.0" />
+            </div>
+            <div class="slide-content">
+              <h1>Die letzte Reise 4.0: Innovationen im Bestattungswesen</h1>
+              <h3>
+                Mehr als nur Kiste und Loch – Die Zukunft des Abschieds ist
+                digital, grün und... überraschend.
+              </h3>
+              <p>
+                Willkommen zur Avantgarde des Ablebens! Wir präsentieren
+                bahnbrechende Trends, die das Sterben revolutionieren. Vergessen
+                Sie Trauer – denken Sie Transformation!
+              </p>
+              <div class="icons">
+                <i class="fa-solid fa-infinity"></i>
+                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 2: Der Markt transformiert sich -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00022_.png"
+                alt="Der Markt transformiert sich"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>Der Markt transformiert sich: Neue Wünsche, neue Wege</h2>
+              <ul>
+                <li>
+                  Individualisierung: Standard war gestern. Jeder Abschied ein
+                  Unikat!
+                </li>
+                <li>
+                  Nachhaltigkeit: Der ökologische Fußabdruck – auch nach dem Tod
+                  ein Thema.
+                </li>
+                <li>
+                  Digitalisierung: Erinnerung wird interaktiv und virtuell.
+                </li>
+                <li>
+                  Enttabuisierung: Offener Umgang mit Sterben und Tod als Chance
+                  für Innovation.
+                </li>
+              </ul>
+              <div class="line-chart">
+                <svg width="100%" height="80" viewBox="0 0 100 80">
+                  <path
+                    d="M10,60 L20,55 L30,48 L40,40 L50,30 L60,25 L70,15 L80,10 L90,5"
+                    class="chart-line"
+                  ></path>
+                  <text x="10" y="75" fill="#fff" font-size="6">2000</text>
+                  <text x="90" y="75" fill="#fff" font-size="6">2023</text>
+                  <text x="95" y="5" fill="#fff" font-size="6">
+                    Alternative Bestattungen
+                  </text>
+
+                  <path
+                    d="M10,20 L20,25 L30,32 L40,40 L50,50 L60,55 L70,65 L80,70 L90,75"
+                    class="chart-line secondary"
+                  ></path>
+                  <text x="95" y="75" fill="#fff" font-size="6">
+                    Traditionelle Erdbestattung
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 3: Grün Sterben Deluxe -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00023_.png" alt="Grün Sterben Deluxe" />
+            </div>
+            <div class="slide-content">
+              <h2>Grün Sterben Deluxe: Kompostierbar, aber mit Stil</h2>
+              <ul>
+                <li>
+                  Myzel-Netzwerke: Werden Sie eins mit dem Wald (buchstäblich!)
+                  im Designer-Pilzanzug.
+                </li>
+                <li>
+                  Baumbestattungen 2.0: Ihre Asche als Nährstoff für einen
+                  genetisch optimierten Gedenkbaum mit WiFi-Hotspot.
+                </li>
+                <li>
+                  Aquamation (alkalische Hydrolyse): Sanfte Auflösung –
+                  umweltfreundlich und irgendwie... flüssig.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-leaf"></i>
+                <i class="fa-solid fa-qrcode"></i>
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 4: Digitales Jenseits -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00024_.png" alt="Digitales Jenseits" />
+            </div>
+            <div class="slide-content">
+              <h2>Digitales Jenseits: Ihr Avatar lebt weiter!</h2>
+              <ul>
+                <li>
+                  KI-Trauerbegleiter: Chatbots, trainiert mit den Daten des
+                  Verstorbenen. Sprechen Sie mit Oma – oder zumindest ihrer
+                  digitalen Kopie.
+                </li>
+                <li>
+                  VR-Gedenkräume: Treffen Sie Freunde und Familie im virtuellen
+                  Himmel (verschiedene Designs verfügbar: Wolken, Strand,
+                  Berghütte).
+                </li>
+                <li>
+                  Hologramm-Erinnerungen: Projizieren Sie den Verstorbenen auf
+                  den Kaffeetisch für ein letztes Gespräch.
+                </li>
+              </ul>
+              <div class="flow-chart">
+                <div class="flow-item">Daten des Verstorbenen</div>
+                <div class="flow-connector">↓</div>
+                <div class="flow-item">KI-Training</div>
+                <div class="flow-connector">↓</div>
+                <div class="flow-item">Interaktiver Avatar</div>
+                <div class="flow-connector">↓</div>
+                <div class="flow-item">Abo-Modell für Angehörige</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 5: Space Burial -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00025_.png" alt="Space Burial" />
+            </div>
+            <div class="slide-content">
+              <h2>Space Burial: Das ultimative Upgrade für Ihre Asche</h2>
+              <ul>
+                <li>
+                  Orbital-Memorial: Ein letzter Rundflug um die Erde.
+                  Sternschnuppe inklusive (vielleicht).
+                </li>
+                <li>
+                  Deep Space Mission: Ihre sterblichen Überreste auf dem Weg zu
+                  Alpha Centauri (Ankunft in ca. 75.000 Jahren).
+                </li>
+                <li>
+                  Mondlandung-Special: Werden Sie Teil des Mondstaubs.
+                  Exklusives Angebot, begrenzte Plätze!
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-rocket"></i>
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-satellite"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 6: Kryonik -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00026_.png" alt="Kryonik" />
+            </div>
+            <div class="slide-content">
+              <h2>Kryonik: Kaltgestellt ins nächste Jahrtausend?</h2>
+              <ul>
+                <li>
+                  Die Wette auf die Zukunft: Einfrieren statt verwesen. Hoffnung
+                  auf Wiederbelebung durch zukünftige Super-Technologie.
+                </li>
+                <li>
+                  Full-Body vs. Neuro-Option: Sparen Sie Geld und frieren Sie
+                  nur das Gehirn ein! (Körper wird nachgeliefert, hoffentlich).
+                </li>
+                <li>
+                  Abo-Modelle für die Ewigkeit: Finanzieren Sie Ihren
+                  Kälteschlaf – Ratenzahlung möglich.
+                </li>
+              </ul>
+              <div class="timeline">
+                <div class="timeline-point" style="left: 10%"></div>
+                <div class="timeline-label" style="left: 10%; top: 10px">
+                  Heute: $200.000
+                </div>
+
+                <div
+                  class="timeline-connector"
+                  style="left: 10%; width: 20%"
+                ></div>
+                <div class="timeline-point" style="left: 30%"></div>
+                <div class="timeline-label" style="left: 30%; top: 10px">
+                  2100: $500.000
+                </div>
+
+                <div
+                  class="timeline-connector"
+                  style="left: 30%; width: 30%"
+                ></div>
+                <div class="timeline-point" style="left: 60%"></div>
+                <div class="timeline-label" style="left: 60%; top: 10px">
+                  2300: $2.000.000
+                </div>
+
+                <div
+                  class="timeline-connector"
+                  style="left: 60%; width: 20%"
+                ></div>
+                <div
+                  class="timeline-point"
+                  style="left: 80%; background-color: #55ff55"
+                ></div>
+                <div class="timeline-label" style="left: 80%; top: 10px">
+                  Wiederbelebung?
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 7: Mensch als Ressource -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00027_.png" alt="Mensch als Ressource" />
+            </div>
+            <div class="slide-content">
+              <h2>Mensch als Ressource: Radikales Upcycling</h2>
+              <ul>
+                <li>
+                  Erinnerungsdiamanten: Aus der Asche gepresst – funkelnd und
+                  für immer (oder bis Sie ihn verlieren).
+                </li>
+                <li>
+                  Bio-Urnen mit Samen: Düngen Sie Ihren eigenen
+                  Gedenk-Gemüsegarten. Tomaten von Opa?
+                </li>
+                <li>
+                  Knochenporzellan reloaded: Das etwas andere Kaffeeservice.
+                </li>
+                <li>
+                  Extrem-Option: Verarbeitung zu Biokraftstoff (nur für
+                  Geschäftskunden).
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-gem"></i>
+                <i class="fa-solid fa-bone"></i>
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 8: Gamification des Gedenkens -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00028_.png" alt="Gamification des Gedenkens" />
+            </div>
+            <div class="slide-content">
+              <h2>Gamification des Gedenkens: Friedhofs-Quests & Highscores</h2>
+              <ul>
+                <li>
+                  AR-Friedhofserlebnisse: Entdecken Sie die Lebensgeschichte per
+                  Smartphone-App direkt am Grab. Mit Minispielen!
+                </li>
+                <li>
+                  Gedenk-Challenges: Wer besucht das Grab am häufigsten? Wer
+                  hinterlässt die kreativste Blumendeko? Punkte sammeln für die
+                  Ewigkeit!
+                </li>
+                <li>
+                  Leaderboards für Hinterbliebene: Vergleichen Sie Ihre
+                  Trauer-Performance mit anderen.
+                </li>
+              </ul>
+              <div
+                style="
+                  background-color: #333;
+                  border-radius: 8px;
+                  padding: 10px;
+                  margin-top: 10px;
+                  font-size: 0.6em;
+                "
+              >
+                <div
+                  style="
+                    text-align: center;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                  "
+                >
+                  Friedhof Hero
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                  "
+                >
+                  <div>Trauerpunkte: 12.450</div>
+                  <div style="color: #55ff55">+500 heute</div>
+                </div>
+                <div
+                  style="
+                    background-color: #444;
+                    padding: 5px;
+                    border-radius: 4px;
+                    margin-bottom: 5px;
+                  "
+                >
+                  <i class="fa-solid fa-award"></i> Grabpflege Level 3
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9em;
+                  "
+                >
+                  <div>Lisa</div>
+                  <div>11.200</div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9em;
+                  "
+                >
+                  <div style="color: #ffaa55">DU</div>
+                  <div style="color: #ffaa55">12.450</div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9em;
+                  "
+                >
+                  <div>Thomas</div>
+                  <div>14.320</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 9: Die Blockchain-Seele -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00029_.png" alt="Die Blockchain-Seele" />
+            </div>
+            <div class="slide-content">
+              <h2>Die Blockchain-Seele: NFT-Erinnerungen & Krypto-Jenseits</h2>
+              <ul>
+                <li>
+                  Tokenisierung der Erinnerung: Prägen Sie einzigartige Momente
+                  als Non-Fungible Tokens. Spekulieren Sie auf Omas Lachen!
+                </li>
+                <li>
+                  Seelen-Backup auf der Blockchain: Dezentral, sicher,
+                  unveränderlich – Ihre Essenz als Code.
+                </li>
+                <li>
+                  Metaverse-Mausoleum: Kaufen Sie digitales Land im
+                  Jenseits-Metaverse für Ihren Krypto-Avatar.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-brain"></i>
+                <i class="fa-brands fa-bitcoin"></i>
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 10: Sterben 4.0 -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00030_.png" alt="Sterben 4.0" />
+            </div>
+            <div class="slide-content">
+              <h2>Sterben 4.0: Effizient, Nachhaltig, Hyper-Personalisiert</h2>
+              <ul>
+                <li>
+                  Die Zukunft ist jetzt: Der Tod als letztes großes
+                  Optimierungsprojekt.
+                </li>
+                <li>
+                  Synergieeffekte nutzen: Kombinieren Sie Öko-Bestattung mit
+                  digitalem Erbe für maximale Impact-Nachhaltigkeit.
+                </li>
+                <li>
+                  Abschied als Experience: Kuratieren Sie Ihr Ableben wie ein
+                  unvergessliches Event.
+                </li>
+                <li>
+                  Denken Sie dran: Sterben muss nicht das Ende sein, sondern
+                  kann der Anfang... Ihres nächsten Geschäftsmodells sein.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-skull"></i>
+                <i class="fa-solid fa-tablet"></i>
+                <i class="fa-solid fa-recycle"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        center: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        keyboard: true,
+        overview: true,
+      })
+    </script>
+  </body>
+</html>

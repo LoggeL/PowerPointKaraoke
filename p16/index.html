@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hilfe, mein bester Freund ist ein Plüschhase!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <style>
+      .slide-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+      .slide-image {
+        flex: 0 0 auto;
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .slide-content {
+        flex: 0 0 auto;
+        width: 60%;
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .slide-content > * {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+      }
+      .reveal h1,
+      .reveal h2 {
+        font-size: 0.9em;
+        margin-bottom: 0.3em;
+      }
+      .reveal h3 {
+        font-size: 0.8em;
+        margin-bottom: 0.3em;
+      }
+      .reveal ul,
+      .reveal p {
+        font-size: 0.6em;
+        margin: 0.2em 0;
+      }
+      .reveal ul {
+        padding-left: 20px;
+      }
+      .reveal li {
+        margin-bottom: 0.2em;
+      }
+      .reveal .icons {
+        font-size: 1em;
+        margin: 0.5em 0;
+      }
+      .reveal .icons i {
+        margin: 0 0.2em;
+      }
+      .chart-container {
+        width: 100%;
+        margin-top: 10px;
+      }
+      .venn-diagram {
+        width: 100%;
+        height: 120px;
+        position: relative;
+        margin-top: 10px;
+      }
+      .venn-circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+      }
+      .venn-label {
+        position: absolute;
+        font-size: 0.45em;
+        text-align: center;
+        color: #fff;
+      }
+      .flow-chart {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 0.55em;
+      }
+      .flow-item {
+        background-color: #444;
+        padding: 5px;
+        border-radius: 4px;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      .flow-connector {
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+      }
+      .bar-chart {
+        width: 100%;
+        height: 100px;
+        background-color: #333;
+        border-radius: 4px;
+        position: relative;
+        margin-top: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .bar {
+        position: absolute;
+        bottom: 5px;
+        background-color: #5555ff;
+        border-radius: 2px 2px 0 0;
+      }
+      .bar-label {
+        position: absolute;
+        font-size: 0.45em;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+      }
+      .conflict-matrix {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 0.5em;
+        border-collapse: collapse;
+      }
+      .conflict-matrix td {
+        border: 1px solid #555;
+        padding: 5px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Folie 1: Titel -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00031_.png" alt="Person mit Plüschhase" />
+            </div>
+            <div class="slide-content">
+              <h1>
+                Mein Bester Freund, der Hase: Diagnose, Management & Akzeptanz
+                einer außergewöhnlichen Beziehung
+              </h1>
+              <h3>
+                Ein tiefenpsychologischer Leitfaden für den Umgang mit
+                nicht-traditionellen Primärbindungen.
+              </h3>
+              <p>
+                Fühlen Sie sich unverstanden? Ist Ihr engster Vertrauter
+                flauschig und hat lange Ohren? Sie sind nicht allein! Diese
+                Präsentation validiert Ihre Erfahrungen und bietet
+                Lösungsansätze.
+              </p>
+              <div class="icons">
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-paw"></i>
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 2: Definition & Soziodemografie -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00032_.png" alt="Plüschhasen-Anatomie" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Das Phänomen "Lepus Amicus Plushious": Definition &
+                Soziodemografie
+              </h2>
+              <ul>
+                <li>
+                  Klinische Einordnung: Eine Form der Objektophilie? Erweiterte
+                  Bindungsfähigkeit? Oder einfach nur sehr guter Geschmack?
+                </li>
+                <li>
+                  Prävalenzraten: Steigende Tendenz bei hochintelligenten,
+                  kreativen Individuen (selbst-diagnostiziert).
+                </li>
+                <li>
+                  Risikofaktoren: Hoher Stresslevel, Enttäuschung durch
+                  menschliche Interaktionen, übermäßiger Konsum von
+                  Karottenkuchen-Werbung.
+                </li>
+              </ul>
+              <div class="chart-container">
+                <div class="bar-chart">
+                  <div
+                    class="bar"
+                    style="left: 5%; width: 10%; height: 30%"
+                  ></div>
+                  <div class="bar-label" style="bottom: 35%; left: 5%">
+                    2013
+                  </div>
+                  <div
+                    class="bar"
+                    style="left: 25%; width: 10%; height: 40%"
+                  ></div>
+                  <div class="bar-label" style="bottom: 45%; left: 25%">
+                    2015
+                  </div>
+                  <div
+                    class="bar"
+                    style="left: 45%; width: 10%; height: 55%"
+                  ></div>
+                  <div class="bar-label" style="bottom: 60%; left: 45%">
+                    2017
+                  </div>
+                  <div
+                    class="bar"
+                    style="left: 65%; width: 10%; height: 70%"
+                  ></div>
+                  <div class="bar-label" style="bottom: 75%; left: 65%">
+                    2019
+                  </div>
+                  <div
+                    class="bar"
+                    style="left: 85%; width: 10%; height: 85%"
+                  ></div>
+                  <div class="bar-label" style="bottom: 90%; left: 85%">
+                    2023
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 3: Bindungstheorie -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00033_.png"
+                alt="Bindungsstile mit Plüschhasen"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>Bindungstheorie Reloaded: Der Hase als sichere Basis</h2>
+              <ul>
+                <li>
+                  Bowlby & Ainsworth reinterpretiert: Der Plüschhase als
+                  konstante, nicht-wertende Präsenz. Erfüllt Kriterien für
+                  sichere Bindung besser als viele Menschen.
+                </li>
+                <li>
+                  Übertragungsphänomene: Projizieren Sie Ihre Wünsche und
+                  Bedürfnisse auf den Hasen. Er widerspricht nie!
+                </li>
+                <li>
+                  Vorteile: Keine Streits über die Fernbedienung, keine
+                  unerwarteten Gefühlsausbrüche (außer Sie werfen ihn zu fest).
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-anchor"></i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comments"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 4: Das Coming-Out -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00034_.png"
+                alt="Person mit verstecktem Hasen"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>Das soziale Minenfeld: Das Coming-Out & Umfeld-Management</h2>
+              <ul>
+                <li>
+                  Wem sage ich es? Strategische Auswahl der Vertrauenspersonen
+                  (vermutlich andere Hasen-Freunde zuerst).
+                </li>
+                <li>
+                  Reaktions-Matrix: Vorbereitung auf Skepsis, Spott,
+                  Unverständnis (oder unerwartete Akzeptanz!).
+                </li>
+                <li>
+                  Formulierungshilfen: "Er ist nicht nur ein Hase, er ist mein
+                  Fels in der Brandung." / "Ja, er kommt mit zum Abendessen."
+                </li>
+              </ul>
+              <div class="flow-chart">
+                <div class="flow-item">Person informieren?</div>
+                <div class="flow-connector">↓</div>
+                <div class="flow-item">Ist die Person aufgeschlossen?</div>
+                <div class="flow-connector">↙ ↘</div>
+                <div style="display: flex; justify-content: space-between">
+                  <div style="width: 48%">
+                    <div class="flow-item">Direkt sagen</div>
+                  </div>
+                  <div style="width: 48%">
+                    <div class="flow-item">Langsam heranführen</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 5: Nonverbale Meisterschaft -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00035_.png" alt="Person hört Plüschhasen zu" />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Nonverbale Meisterschaft: Die Geheimsprache der Plüschtiere
+              </h2>
+              <ul>
+                <li>
+                  Deutung subtiler Signale: Die Neigung des Ohrs, die Position
+                  der Knopfaugen, der Grad der Flauschigkeit – alles hat
+                  Bedeutung!
+                </li>
+                <li>
+                  Aktives Zuhören (mit Plüsch): Schenken Sie Ihrem Hasen Ihre
+                  volle Aufmerksamkeit. Er "hört" besser, wenn Sie Blickkontakt
+                  halten.
+                </li>
+                <li>
+                  Gemeinsame Rituale stärken die Bindung: Der morgendliche
+                  Kaffee, das abendliche Vorlesen (auch wenn er nicht
+                  antwortet).
+                </li>
+              </ul>
+              <div class="venn-diagram">
+                <div
+                  class="venn-circle"
+                  style="
+                    width: 100px;
+                    height: 100px;
+                    background: rgba(255, 0, 0, 0.5);
+                    left: 20px;
+                    top: 10px;
+                  "
+                ></div>
+                <div class="venn-label" style="left: 30px; top: 50px">
+                  Meine Bedürfnisse
+                </div>
+                <div
+                  class="venn-circle"
+                  style="
+                    width: 100px;
+                    height: 100px;
+                    background: rgba(0, 0, 255, 0.5);
+                    left: 80px;
+                    top: 10px;
+                  "
+                ></div>
+                <div class="venn-label" style="left: 110px; top: 50px">
+                  Was ich glaube, dass der Hase braucht
+                </div>
+                <div
+                  class="venn-label"
+                  style="left: 65px; top: 20px; color: #ffffff"
+                >
+                  Stille Akzeptanz & Kuscheln
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 6: Integration in den Alltag -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img src="ComfyUI_00036_.png" alt="Plüschhase im Büro" />
+            </div>
+            <div class="slide-content">
+              <h2>Integration in den Alltag: Der Hase als +1</h2>
+              <ul>
+                <li>
+                  Arbeitsplatz-Etikette: Darf der Hase mit ins Büro? Eigener
+                  Stuhl? Teilnahme an Meetings? Klären Sie die HR-Richtlinien!
+                </li>
+                <li>
+                  Reisen mit Hase: Eigener Koffer? Sicherheitskontrolle am
+                  Flughafen? Buchen Sie einen extra Sitzplatz?
+                </li>
+                <li>
+                  Gesellschaftliche Anlässe: Der Hase als Eisbrecher oder als
+                  Grund für sofortigen Ausschluss – ein soziales Experiment.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-chair"></i>
+                <i class="fa-solid fa-briefcase"></i>
+                <i class="fa-solid fa-plane"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 7: Konfliktmanagement -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00037_.png"
+                alt="Person und abgewandter Plüschhase"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Konfliktmanagement: Wenn der Haussegen schief hängt (oder der
+                Hase)
+              </h2>
+              <ul>
+                <li>
+                  Umgang mit "Widerstand": Was tun, wenn der Hase "nicht
+                  kooperiert" (z.B. vom Sofa fällt)? Interpretation ist alles!
+                </li>
+                <li>
+                  Die "Auszeit"-Strategie: Setzen Sie den Hasen in die Ecke,
+                  wenn er "ungezogen" war. Wichtig: Danach Versöhnungskuscheln.
+                </li>
+                <li>
+                  Eifersucht: Was, wenn Sie Zeit mit anderen (Plüsch-)Tieren
+                  verbringen? Klären Sie die Beziehungsregeln.
+                </li>
+              </ul>
+              <table class="conflict-matrix">
+                <tr>
+                  <td></td>
+                  <td>Unwichtig für Hase</td>
+                  <td>Wichtig für Hase</td>
+                </tr>
+                <tr>
+                  <td>Unwichtig für mich</td>
+                  <td>Ignorieren</td>
+                  <td>Nachgeben</td>
+                </tr>
+                <tr>
+                  <td>Wichtig für mich</td>
+                  <td>Durchsetzen</td>
+                  <td>Neuen Hasen kaufen?</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 8: Paartherapie -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00038_.png"
+                alt="Therapiesitzung mit Plüschhase"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>Paartherapie für Fortgeschrittene: Hilfe von außen?</h2>
+              <ul>
+                <li>
+                  Wann ist professionelle Hilfe nötig? Wenn die Kommunikation
+                  stockt oder der Hase "fremdgeht" (mit dem Hund spielt).
+                </li>
+                <li>
+                  Den richtigen Therapeuten finden: Spezialisiert auf
+                  Mensch-Objekt-Beziehungen. Referenzen prüfen!
+                </li>
+                <li>
+                  Therapieziele: Verbesserung der nonverbalen Kommunikation,
+                  Stärkung der Bindung, Umgang mit externem Druck.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <i class="fa-solid fa-handshake"></i>
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 9: Rechtliche Dimensionen -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00039_.png"
+                alt="Plüschhase mit Rechtsdokumenten"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>Rechtliche Dimensionen: Sorgerecht, Erbe & Hasen-Rechte</h2>
+              <ul>
+                <li>
+                  Testamentarische Verfügung: Wer erbt den Hasen? Gibt es ein
+                  Besuchsrecht für andere Familienmitglieder?
+                </li>
+                <li>
+                  Versicherung: Kann man einen emotional wertvollen Hasen gegen
+                  Diebstahl oder Abnutzung versichern?
+                </li>
+                <li>
+                  Anerkennung als "Lebenspartner"? Steuerliche Vorteile?
+                  (Spoiler: Wahrscheinlich nicht, aber fragen kostet nichts).
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-gavel"></i>
+                <i class="fa-solid fa-scroll"></i>
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Folie 10: Fazit -->
+        <section>
+          <div class="slide-container">
+            <div class="slide-image">
+              <img
+                src="ComfyUI_00040_.png"
+                alt="Person und Plüschhase im Sonnenuntergang"
+              />
+            </div>
+            <div class="slide-content">
+              <h2>
+                Fazit: Umarme deinen inneren Hasen – Akzeptanz als Superkraft
+              </h2>
+              <ul>
+                <li>
+                  Ihre Beziehung ist valide und wichtig! Lassen Sie sich nicht
+                  von gesellschaftlichen Normen einschränken.
+                </li>
+                <li>
+                  Der Hase als Quelle der Stärke: Nutzen Sie die bedingungslose
+                  Akzeptanz für Ihr persönliches Wachstum.
+                </li>
+                <li>
+                  Empowerment durch Flauschigkeit: Stehen Sie zu Ihrem besten
+                  Freund! Die Welt braucht mehr Hasenliebe.
+                </li>
+              </ul>
+              <div class="icons">
+                <i class="fa-solid fa-trophy"></i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-hand-peace"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'fade',
+        center: true,
+        controls: true,
+        progress: true,
+        slideNumber: true,
+        keyboard: true,
+        overview: true,
+      })
+    </script>
+  </body>
+</html>

@@ -1,44 +1,74 @@
-# PowerPoint Karaoke Präsentationen
+# PowerPoint Karaoke Presentations
 
-Dieses Repository enthält Reveal.js Präsentationen für "PowerPoint Karaoke".
+A collection of amusing Reveal.js presentations designed for PowerPoint Karaoke - where presenters have to give presentations about topics they've never seen before!
 
-## Verfügbare Präsentationen
+## Available Presentations
 
-1. **Als Frau im Mittelalter: 10 Überlebenstipps**
-   - Öffne `index.html` in einem Browser
-   - Zielgruppe: Frauen, die versehentlich ins Jahr 1476 gereist sind
+There are currently 17 presentations available (p1 through p17), each with its own unique and absurd topic. To view a presentation:
 
-2. **Vielfältige Verwendungszwecke für Streckbänke**
-   - Öffne `presentation2.html` in einem Browser
-   - Zielgruppe: Innovative Unternehmer und Folterknechte mit Freizeit
+1. Navigate to the presentation folder (e.g., `p1/`, `p2/`, etc.)
+2. Open the respective `index.html` file in a browser
 
-## Wie man die Präsentationen startet
+Access any presentation by using this pattern:
+```
+p[number]/index.html
+```
+Where `[number]` is any number from 1 to 17.
 
-1. Öffne die jeweilige HTML-Datei in einem modernen Webbrowser.
+## Features
 
-**Alternative (mit lokalem Webserver):**
+- Built with [Reveal.js](https://revealjs.com/)
+- Responsive design that works on all modern browsers
+- Uses Font Awesome icons for visual elements
+- Includes high-quality AI-generated images (stored as PNG files)
+- Presentation controls for easy navigation
 
-Wenn du einen lokalen Webserver nutzen möchtest:
+## How to Use
 
-```powershell
-# Mit Python (falls installiert)
-python -m http.server
+1. Clone this repository
+2. Open any presentation's `index.html` file in a modern web browser
+3. Present with confidence (or confusion - that's part of the fun!)
 
-# Oder mit Node.js (falls installiert)
-npx serve
+### Presentation Controls
+
+- **Next slide**: Right arrow, Down arrow, Space
+- **Previous slide**: Left arrow, Up arrow
+- **Overview**: Press `ESC`
+- **Fullscreen**: Press `F`
+- **Speaker notes**: Press `S`
+- **End presentation**: Press `ESC` twice
+
+## Technical Details
+
+- All presentations use Reveal.js for the slideshow functionality
+- Icons are loaded from Font Awesome
+- Resources are loaded via CDNs (Internet connection required)
+- Presentations are structured with both HTML and Markdown files
+- Images are generated using ComfyUI
+
+## Structure
+
+Each presentation follows this structure:
+```
+p[1-17]/
+├── index.html          # The presentation HTML file
+├── p[1-17].md         # Optional markdown content
+└── ComfyUI_*.png      # AI-generated images
 ```
 
-## Steuerung der Präsentation
+## Adding New Presentations
 
-- **Weiter**: Pfeil rechts, Pfeil runter, Space
-- **Zurück**: Pfeil links, Pfeil hoch
-- **Übersicht**: ESC-Taste
-- **Vollbild**: F-Taste
-- **Sprechernotizen**: S-Taste
-- **Präsentation beenden**: ESC-Taste zweimal
+To add a new presentation:
+1. Create a new directory following the naming pattern (`p18/`, etc.)
+2. Include an `index.html` file using the existing structure
+3. Optionally include a markdown file for content
+4. Add necessary AI-generated images
+5. Follow the existing presentation format
 
-## Technische Details
+## Contributing
 
-- Die Präsentationen verwenden [Reveal.js](https://revealjs.com/)
-- Die Icons stammen von [Font Awesome](https://fontawesome.com/)
-- Alle Ressourcen werden über CDNs geladen (Internetverbindung erforderlich)
+Feel free to contribute your own absurd presentations through pull requests!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

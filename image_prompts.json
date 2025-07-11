@@ -334,5 +334,299 @@
       "image_file": "ComfyUI_00070_.png",
       "prompt": "Conclusion slide: Career lessons from gorilla interviews. Show key takeaways about non-verbal communication, respect, hierarchy and staying calm. Hint at next seminar about sloth interviews. Symbols: lightbulb, hippo/gorilla, leaf."
     }
+  ],
+  "p18": [
+    {
+      "image_file": "01_gerichtssaal_ueberraschung.png",
+      "prompt": "A courtroom scene with a judge, jury, and a surprised-looking defendant"
+    },
+    {
+      "image_file": "02_vergewaltigung_definition.png",
+      "prompt": "A law book open to the page defining rape, with a magnifying glass highlighting the text"
+    },
+    {
+      "image_file": "03_moralisch_verwerflich.png",
+      "prompt": "A person looking shocked and disturbed, with a red 'X' over the image"
+    },
+    {
+      "image_file": "04_ueberraschung_schreien.png",
+      "prompt": "A person shouting 'surprise' while holding a megaphone, with a confused look on their face"
+    },
+    {
+      "image_file": "05_ueberraschung_dauer.png",
+      "prompt": "An hourglass with the words 'surprise' and 'rape' on either side, with a red 'X' over the image"
+    },
+    {
+      "image_file": "06_internationale_vergleiche.png",
+      "prompt": "A world map with different countries highlighted and labeled with 'surprise rape law'"
+    },
+    {
+      "image_file": "07_historische_perspektive.png",
+      "prompt": "An old painting depicting a surprise rape scene, with people looking shocked and disgusted"
+    },
+    {
+      "image_file": "08_opfer_auswirkungen.png",
+      "prompt": "A person crying and looking traumatized, with the word 'surprise' in the background"
+    },
+    {
+      "image_file": "09_gegenmassnahmen.png",
+      "prompt": "A person holding a shield with the word 'consent' on it, facing a person shouting 'surprise'"
+    },
+    {
+      "image_file": "10_fazit_einvernehmlichkeit.png",
+      "prompt": "A person giving a thumbs up to consent and a thumbs down to surprise rape, with a serious expression"
+    }
+  ],
+  "p19": [
+    {
+      "image_file": "01_verworrene_rote_seide.png",
+      "prompt": "Abstract artistic representation of tangled red silk ribbons forming complex patterns against a dark background, suggesting complexity and mystery"
+    },
+    {
+      "image_file": "02_akrobatische_silhouetten_zirku.png",
+      "prompt": "Silhouette of two acrobatic figures in an impossible twisted position against a circus tent background with spotlights"
+    },
+    {
+      "image_file": "03_moebius_menschen_mathematik.png",
+      "prompt": "3D rendered Möbius strip made of intertwined human-like figures in soft pink and blue colors, mathematical symbols floating around"
+    },
+    {
+      "image_file": "04_quanten_tango_paar.png",
+      "prompt": "Surreal artistic image of two dancing figures phasing in and out of reality with quantum particle effects and wave patterns"
+    },
+    {
+      "image_file": "05_lustige_statistik_diagramm.png",
+      "prompt": "Colorful pie chart visualization with funny icons representing different failure modes, comedic style infographic"
+    },
+    {
+      "image_file": "06_origami_lotus_paar.png",
+      "prompt": "Artistic representation of human figures folded like origami paper in lotus flower shape, Japanese aesthetic with cherry blossoms"
+    },
+    {
+      "image_file": "07_astronauten_spirale_raumstatio.png",
+      "prompt": "Two astronauts floating in a space station module, connected in a spiral formation with Earth visible through window"
+    },
+    {
+      "image_file": "08_ausruestung_flatlay_foto.png",
+      "prompt": "Flat lay photography of various equipment including yoga mat, ropes, geometric tools, first aid kit, arranged aesthetically"
+    },
+    {
+      "image_file": "09_experten_cartoon_tipps.png",
+      "prompt": "Three cartoon expert characters giving thumbs up, wearing lab coats and athletic gear, humorous style illustration"
+    },
+    {
+      "image_file": "10_glueckliches_paar_couch.png",
+      "prompt": "Happy couple laughing together on a couch, looking at a yoga book with amused expressions, warm and cozy atmosphere"
+    }
+  ],
+  "p21": [
+    {
+      "image_file": "01_frau_bauarbeiterin_selbstbewus.png",
+      "prompt": "A confident female construction worker in safety gear standing proudly on a construction site, holding blueprints, with a modern building under construction in the background, golden hour lighting, professional photography style"
+    },
+    {
+      "image_file": "02_multitasking_baustelle_frau.png",
+      "prompt": "A female construction worker expertly multitasking on a construction site, operating power tools while reviewing blueprints and coordinating with team via headset, dynamic action shot with motion blur effects"
+    },
+    {
+      "image_file": "03_praezision_bauarbeiten_verglei.png",
+      "prompt": "Split screen comparison showing a female construction worker using precision measuring tools and level on one side, creating perfectly aligned wall, professional construction site photography"
+    },
+    {
+      "image_file": "04_team_kommunikation_baustelle.png",
+      "prompt": "Female construction team having an efficient planning meeting on site, with clear communication, blueprints spread out, everyone engaged and professional, modern construction site setting"
+    },
+    {
+      "image_file": "05_sicherheit_arbeitsschutz_frau.png",
+      "prompt": "Female construction worker demonstrating proper safety equipment usage, wearing complete safety gear including hard hat, safety glasses, and harness, bright and professional safety poster style"
+    },
+    {
+      "image_file": "06_problemloesung_innovation_bau.png",
+      "prompt": "Female engineer on construction site solving complex problem with tablet and digital tools, surrounded by technical drawings and modern construction technology, innovative atmosphere"
+    },
+    {
+      "image_file": "07_organisation_ordnung_baustelle.png",
+      "prompt": "Perfectly organized construction site managed by women, with labeled tool stations, clean walkways, organized material storage, and visible efficiency systems in place"
+    },
+    {
+      "image_file": "08_nachhaltigkeit_gruenes_bauen.png",
+      "prompt": "Female construction worker implementing sustainable building practices, installing solar panels and green technology on a modern eco-friendly construction project"
+    },
+    {
+      "image_file": "09_erfolgsstatistik_frauen_bau.png",
+      "prompt": "Infographic style visualization showing positive statistics and success metrics of female-led construction projects, with charts and graphs in modern design"
+    },
+    {
+      "image_file": "10_zukunft_frauen_bauwirtschaft.png",
+      "prompt": "Diverse group of female construction workers celebrating successful project completion on a futuristic construction site with advanced technology and modern architecture in background"
+    }
+  ],
+  "p22": [
+    {
+      "image_file": "01_frau_lobbyiert_verwirrt.png",
+      "prompt": "A humorous illustration of a woman trying to lobby with a confused expression, surrounded by political cartoon characters."
+    },
+    {
+      "image_file": "02_lobbyist_gibt_geld.png",
+      "prompt": "A cartoon of a lobbyist handing over a briefcase full of money to a politician."
+    },
+    {
+      "image_file": "03_frau_schleppt_akten.png",
+      "prompt": "A woman struggling to carry a heavy briefcase full of documents while walking through a crowded hallway."
+    },
+    {
+      "image_file": "04_frau_weint_am_schreibtisch.png",
+      "prompt": "A woman crying at her desk, surrounded by stacks of paperwork and political memos."
+    },
+    {
+      "image_file": "05_frau_auf_networking_event.png",
+      "prompt": "A woman looking uncomfortable at a networking event, surrounded by men in suits."
+    },
+    {
+      "image_file": "06_frau_erklärt_vergeblich.png",
+      "prompt": "A woman trying to explain something to a group of men, who look confused and uninterested."
+    },
+    {
+      "image_file": "07_frau_zieht_anzug_an.png",
+      "prompt": "A woman struggling to put on a suit, looking uncomfortable and out of place."
+    },
+    {
+      "image_file": "08_frau_unter_männern.png",
+      "prompt": "A woman sitting alone in a room full of men, looking out of place and lonely."
+    },
+    {
+      "image_file": "09_frau_mit_kind_und_akten.png",
+      "prompt": "A woman juggling a baby and a briefcase, looking stressed and overwhelmed."
+    },
+    {
+      "image_file": "10_frau_verlässt_politik.png",
+      "prompt": "A woman walking away from a political building, looking relieved and free."
+    }
+  ],
+  "p23": [
+    {
+      "image_file": "01_kickboxer_verwirrt_liebe.png",
+      "prompt": "A person kickboxing in a gym with a confused look on their face, trying to balance a pair of boxing gloves and a heart-shaped pillow."
+    },
+    {
+      "image_file": "02_hormone_boxen_gelehrt.png",
+      "prompt": "A graphic showing the chemical structure of testosterone and adrenaline, with boxing gloves and a brain in the background."
+    },
+    {
+      "image_file": "03_kickboxer_erektionsproblem.png",
+      "prompt": "A person practicing kickboxing, with a thought bubble showing a sad and confused penis."
+    },
+    {
+      "image_file": "04_kickboxer_meditiert_angst.png",
+      "prompt": "A person meditating in a boxing stance, with thought bubbles showing various sexual fears and anxieties."
+    },
+    {
+      "image_file": "05_kickboxer_erlebnisbericht.png",
+      "prompt": "A collage of kickboxers in various stages of confusion and enlightenment, with steam rising from their heads."
+    },
+    {
+      "image_file": "06_kickboxer_leidenschaft_bett.png",
+      "prompt": "A kickboxer in a passionate embrace with a partner, with sparks flying from their heads."
+    },
+    {
+      "image_file": "07_kickboxer_verletzung_leid.png",
+      "prompt": "A kickboxer holding their groin in pain, with a thought bubble showing a sad and confused partner."
+    },
+    {
+      "image_file": "08_kickboxer_paar_ring.png",
+      "prompt": "A couple practicing kickboxing together, with one partner looking determined and the other looking terrified."
+    },
+    {
+      "image_file": "09_wissenschaftler_kickbox_studie.png",
+      "prompt": "A scientist in a lab coat, holding a clipboard and looking at a chart with confusing data."
+    },
+    {
+      "image_file": "10_zukunft_kickbox_sexual.png",
+      "prompt": "A person looking through a telescope at a distant kickboxing match, with a thoughtful expression."
+    }
+  ],
+  "p17": [
+    {
+      "image_file": "01_verwirrte_typen.png",
+      "prompt": "Two confused men scratching their heads, surrounded by question marks"
+    },
+    {
+      "image_file": "02_bier_freundschaft.png",
+      "prompt": "Two men clinking beer bottles and shaking hands, looking friendly"
+    },
+    {
+      "image_file": "03_notfall_essen.png",
+      "prompt": "Two men stranded on a desert island, looking hungry and desperate"
+    },
+    {
+      "image_file": "04_mutprobe_lachen.png",
+      "prompt": "A group of men laughing and pointing at one scared-looking man"
+    },
+    {
+      "image_file": "05_betrunken_verwirrt.png",
+      "prompt": "A drunk man with blurred vision, seeing double"
+    },
+    {
+      "image_file": "06_kulturen_freundschaft.png",
+      "prompt": "Men from different cultures shaking hands and smiling"
+    },
+    {
+      "image_file": "07_wette_geld.png",
+      "prompt": "A man holding a large bag of money, looking shocked"
+    },
+    {
+      "image_file": "08_dunkelheit_verwechslung.png",
+      "prompt": "A man fumbling in the dark, looking confused"
+    },
+    {
+      "image_file": "09_notfall_uebung.png",
+      "prompt": "Firefighters practicing rescue techniques on each other"
+    },
+    {
+      "image_file": "10_sieger_posen.png",
+      "prompt": "A group of men standing triumphantly, giving thumbs up"
+    }
+  ],
+  "p20": [
+    {
+      "image_file": "01_verwirrter_wissenschaftler.png",
+      "prompt": "A scientist in a lab coat scratching their head in confusion while looking at a political cartoon"
+    },
+    {
+      "image_file": "02_ungleiche_waage.png",
+      "prompt": "A balance scale with political symbols on one side and scientific symbols on the other, weighing unevenly"
+    },
+    {
+      "image_file": "03_menschen_atome.png",
+      "prompt": "A group of people with different expressions and poses, contrasted with a simple atom diagram"
+    },
+    {
+      "image_file": "04_labor_chaos.png",
+      "prompt": "A laboratory with test tubes and a scientist, contrasted with a chaotic political scene"
+    },
+    {
+      "image_file": "05_theorien_waffe.png",
+      "prompt": "A book with political theories being used as a weapon by a politician"
+    },
+    {
+      "image_file": "06_falsche_prognose.png",
+      "prompt": "A crystal ball showing a failed political prediction"
+    },
+    {
+      "image_file": "07_methoden_chaos.png",
+      "prompt": "A bunch of different tools and methods scattered around, representing the lack of consensus"
+    },
+    {
+      "image_file": "08_geisteswissenschaft_frage.png",
+      "prompt": "A brain symbolizing humanities and a flask symbolizing natural science, separated by a question mark"
+    },
+    {
+      "image_file": "09_wissen_frage.png",
+      "prompt": "A university building with a lightbulb above it, symbolizing knowledge, but with a question mark"
+    },
+    {
+      "image_file": "10_politik_studium.png",
+      "prompt": "A magnifying glass looking at a globe, symbolizing the study of politics and society"
+    }
   ]
-} 
+}

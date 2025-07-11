@@ -1,0 +1,145 @@
+{
+  "title": "Die kompliziertesten Sexualpraktiken der Welt",
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "Die kompliziertesten Sexualpraktiken der Welt",
+      "subtitle": "Eine wissenschaftlich-humorvolle Betrachtung",
+      "content": "Willkommen zu einer Reise durch die verwirrendsten, akrobatischsten und manchmal absurdesten Liebestechniken, die die Menschheit je erfunden hat. Schnallen Sie sich an!",
+      "icons": [
+        "fa-solid fa-heart-crack",
+        "fa-solid fa-brain"
+      ],
+      "image_description": "Abstract artistic representation of tangled red silk ribbons forming complex patterns against a dark background, suggesting complexity and mystery",
+      "image_name": "verworrene_rote_seide",
+      "special_elements": "",
+      "image_file": "01_verworrene_rote_seide.png"
+    },
+    {
+      "slide_number": 2,
+      "title": "Der Helikopter",
+      "subtitle": "Wenn Physik auf Romantik trifft",
+      "content": "Diese Position erfordert die Rotationsfähigkeit eines Hubschraubers und die Flexibilität eines Zirkusartisten. Partner A hängt kopfüber von der Decke, während Partner B... nun ja, Sie können es sich vorstellen. Schwindelfreiheit ist Pflicht!",
+      "icons": [
+        "fa-solid fa-helicopter",
+        "fa-solid fa-person-falling"
+      ],
+      "image_description": "Silhouette of two acrobatic figures in an impossible twisted position against a circus tent background with spotlights",
+      "image_name": "akrobatische_silhouetten_zirkus",
+      "special_elements": "",
+      "image_file": "02_akrobatische_silhouetten_zirku.png"
+    },
+    {
+      "slide_number": 3,
+      "title": "Die Möbiusschleife der Liebe",
+      "subtitle": "Mathematik trifft Intimität",
+      "content": "Inspiriert von der endlosen Möbiusschleife, versuchen beide Partner sich so zu verknoten, dass niemand mehr weiß, wo oben und unten ist. Empfohlene Vorbereitung: 3 Jahre Yoga und ein Mathematikstudium.",
+      "icons": [
+        "fa-solid fa-infinity",
+        "fa-solid fa-calculator"
+      ],
+      "image_description": "3D rendered Möbius strip made of intertwined human-like figures in soft pink and blue colors, mathematical symbols floating around",
+      "image_name": "moebius_menschen_mathematik",
+      "special_elements": "Diagramm: Möbiusschleife mit Pfeilen",
+      "image_file": "03_moebius_menschen_mathematik.png"
+    },
+    {
+      "slide_number": 4,
+      "title": "Der Quantenverschränkungs-Tango",
+      "subtitle": "Schrödinger hätte gestaunt",
+      "content": "Bei dieser Praktik befinden sich beide Partner gleichzeitig in mehreren Positionen - zumindest theoretisch. Praktisch endet es meist mit Muskelkater an Stellen, von denen man nicht wusste, dass man dort Muskeln hat.",
+      "icons": [
+        "fa-solid fa-atom",
+        "fa-solid fa-question"
+      ],
+      "image_description": "Surreal artistic image of two dancing figures phasing in and out of reality with quantum particle effects and wave patterns",
+      "image_name": "quanten_tango_paar",
+      "special_elements": "",
+      "image_file": "04_quanten_tango_paar.png"
+    },
+    {
+      "slide_number": 5,
+      "title": "Die Statistik des Scheiterns",
+      "subtitle": "Zahlen, die ernüchtern",
+      "content": "87% aller Versuche enden mit Lachkrämpfen, 12% mit Zerrungen und 1% behauptet tatsächlich, es geschafft zu haben (Quelle: Institut für kreative Statistiken)",
+      "icons": [
+        "fa-solid fa-chart-pie",
+        "fa-solid fa-face-laugh-squint"
+      ],
+      "image_description": "Colorful pie chart visualization with funny icons representing different failure modes, comedic style infographic",
+      "image_name": "lustige_statistik_diagramm",
+      "special_elements": "Kreisdiagramm: 87% Lachkrämpfe, 12% Zerrungen, 1% Erfolg",
+      "image_file": "05_lustige_statistik_diagramm.png"
+    },
+    {
+      "slide_number": 6,
+      "title": "Der Origami-Lotus",
+      "subtitle": "Japanische Faltkunst mal anders",
+      "content": "Diese Position erfordert die Präzision eines Origami-Meisters. Schritt 1: Falten Sie Ihren Partner diagonal. Schritt 2: Hinterfragen Sie Ihre Lebensentscheidungen. Schritt 3: Rufen Sie einen Physiotherapeuten.",
+      "icons": [
+        "fa-solid fa-spa",
+        "fa-solid fa-hospital"
+      ],
+      "image_description": "Artistic representation of human figures folded like origami paper in lotus flower shape, Japanese aesthetic with cherry blossoms",
+      "image_name": "origami_lotus_paar",
+      "special_elements": "",
+      "image_file": "06_origami_lotus_paar.png"
+    },
+    {
+      "slide_number": 7,
+      "title": "Die Schwerelosigkeits-Spirale",
+      "subtitle": "NASA-Training empfohlen",
+      "content": "Ursprünglich für Astronauten entwickelt, funktioniert diese Position nur in der Schwerelosigkeit wirklich gut. Auf der Erde benötigt man mindestens 4 Seile, 2 Karabiner und eine gute Krankenversicherung.",
+      "icons": [
+        "fa-solid fa-rocket",
+        "fa-solid fa-user-astronaut"
+      ],
+      "image_description": "Two astronauts floating in a space station module, connected in a spiral formation with Earth visible through window",
+      "image_name": "astronauten_spirale_raumstation",
+      "special_elements": "",
+      "image_file": "07_astronauten_spirale_raumstatio.png"
+    },
+    {
+      "slide_number": 8,
+      "title": "Benötigte Ausrüstung",
+      "subtitle": "Die Einkaufsliste des Wagemutigen",
+      "content": "• Yoga-Matte (verstärkt)\n• Erste-Hilfe-Kasten\n• Massageöl (5 Liter)\n• Seilwinde\n• Geometrie-Set\n• Humor (unbegrenzt)\n• Geduld des Partners (unbezahlbar)",
+      "icons": [
+        "fa-solid fa-toolbox",
+        "fa-solid fa-kit-medical"
+      ],
+      "image_description": "Flat lay photography of various equipment including yoga mat, ropes, geometric tools, first aid kit, arranged aesthetically",
+      "image_name": "ausruestung_flatlay_foto",
+      "special_elements": "Checkliste mit Icons",
+      "image_file": "08_ausruestung_flatlay_foto.png"
+    },
+    {
+      "slide_number": 9,
+      "title": "Expertentipps",
+      "subtitle": "Von denen, die es überlebt haben",
+      "content": "\"Beginnen Sie mit einfachen Verrenkungen und arbeiten Sie sich hoch\" - Dr. Flexibel\n\"Ein guter Chiropraktiker ist Gold wert\" - Anna Akrobatik\n\"Lachen ist die beste Medizin... und oft das einzige Ergebnis\" - Prof. Humor",
+      "icons": [
+        "fa-solid fa-user-doctor",
+        "fa-solid fa-lightbulb"
+      ],
+      "image_description": "Three cartoon expert characters giving thumbs up, wearing lab coats and athletic gear, humorous style illustration",
+      "image_name": "experten_cartoon_tipps",
+      "special_elements": "",
+      "image_file": "09_experten_cartoon_tipps.png"
+    },
+    {
+      "slide_number": 10,
+      "title": "Fazit: Einfach ist auch schön",
+      "subtitle": "Die Weisheit der Erfahrung",
+      "content": "Nach all diesen komplizierten Praktiken kommen 99,9% aller Paare zu dem Schluss: Manchmal ist weniger mehr. Aber hey, wenigstens haben wir jetzt was zu erzählen! Denken Sie daran: Liebe sollte Spaß machen, nicht ins Krankenhaus führen.",
+      "icons": [
+        "fa-solid fa-heart",
+        "fa-solid fa-face-smile-wink"
+      ],
+      "image_description": "Happy couple laughing together on a couch, looking at a yoga book with amused expressions, warm and cozy atmosphere",
+      "image_name": "glueckliches_paar_couch",
+      "special_elements": "",
+      "image_file": "10_glueckliches_paar_couch.png"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Warum sollten Frauen keine Lobbyisten sein?",
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "Titelbild",
+      "content": "Willkommen zu einer humorvollen Reise durch die Welt der Lobbyismus-Politik!",
+      "icons": [
+        "fa-solid fa-users",
+        "fa-solid fa-comment-dots"
+      ],
+      "image_description": "A humorous illustration of a woman trying to lobby with a confused expression, surrounded by political cartoon characters.",
+      "image_name": "Frau lobbyiert verwirrt",
+      "special_elements": null,
+      "image_file": "01_frau_lobbyiert_verwirrt.png"
+    },
+    {
+      "slide_number": 2,
+      "title": "Was ist Lobbyismus?",
+      "content": "Lobbyismus bedeutet, Politiker zu beeinflussen, um bestimmte Interessen durchzusetzen. Oft geht es um Geld und Macht.",
+      "icons": [
+        "fa-solid fa-handshake",
+        "fa-solid fa-dollar-sign"
+      ],
+      "image_description": "A cartoon of a lobbyist handing over a briefcase full of money to a politician.",
+      "image_name": "Lobbyist gibt Geld",
+      "special_elements": null,
+      "image_file": "02_lobbyist_gibt_geld.png"
+    },
+    {
+      "slide_number": 3,
+      "title": "Die Herausforderungen für Frauen",
+      "content": "Frauen müssen oft doppelt so hart arbeiten, um in der männlich dominierten Lobbyismus-Welt Fuß zu fassen.",
+      "icons": [
+        "fa-solid fa-briefcase",
+        "fa-solid fa-woman"
+      ],
+      "image_description": "A woman struggling to carry a heavy briefcase full of documents while walking through a crowded hallway.",
+      "image_name": "Frau schleppt Akten",
+      "special_elements": null,
+      "image_file": "03_frau_schleppt_akten.png"
+    },
+    {
+      "slide_number": 4,
+      "title": "Emotionale Belastung",
+      "content": "Lobbyisten müssen oft ihre Emotionen unterdrücken. Frauen sind dafür bekannt, emotionaler zu sein – ein No-Go im Lobbyismus.",
+      "icons": [
+        "fa-solid fa-heart",
+        "fa-solid fa-tears"
+      ],
+      "image_description": "A woman crying at her desk, surrounded by stacks of paperwork and political memos.",
+      "image_name": "Frau weint am Schreibtisch",
+      "special_elements": null,
+      "image_file": "04_frau_weint_am_schreibtisch.png"
+    },
+    {
+      "slide_number": 5,
+      "title": "Netzwerken wie die Profis",
+      "content": "Lobbyismus erfordert intensives Netzwerken, oft auf Partys und Events. Frauen könnten sich dabei unwohl fühlen.",
+      "icons": [
+        "fa-solid fa-glass-cheers",
+        "fa-solid fa-network-wired"
+      ],
+      "image_description": "A woman looking uncomfortable at a networking event, surrounded by men in suits.",
+      "image_name": "Frau auf Networking Event",
+      "special_elements": null,
+      "image_file": "05_frau_auf_networking_event.png"
+    },
+    {
+      "slide_number": 6,
+      "title": "Die Macht der Worte",
+      "content": "Lobbyisten müssen überzeugend argumentieren können. Frauen neigen dazu, indirekter zu kommunizieren, was im Lobbyismus nicht immer gut ankommt.",
+      "icons": [
+        "fa-solid fa-language",
+        "fa-solid fa-comment"
+      ],
+      "image_description": "A woman trying to explain something to a group of men, who look confused and uninterested.",
+      "image_name": "Frau erklärt vergeblich",
+      "special_elements": null,
+      "image_file": "06_frau_erklärt_vergeblich.png"
+    },
+    {
+      "slide_number": 7,
+      "title": "Der Dresscode",
+      "content": "Lobbyismus erfordert oft eine strenge Kleidervorschrift. Frauen könnten sich in Anzügen unwohl fühlen.",
+      "icons": [
+        "fa-solid fa-tie",
+        "fa-solid fa-shirt"
+      ],
+      "image_description": "A woman struggling to put on a suit, looking uncomfortable and out of place.",
+      "image_name": "Frau zieht Anzug an",
+      "special_elements": null,
+      "image_file": "07_frau_zieht_anzug_an.png"
+    },
+    {
+      "slide_number": 8,
+      "title": "Die Macht der Männer",
+      "content": "In der Lobbyismus-Welt dominieren Männer. Frauen könnten sich wie Außenseiter fühlen.",
+      "icons": [
+        "fa-solid fa-male",
+        "fa-solid fa-exclamation"
+      ],
+      "image_description": "A woman sitting alone in a room full of men, looking out of place and lonely.",
+      "image_name": "Frau unter Männern",
+      "special_elements": null,
+      "image_file": "08_frau_unter_männern.png"
+    },
+    {
+      "slide_number": 9,
+      "title": "Die Rolle der Mutter",
+      "content": "Frauen, die Mütter sind, haben es besonders schwer, da sie oft zwischen Familie und Karriere wählen müssen.",
+      "icons": [
+        "fa-solid fa-child",
+        "fa-solid fa-balance-scale"
+      ],
+      "image_description": "A woman juggling a baby and a briefcase, looking stressed and overwhelmed.",
+      "image_name": "Frau mit Kind und Akten",
+      "special_elements": null,
+      "image_file": "09_frau_mit_kind_und_akten.png"
+    },
+    {
+      "slide_number": 10,
+      "title": "Fazit",
+      "content": "Frauen sollten keine Lobbyisten sein, weil es einfach zu viele Herausforderungen und Erwartungen gibt. Lasst sie in Ruhe!",
+      "icons": [
+        "fa-solid fa-thumbs-down",
+        "fa-solid fa-stop"
+      ],
+      "image_description": "A woman walking away from a political building, looking relieved and free.",
+      "image_name": "Frau verlässt Politik",
+      "special_elements": null,
+      "image_file": "10_frau_verlässt_politik.png"
+    }
+  ]
+}

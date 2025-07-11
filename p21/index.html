@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warum sind Frauen die besseren Bauarbeiter?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .reveal .slides section {
+            text-align: left;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .slide-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .slide-image {
+            flex: 0 0 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .slide-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .slide-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slide-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #4ecdc4;
+            font-style: italic;
+        }
+        
+        .slide-content p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .icons i {
+            font-size: 2rem;
+            color: #ffd93d;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .title-slide {
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .title-slide .slide-content {
+            text-align: center;
+        }
+        
+        .title-slide h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-container {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .stat-bar {
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            height: 30px;
+            border-radius: 15px;
+            margin: 0.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+        
+        .circle-chart {
+            display: inline-block;
+            margin: 0 1rem;
+            text-align: center;
+        }
+        
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(#ff6b6b 0deg 252deg, #333 252deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .circle-inner {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        @media (max-width: 768px) {
+            .slide-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .slide-image {
+                flex: 0 0 40%;
+                width: 100%;
+            }
+            
+            .slide-content {
+                flex: 1;
+                padding: 1rem;
+            }
+            
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-content h2 {
+                font-size: 1.3rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Title -->
+            <section class="title-slide">
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="01_frau_bauarbeiterin_selbstbewus.png" alt="Selbstbewusste Bauarbeiterin">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Die Revolution am Bau</h1>
+                        <h2>Zeit für einen Perspektivwechsel</h2>
+                        <p>Während Männer noch diskutieren, ob der Hammer zu schwer ist, haben Frauen bereits das Fundament fertig. Willkommen zur schockierenden Wahrheit über die wahren Helden der Baustelle!</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-hard-hat"></i>
+                            <i class="fa-solid fa-venus"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Multitasking -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="02_multitasking_baustelle_frau.png" alt="Multitasking Bauarbeiterin">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Multitasking-Meisterinnen</h1>
+                        <h2>Wenn eine Hand nicht reicht</h2>
+                        <p>Frauen können gleichzeitig: Bohren, telefonieren, den Bauplan korrigieren UND dem Kollegen erklären, warum seine Idee nicht funktioniert. Männer schaffen es kaum, beim Hämmern nicht den eigenen Daumen zu treffen.</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-brain"></i>
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Präzision -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="03_praezision_bauarbeiten_verglei.png" alt="Präzision beim Bauen">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Präzision vs. Kraft</h1>
+                        <h2>David gegen Goliath neu interpretiert</h2>
+                        <p>Während Männer mit roher Gewalt arbeiten ('Passt schon, nur noch fester!'), setzen Frauen auf Präzision. Das Ergebnis: Wände, die tatsächlich gerade sind und Türen, die sich öffnen lassen.</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Kommunikation -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="04_team_kommunikation_baustelle.png" alt="Team Kommunikation">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Kommunikation ist alles</h1>
+                        <h2>Vom Grunzen zur Grammatik</h2>
+                        <p>Frauen: 'Könntest du mir bitte den 13er Schlüssel reichen?' Männer: *unverständliche Geräusche* *zeigt vage in eine Richtung*. Kein Wunder, dass Projekte mit Frauen schneller fertig werden!</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-comments"></i>
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Sicherheit -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="05_sicherheit_arbeitsschutz_frau.png" alt="Sicherheit am Arbeitsplatz">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Sicherheit first!</h1>
+                        <h2>Helm ist kein Bierhalter</h2>
+                        <p>Unfallstatistik: 87% weniger Arbeitsunfälle bei Frauen am Bau. Warum? Weil 'Halt mal kurz' nicht als Sicherheitskonzept gilt und der Schutzhelm tatsächlich auf dem Kopf getragen wird.</p>
+                        <div class="chart-container">
+                            <div style="display: flex; align-items: center; margin: 0.5rem 0;">
+                                <span style="width: 100px; font-size: 0.9rem;">Frauen:</span>
+                                <div class="stat-bar" style="width: 200px;">
+                                    <div class="stat-label">13%</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; margin: 0.5rem 0;">
+                                <span style="width: 100px; font-size: 0.9rem;">Männer:</span>
+                                <div class="stat-bar" style="width: 400px; background: linear-gradient(90deg, #ff4757, #ff3742);">
+                                    <div class="stat-label">100%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-shield-alt"></i>
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Problemlösung -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="06_problemloesung_innovation_bau.png" alt="Innovative Problemlösung">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Problemlösung deluxe</h1>
+                        <h2>Wenn Plan A nicht funktioniert</h2>
+                        <p>Männer: 'Hammer drauf, wird schon passen!' Frauen: 'Moment, lass uns das durchdenken...' 5 Minuten später ist das Problem elegant gelöst und niemand musste ins Krankenhaus.</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Ordnung -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="07_organisation_ordnung_baustelle.png" alt="Organisierte Baustelle">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Ordnung muss sein</h1>
+                        <h2>Chaos ist keine Strategie</h2>
+                        <p>Frauen-Baustelle: Werkzeuge sortiert, Materialien beschriftet, Zeitplan eingehalten. Männer-Baustelle: 'Wo ist der Hammer?' 'Keine Ahnung, such doch im Chaos!' *3 Stunden Suchzeit*</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-boxes"></i>
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Nachhaltigkeit -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="08_nachhaltigkeit_gruenes_bauen.png" alt="Nachhaltiges Bauen">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Nachhaltigkeit am Bau</h1>
+                        <h2>Grün ist das neue Grau</h2>
+                        <p>Frauen denken an morgen: Recycling, energieeffiziente Lösungen, nachhaltige Materialien. Männer: 'Beton ist Beton!' Spoiler: Ist er nicht, wenn man die Umwelt einbezieht.</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-leaf"></i>
+                            <i class="fa-solid fa-recycle"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Statistiken -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="09_erfolgsstatistik_frauen_bau.png" alt="Erfolgsstatistiken">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Die Zahlen sprechen</h1>
+                        <h2>Fakten statt Vorurteile</h2>
+                        <p>Projekte mit hohem Frauenanteil: 23% schneller fertig, 31% weniger Budgetüberschreitung, 45% höhere Kundenzufriedenheit. Zufall? Wohl kaum!</p>
+                        <div style="display: flex; justify-content: space-around; margin: 1rem 0;">
+                            <div class="circle-chart">
+                                <div class="circle">
+                                    <div class="circle-inner">23%</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">Schneller</div>
+                            </div>
+                            <div class="circle-chart">
+                                <div class="circle" style="background: conic-gradient(#4ecdc4 0deg 112deg, #333 112deg 360deg);">
+                                    <div class="circle-inner" style="color: #4ecdc4;">31%</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">Günstiger</div>
+                            </div>
+                            <div class="circle-chart">
+                                <div class="circle" style="background: conic-gradient(#ffd93d 0deg 162deg, #333 162deg 360deg);">
+                                    <div class="circle-inner" style="color: #ffd93d;">45%</div>
+                                </div>
+                                <div style="font-size: 0.9rem;">Zufriedener</div>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-chart-bar"></i>
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Zukunft -->
+            <section>
+                <div class="slide-container">
+                    <div class="slide-image">
+                        <img src="10_zukunft_frauen_bauwirtschaft.png" alt="Zukunft der Bauwirtschaft">
+                    </div>
+                    <div class="slide-content">
+                        <h1>Die Zukunft ist weiblich</h1>
+                        <h2>Bereit für die Revolution?</h2>
+                        <p>Es ist Zeit, die Baustelle neu zu denken! Mit mehr Frauen am Bau bekommen wir nicht nur gerade Wände und pünktliche Fertigstellung, sondern auch bessere Stimmung (weniger Grunzen, mehr Lachen). Die Zukunft baut auf Gleichberechtigung!</p>
+                        <div class="icons">
+                            <i class="fa-solid fa-rocket"></i>
+                            <i class="fa-solid fa-equals"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>

@@ -628,5 +628,47 @@
       "image_file": "10_politik_studium.png",
       "prompt": "A magnifying glass looking at a globe, symbolizing the study of politics and society"
     }
+  ],
+  "p24": [
+    {
+      "image_file": "01_creepshow_buehne_auftakt.png",
+      "prompt": "A creepy amateur theater stage with red curtains, eerie green spotlight, handmade horror props, fake blood, and an audience unsure whether to laugh or panic."
+    },
+    {
+      "image_file": "02_creepshow_plot_chaos.png",
+      "prompt": "A chaotic horror theater rehearsal scene with actors in dramatic poses, a spooky handwritten script, dim red lighting, and a director looking overwhelmed."
+    },
+    {
+      "image_file": "03_creepshow_figuren_verdacht.png",
+      "prompt": "A lineup of suspicious theater characters in horror costumes under dramatic stage light, each with a distinct unsettling expression, stylized like a dark stage poster."
+    },
+    {
+      "image_file": "04_creepshow_buehnenbild_keller.png",
+      "prompt": "A handmade horror theater set with crooked furniture, old wallpaper, broken mirrors, candles, fog, and unsettling basement vibes on stage."
+    },
+    {
+      "image_file": "05_creepshow_kunstblut_effekt.png",
+      "prompt": "A theatrical horror makeup table covered in fake blood, brushes, masks, torn costumes, and dramatic stage lights reflecting off glossy red splatter."
+    },
+    {
+      "image_file": "06_creepshow_schauspiel_wahnsinn.png",
+      "prompt": "An intense stage actor mid-performance in a horror play, sweating under spotlight, eyes wide, between brilliance and emotional collapse, dramatic theatrical atmosphere."
+    },
+    {
+      "image_file": "07_creepshow_sounddesign_daemon.png",
+      "prompt": "A dark theater control booth with eerie sound equipment, flickering lights, waveform monitors, and a ghostly atmosphere suggesting supernatural stage audio."
+    },
+    {
+      "image_file": "08_creepshow_publikum_schock.png",
+      "prompt": "A theater audience reacting to a horror stage play with mixed fear, laughter, and shock, faces lit by eerie stage light in a dark auditorium."
+    },
+    {
+      "image_file": "09_creepshow_warum_es_knallt.png",
+      "prompt": "A surreal horror theater collage with stage lights, masks, blood-red curtains, fragmented props, and dreamlike unsettling imagery symbolizing memorable theatrical chaos."
+    },
+    {
+      "image_file": "10_creepshow_finale_vorhang.png",
+      "prompt": "A final curtain call on a horror theater stage with actors silhouetted in red light, smoke, fake blood, applause, and a triumphant unsettling atmosphere."
+    }
   ]
 }

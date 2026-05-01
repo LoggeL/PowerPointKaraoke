@@ -1,0 +1,115 @@
+{
+  "title": "Creepshow – Das Theaterstück, das zu weit ging",
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "Willkommen im Albtraum",
+      "subtitle": "Creepshow betritt die Bühne",
+      "content": "Heute geht es um unser Theaterstück Creepshow: irgendwo zwischen Horror, Trash, Kunstblut und dem Moment, in dem niemand mehr weiß, ob das Quietschen zum Sounddesign gehört oder ob gerade wirklich etwas kaputtgeht.",
+      "icons": ["fa-solid fa-masks-theater", "fa-solid fa-skull"],
+      "image_description": "A creepy amateur theater stage with red curtains, eerie green spotlight, handmade horror props, fake blood, and an audience unsure whether to laugh or panic.",
+      "image_name": "creepshow_buehne_auftakt",
+      "special_elements": null,
+      "image_file": "01_creepshow_buehne_auftakt.png"
+    },
+    {
+      "slide_number": 2,
+      "title": "Die Handlung? Leider ja",
+      "subtitle": "Plot mit Kontrollverlust",
+      "content": "Creepshow erzählt die berührende Geschichte von Menschen, die sehr schlechte Entscheidungen in sehr schlechtem Licht treffen. Es gibt Schreie, Geheimnisse, fragwürdige Moral und mindestens eine Szene, bei der man denkt: Das hätte man dramaturgisch auch einfach lassen können.",
+      "icons": ["fa-solid fa-book-skull", "fa-solid fa-lightbulb"],
+      "image_description": "A chaotic horror theater rehearsal scene with actors in dramatic poses, a spooky handwritten script, dim red lighting, and a director looking overwhelmed.",
+      "image_name": "creepshow_plot_chaos",
+      "special_elements": null,
+      "image_file": "02_creepshow_plot_chaos.png"
+    },
+    {
+      "slide_number": 3,
+      "title": "Die Figuren sind alle verdächtig",
+      "subtitle": "Und das Publikum gleich mit",
+      "content": "Jede Figur in Creepshow wirkt, als hätte sie mindestens ein dunkles Geheimnis, zwei emotionale Schäden und drei Leichen im Keller. Das Schöne ist: Man kann sich mit niemandem identifizieren, aber genau das macht Spaß.",
+      "icons": ["fa-solid fa-user-secret", "fa-solid fa-users-viewfinder"],
+      "image_description": "A lineup of suspicious theater characters in horror costumes under dramatic stage light, each with a distinct unsettling expression, stylized like a dark stage poster.",
+      "image_name": "creepshow_figuren_verdacht",
+      "special_elements": null,
+      "image_file": "03_creepshow_figuren_verdacht.png"
+    },
+    {
+      "slide_number": 4,
+      "title": "Bühnenbild aus der Hölle",
+      "subtitle": "Mit Liebe, Sperrmüll und Panik gebaut",
+      "content": "Das Set von Creepshow sieht aus, als hätten sich ein verlassener Keller, ein Albtraum und eine Requisitekiste geprügelt. Genau deshalb funktioniert es. Nichts ist elegant, aber alles ist maximal verdächtig.",
+      "icons": ["fa-solid fa-house-crack", "fa-solid fa-hammer"],
+      "image_description": "A handmade horror theater set with crooked furniture, old wallpaper, broken mirrors, candles, fog, and unsettling basement vibes on stage.",
+      "image_name": "creepshow_buehnenbild_keller",
+      "special_elements": null,
+      "image_file": "04_creepshow_buehnenbild_keller.png"
+    },
+    {
+      "slide_number": 5,
+      "title": "Kunstblut als Persönlichkeit",
+      "subtitle": "Weniger ist hier nie mehr",
+      "content": "Creepshow beweist, dass Kunstblut nicht nur Effekt, sondern Haltung ist. Wenn nach der dritten Szene schon wieder jemand rot glänzt, ist das kein Unfall – das ist visuelle Konsequenz.",
+      "icons": ["fa-solid fa-droplet", "fa-solid fa-face-grin-squint-tears"],
+      "image_description": "A theatrical horror makeup table covered in fake blood, brushes, masks, torn costumes, and dramatic stage lights reflecting off glossy red splatter.",
+      "image_name": "creepshow_kunstblut_effekt",
+      "special_elements": null,
+      "image_file": "05_creepshow_kunstblut_effekt.png"
+    },
+    {
+      "slide_number": 6,
+      "title": "Schauspiel zwischen Genie und Zusammenbruch",
+      "subtitle": "Genau da wird es gut",
+      "content": "Die Performance lebt davon, dass alle voll reingehen. Manchmal so sehr, dass man kurz Sorge hat, ob noch gespielt wird oder schon ein echter Nervenzusammenbruch stattfindet. Theatergold, ganz ehrlich.",
+      "icons": ["fa-solid fa-face-dizzy", "fa-solid fa-star"],
+      "image_description": "An intense stage actor mid-performance in a horror play, sweating under spotlight, eyes wide, between brilliance and emotional collapse, dramatic theatrical atmosphere.",
+      "image_name": "creepshow_schauspiel_wahnsinn",
+      "special_elements": null,
+      "image_file": "06_creepshow_schauspiel_wahnsinn.png"
+    },
+    {
+      "slide_number": 7,
+      "title": "Sounddesign oder Dämon?",
+      "subtitle": "Niemand kann das sicher sagen",
+      "content": "Knarzen, Flüstern, plötzliche Schläge, irgendein dumpfes Poltern im Off: Creepshow nutzt Sound so, wie gute Horrorstücke es tun sollten – effektiv, unangenehm und minimal übergriffig gegenüber dem Herz-Kreislauf-System.",
+      "icons": ["fa-solid fa-volume-high", "fa-solid fa-ghost"],
+      "image_description": "A dark theater control booth with eerie sound equipment, flickering lights, waveform monitors, and a ghostly atmosphere suggesting supernatural stage audio.",
+      "image_name": "creepshow_sounddesign_daemon",
+      "special_elements": null,
+      "image_file": "07_creepshow_sounddesign_daemon.png"
+    },
+    {
+      "slide_number": 8,
+      "title": "Das Publikum leidet angemessen",
+      "subtitle": "Zwischen Lachen, Schock und Schulterkrampf",
+      "content": "Die ideale Reaktion auf Creepshow ist ein Mix aus nervösem Lachen, echtem Erschrecken und dem Blick zur Sitznachbarin nach dem Motto: Hast du das auch gesehen oder bin ich jetzt Teil des Stücks?",
+      "icons": ["fa-solid fa-people-group", "fa-solid fa-eye"],
+      "image_description": "A theater audience reacting to a horror stage play with mixed fear, laughter, and shock, faces lit by eerie stage light in a dark auditorium.",
+      "image_name": "creepshow_publikum_schock",
+      "special_elements": null,
+      "image_file": "08_creepshow_publikum_schock.png"
+    },
+    {
+      "slide_number": 9,
+      "title": "Warum Creepshow funktioniert",
+      "subtitle": "Weil es sich traut, seltsam zu sein",
+      "content": "Das Stück funktioniert nicht trotz seines Wahnsinns, sondern wegen ihm. Creepshow will nicht geschniegelt sein. Es will Atmosphäre, Übertreibung, Unruhe und Bilder, die im Kopf hängen bleiben wie ein schlechter Flurtraum nach Mitternacht.",
+      "icons": ["fa-solid fa-brain", "fa-solid fa-bolt"],
+      "image_description": "A surreal horror theater collage with stage lights, masks, blood-red curtains, fragmented props, and dreamlike unsettling imagery symbolizing memorable theatrical chaos.",
+      "image_name": "creepshow_warum_es_knallt",
+      "special_elements": null,
+      "image_file": "09_creepshow_warum_es_knallt.png"
+    },
+    {
+      "slide_number": 10,
+      "title": "Fazit: Mehr davon, ihr Irren",
+      "subtitle": "Creepshow bleibt kleben",
+      "content": "Creepshow ist laut, schräg, gruselig, manchmal absurd und genau deshalb stark. Es fühlt sich an wie ein Fiebertraum mit Vorhang auf – und man geht raus mit dem Gefühl, gerade etwas herrlich Kaputtes erlebt zu haben.",
+      "icons": ["fa-solid fa-clapperboard", "fa-solid fa-fire"],
+      "image_description": "A final curtain call on a horror theater stage with actors silhouetted in red light, smoke, fake blood, applause, and a triumphant unsettling atmosphere.",
+      "image_name": "creepshow_finale_vorhang",
+      "special_elements": null,
+      "image_file": "10_creepshow_finale_vorhang.png"
+    }
+  ]
+}

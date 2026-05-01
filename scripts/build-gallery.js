@@ -1,4 +1,57 @@
-<!DOCTYPE html>
+import fs from 'fs';
+import path from 'path';
+
+const repoRoot = process.cwd();
+const decksDir = path.join(repoRoot, 'decks');
+const outPath = path.join(repoRoot, 'index.html');
+
+function readMeta(deckPath, slug) {
+  const metaPath = path.join(deckPath, 'meta.json');
+  if (fs.existsSync(metaPath)) {
+    return JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+  }
+  return {
+    title: slug,
+    description: 'Ohne Beschreibung.',
+    emoji: '🎤',
+    language: 'de'
+  };
+}
+
+const decks = fs.existsSync(decksDir)
+  ? fs.readdirSync(decksDir, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => {
+        const slug = entry.name;
+        const deckPath = path.join(decksDir, slug);
+        const meta = readMeta(deckPath, slug);
+        return {
+          slug,
+          ...meta
+        };
+      })
+      .sort((a, b) => a.title.localeCompare(b.title, 'de'))
+  : [];
+
+const cards = decks
+  .map(
+    (deck) => `
+        <article class="presentation-card">
+          <div class="card-header">
+            <h2><span class="emoji">${deck.emoji ?? '🎤'}</span> ${deck.title}</h2>
+          </div>
+          <div class="card-body">
+            <p>${deck.description ?? ''}</p>
+            <p class="meta">Sprache: ${deck.language ?? 'de'}</p>
+          </div>
+          <div class="card-footer">
+            <a href="decks/${deck.slug}/index.html" class="btn">Ansehen</a>
+          </div>
+        </article>`
+  )
+  .join('\n');
+
+const html = `<!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -94,20 +147,12 @@
         Rohe HTML-Decks mit maximaler Agenten-Kreativität, minimaler Bürokratie und einer klaren Regel: auf Desktop muss der Kram sauber sitzen.
       </p>
       <section class="presentations">
-
-        <article class="presentation-card">
-          <div class="card-header">
-            <h2><span class="emoji">🚌</span> VW Bus vs. Wohnwagen</h2>
-          </div>
-          <div class="card-body">
-            <p>Eine absurde, liebevoll überzogene Vergleichsstudie über Freiheit, Spießigkeit und mobile Identitätskrisen.</p>
-            <p class="meta">Sprache: de</p>
-          </div>
-          <div class="card-footer">
-            <a href="decks/vw-bus-vs-wohnwagen/index.html" class="btn">Ansehen</a>
-          </div>
-        </article>
+${cards}
       </section>
     </main>
   </body>
 </html>
+`;
+
+fs.writeFileSync(outPath, html);
+console.log(`Wrote ${outPath} with ${decks.length} deck(s).`);

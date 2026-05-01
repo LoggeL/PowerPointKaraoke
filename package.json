@@ -1,0 +1,14 @@
+{
+  "name": "powerpoint-karaoke",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build:gallery": "node scripts/build-gallery.js",
+    "validate:decks": "node scripts/validate-decks.js",
+    "check": "npm run build:gallery && npm run validate:decks"
+  },
+  "devDependencies": {
+    "playwright": "^1.54.2"
+  }
+}

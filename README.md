@@ -1,74 +1,61 @@
 # PowerPoint Karaoke Presentations
 
-A collection of amusing Reveal.js presentations designed for PowerPoint Karaoke - where presenters have to give presentations about topics they've never seen before!
+A collection of absurd Reveal.js presentations for PowerPoint Karaoke.
 
-## Available Presentations
+## What changed
 
-There are currently 17 presentations available (p1 through p17), each with its own unique and absurd topic. To view a presentation:
+This repo no longer uses the old image-generation pipeline or the previous multi-stage harness.
+New presentations are generated as self-contained slide decks:
 
-1. Navigate to the presentation folder (e.g., `p1/`, `p2/`, etc.)
-2. Open the respective `index.html` file in a browser
+- the model invents the slide structure from the topic itself
+- the model writes the presentation HTML directly
+- local placeholder visuals are created automatically for each slide
+- no Replicate workflow
+- no image prompt registry
+- no old replacement script
 
-Access any presentation by using this pattern:
-```
+## Available presentations
+
+Open any presentation with:
+
+```text
 p[number]/index.html
 ```
-Where `[number]` is any number from 1 to 17.
 
-## Features
+## Generator
 
-- Built with [Reveal.js](https://revealjs.com/)
-- Responsive design that works on all modern browsers
-- Uses Font Awesome icons for visual elements
-- Includes high-quality AI-generated images (stored as PNG files)
-- Presentation controls for easy navigation
+Create a new presentation with:
 
-## How to Use
-
-1. Clone this repository
-2. Open any presentation's `index.html` file in a modern web browser
-3. Present with confidence (or confusion - that's part of the fun!)
-
-### Presentation Controls
-
-- **Next slide**: Right arrow, Down arrow, Space
-- **Previous slide**: Left arrow, Up arrow
-- **Overview**: Press `ESC`
-- **Fullscreen**: Press `F`
-- **Speaker notes**: Press `S`
-- **End presentation**: Press `ESC` twice
-
-## Technical Details
-
-- All presentations use Reveal.js for the slideshow functionality
-- Icons are loaded from Font Awesome
-- Resources are loaded via CDNs (Internet connection required)
-- Presentations are structured with both HTML and Markdown files
-- Images are generated using ComfyUI
-
-## Structure
-
-Each presentation follows this structure:
-```
-p[1-17]/
-├── index.html          # The presentation HTML file
-├── p[1-17].md         # Optional markdown content
-└── ComfyUI_*.png      # AI-generated images
+```bash
+python create_presentation.py "Dein Thema"
+python create_presentation.py "Dein Thema" p42
 ```
 
-## Adding New Presentations
+Required environment variable:
 
-To add a new presentation:
-1. Create a new directory following the naming pattern (`p18/`, etc.)
-2. Include an `index.html` file using the existing structure
-3. Optionally include a markdown file for content
-4. Add necessary AI-generated images
-5. Follow the existing presentation format
+```bash
+OPENROUTER_API_KEY=...
+```
 
-## Contributing
+## Output structure
 
-Feel free to contribute your own absurd presentations through pull requests!
+Each generated presentation contains:
+
+```text
+pXX/
+├── content_structure.json
+├── index.html
+├── pXX.md
+└── 01_*.svg ... 10_*.svg
+```
+
+## Notes
+
+- Presentations are in German
+- Reveal.js and Font Awesome are loaded via CDN
+- The generator is intentionally decoupled from older presentation logic
+- Visuals are lightweight local SVG scene cards, not AI-rendered external images
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT

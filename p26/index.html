@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerPoint Karaoke: VW Bus vs. Wohnwagen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #111;
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 60px 80px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .slide.active { display: flex; }
+
+  h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+  h2 { font-size: 2.8rem; font-weight: 700; margin-bottom: 30px; }
+  h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+  p, li { font-size: 1.6rem; line-height: 1.6; }
+  ul { list-style: none; padding-left: 0; }
+  ul li::before { content: "▸ "; color: #ffd700; font-weight: 700; }
+
+  .accent { color: #ffd700; }
+  .blue { color: #4fc3f7; }
+  .green { color: #81c784; }
+  .red { color: #ef5350; }
+  .sub { font-size: 1.2rem; color: #aaa; margin-top: 10px; }
+
+  /* backgrounds */
+  .bg-gradient { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+  .bg-warm { background: linear-gradient(135deg, #2d1b00 0%, #4a2c0a 50%, #1a1a2e 100%); }
+  .bg-green { background: linear-gradient(135deg, #0d2818 0%, #1a472a 50%, #0f3460 100%); }
+  .bg-red { background: linear-gradient(135deg, #2d0a0a 0%, #4a1a1a 50%, #1a1a2e 100%); }
+  .bg-purple { background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #0f1060 100%); }
+  .bg-split { background: linear-gradient(90deg, #1a472a 50%, #4a2c0a 50%); }
+
+  .emoji-huge { font-size: 8rem; text-align: center; margin-bottom: 20px; }
+  .emoji-big { font-size: 5rem; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 20px; }
+  .col { padding: 30px; border-radius: 20px; }
+  .col-left { background: rgba(79,195,247,0.1); border: 2px solid rgba(79,195,247,0.3); }
+  .col-right { background: rgba(255,215,0,0.1); border: 2px solid rgba(255,215,0,0.3); }
+
+  .vs {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem; font-weight: 900;
+    color: #ef5350;
+    text-shadow: 0 0 40px rgba(239,83,80,0.5);
+  }
+
+  .bar-chart { display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
+  .bar-row { display: flex; align-items: center; gap: 16px; }
+  .bar-label { width: 180px; font-size: 1.2rem; text-align: right; }
+  .bar-track { flex: 1; height: 36px; background: rgba(255,255,255,0.1); border-radius: 18px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 18px; display: flex; align-items: center; padding-left: 14px; font-size: 0.9rem; font-weight: 700; }
+
+  .footer {
+    position: absolute; bottom: 30px; right: 40px;
+    font-size: 0.9rem; color: #555;
+  }
+
+  .nav {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 8px; z-index: 999;
+  }
+  .nav button {
+    background: rgba(255,255,255,0.15); border: none; color: #fff;
+    padding: 10px 20px; border-radius: 10px; cursor: pointer; font-size: 1rem;
+    transition: background 0.2s;
+  }
+  .nav button:hover { background: rgba(255,255,255,0.3); }
+
+  .counter {
+    position: fixed; top: 20px; right: 30px;
+    font-size: 0.9rem; color: #555; z-index: 999;
+  }
+
+  .verdict-box {
+    background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(239,83,80,0.2));
+    border: 3px solid #ffd700;
+    border-radius: 24px;
+    padding: 40px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; margin-top: 30px; }
+  .stat-card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; text-align: center; }
+  .stat-num { font-size: 3rem; font-weight: 900; }
+  .stat-label { font-size: 1rem; color: #aaa; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="counter" id="counter">1 / 12</div>
+
+<!-- Slide 1: Title -->
+<div class="slide active bg-gradient" id="s1">
+  <div class="emoji-huge">🚐 ⚡ 🏠</div>
+  <h1>VW Bus <span class="accent">vs.</span> Wohnwagen</h1>
+  <p style="font-size:2rem; color:#aaa;">PowerPoint Karaoke — Die ultimative Vergleichsstudie</p>
+  <p class="sub">Vortragende/r hat keine Ahnung was hier passiert. Viel Glück.</p>
+  <div class="footer">Folie 1</div>
+</div>
+
+<!-- Slide 2: Was ist was -->
+<div class="slide bg-gradient" id="s2">
+  <h2>Was haben wir hier?</h2>
+  <div class="grid">
+    <div class="col col-left">
+      <h3 class="blue">🚐 VW Bus</h3>
+      <p>Ein Auto. Das auch ein Bett hat.<br>Motorisiert. Fahrbar. Kultig.</p>
+      <p class="sub">aka Bulli, Transporter, Lebensentscheidung auf Rädern</p>
+    </div>
+    <div class="col col-right">
+      <h3 class="accent">🏠 Wohnwagen</h3>
+      <p>Ein Zimmer. Das man hinter sich her zieht.<br>Kein Motor. Dafür mehr Platz.</p>
+      <p class="sub">aka Caravan, Wohnanhänger, Der Große Bruder vom Zelt</p>
+    </div>
+  </div>
+  <div class="footer">Folien die niemand braucht — aber alle verdienen</div>
+</div>
+
+<!-- Slide 3: Philosophie -->
+<div class="slide bg-purple" id="s3">
+  <div class="emoji-huge">🧘</div>
+  <h2>Die philosophische Frage</h2>
+  <p style="font-size:2.2rem; text-align:center; max-width:800px; margin:0 auto;">
+    Bist du jemand der <span class="accent">fährt</span>,<br>
+    oder jemand der <span class="blue">gezogen wird</span>?
+  </p>
+  <p class="sub" style="text-align:center; margin-top:30px;">Es gibt keine falsche Antwort.<br>Nur peinliche.</p>
+</div>
+
+<!-- Slide 4: Größe -->
+<div class="slide bg-gradient" id="s4">
+  <h2>Größenvergleich <span class="accent">der Lügen</span></h2>
+  <div class="grid">
+    <div class="col col-left">
+      <h3 class="blue">VW Bus</h3>
+      <p>"Passt in jede Garage!"</p>
+      <p class="sub">Lüge. Nicht in die von Oma.</p>
+      <p style="margin-top:16px;">~4,9 m lang, ~1,9 m breit</p>
+    </div>
+    <div class="col col-right">
+      <h3 class="accent">Wohnwagen</h3>
+      <p>"Wie ein kleines Apartment!"</p>
+      <p class="sub">Lüge. Wohnungsdichte München.</p>
+      <p style="margin-top:16px;">~6–8 m lang, ~2,3 m breit</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: Kosten -->
+<div class="slide bg-red" id="s5">
+  <div class="emoji-huge">💸</div>
+  <h2 style="text-align:center;">Kosten — oder: Wie arm bist du bereit zu sein?</h2>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-num red">40k€</div>
+      <div class="stat-label">VW Bus (gebraucht, optimistisch)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num accent">20k€</div>
+      <div class="stat-label">Wohnwagen (solide Mittelklasse)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" style="color:#81c784;">∞</div>
+      <div class="stat-label">Reparaturen (beide)</div>
+    </div>
+  </div>
+  <p class="sub" style="text-align:center; margin-top:20px;">Tipp: Einfach Zelt kaufen. 50€. Fertig.</p>
+</div>
+
+<!-- Slide 6: Geschwindigkeit -->
+<div class="slide bg-gradient" id="s6">
+  <h2>Geschwindigkeitsvergleich ⚡</h2>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <div class="bar-label">Sportwagen</div>
+      <div class="bar-track"><div class="bar-fill" style="width:90%; background:#4fc3f7;">250 km/h</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">VW Bus</div>
+      <div class="bar-track"><div class="bar-fill" style="width:45%; background:#ffd700;">130 km/h*</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Wohnwagen</div>
+      <div class="bar-track"><div class="bar-fill" style="width:30%; background:#ef5350;">80 km/h**</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">*bergauf</div>
+      <div class="bar-track"><div class="bar-fill" style="width:12%; background:#888;">35 km/h</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">**mit Angst</div>
+      <div class="bar-track"><div class="bar-fill" style="width:8%; background:#888;">25 km/h</div></div>
+    </div>
+  </div>
+  <p class="sub" style="text-align:center; margin-top:20px;">* Bergab bitte nicht vergessen zu bremsen.</p>
+</div>
+
+<!-- Slide 7: Coolness -->
+<div class="slide bg-warm" id="s7">
+  <h2>Coolness-Faktor 😎</h2>
+  <div class="grid">
+    <div class="col col-left">
+      <h3 class="blue">VW Bus</h3>
+      <ul>
+        <li>Hipster-Magnet</li>
+        <li>Instagram-würdig</li>
+        <li>Surfer-Vibes</li>
+        <li>"Ich reise, also bin ich"</li>
+      </ul>
+      <p class="sub">Coolness: 8/10</p>
+    </div>
+    <div class="col col-right">
+      <h3 class="accent">Wohnwagen</h3>
+      <ul>
+        <li>Rentner-Chic</li>
+        <li>Campingplatz-König</li>
+        <li>Vorhang-Mustermix</li>
+        <li>"Schatz, die Stellplätze!"</li>
+      </ul>
+      <p class="sub">Coolness: 3/10 (7/10 auf dem Campingplatz)</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 8: Praktikabilität -->
+<div class="slide bg-green" id="s8">
+  <h2>Aber mal ehrlich: <span class="green">Praktikabilität</span></h2>
+  <div class="grid">
+    <div class="col col-left">
+      <h3 class="blue">VW Bus</h3>
+      <ul>
+        <li>Überall parken (fast)</li>
+        <li>Tageswagen + Nachtbett</li>
+        <li>Fährt auch mal solo zum Bäcker</li>
+        <li>Kleine Stauraum-Lüge</li>
+      </ul>
+    </div>
+    <div class="col col-right">
+      <h3 class="accent">Wohnwagen</h3>
+      <ul>
+        <li>ECHTES Bett</li>
+        <li>ECHTE Küche</li>
+        <li>ECHTES Badezimmer</li>
+        <li>Aufstellen und vergessen</li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align:center; margin-top:20px; font-size:1.3rem;">Wohnwagen gewinnt im Komfort. Aber du musst es <span class="accent">ziehen</span>.</p>
+</div>
+
+<!-- Slide 9: Typische Besitzer -->
+<div class="slide bg-gradient" id="s9">
+  <h2>Typische Besitzer 👤</h2>
+  <div class="grid">
+    <div class="col col-left">
+      <h3 class="blue">VW Bus-Fahrer:in</h3>
+      <p>🎒 Digital Nomad</p>
+      <p>🎸 Hobby-Musiker/in</p>
+      <p>📸 Hat eine Filmkamera</p>
+      <p>☕ Trinkt Flat White</p>
+      <p class="sub">Sagt "van life" unironisch</p>
+    </div>
+    <div class="col col-right">
+      <h3 class="accent">Wohnwagen-Besitzer:in</h3>
+      <p>🧓 Hat einen Plan</p>
+      <p>📍 Stellplatz seit 2003</p>
+      <p>🧺 Picknickkorb immer dabei</p>
+      <p>☕ Trinkt Filterkaffee</p>
+      <p class="sub">Sagt "wir haben's gemütlich"</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 10: Schlimmstes Szenario -->
+<div class="slide bg-red" id="s10">
+  <h2 style="text-align:center;">Das <span class="red">schlimmste</span> Szenario</h2>
+  <div class="grid">
+    <div class="col" style="background:rgba(239,83,80,0.1); border:2px solid rgba(239,83,80,0.3);">
+      <h3 class="red">VW Bus</h3>
+      <p>Motor geht kaputt.</p>
+      <p style="margin-top:10px;">Du schläfst am Straßenrand.</p>
+      <p style="margin-top:10px;">In der Werkstatt: <span class="accent">4.000€</span></p>
+      <p style="margin-top:10px;">Dafür: Intensives bonding mit dem ADAC-Mann</p>
+    </div>
+    <div class="col" style="background:rgba(239,83,80,0.1); border:2px solid rgba(239,83,80,0.3);">
+      <h3 class="red">Wohnwagen</h3>
+      <p>Rückspiegel-Schaden.</p>
+      <p style="margin-top:10px;">Du stehst quer auf der Autobahn.</p>
+      <p style="margin-top:10px;">Reparatur: <span class="accent">600€</span></p>
+      <p style="margin-top:10px;">Dafür: Intensives bonding mit dem Abschleppdienst</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 11: Vorurteile -->
+<div class="slide bg-warm" id="s11">
+  <div class="emoji-huge">🤥</div>
+  <h2 style="text-align:center;">Vorurteile — und ob sie stimmen</h2>
+  <div style="max-width:700px; margin:0 auto;">
+    <p>🚐 "VW Busfahrer haben keinen Job" — <span class="accent">Stimmt manchmal</span></p>
+    <p style="margin-top:14px;">🏠 "Wohnwagenleute sind langweilig" — <span class="accent">Definitiv nicht</span> (haben du INVORHANDENE kennen gelernt)</p>
+    <p style="margin-top:14px;">🚐 "Bullis sind unzuverlässig" — <span class="accent">FAKT</span></p>
+    <p style="margin-top:14px;">🏠 "Wohnwagen sind immer sauber" — <span class="accent">Bis Tag 3</span></p>
+  </div>
+</div>
+
+<!-- Slide 12: Urteil -->
+<div class="slide bg-gradient" id="s12">
+  <h2 style="text-align:center;">Das <span class="accent">Urteil</span></h2>
+  <div class="verdict-box">
+    <div class="emoji-big" style="text-align:center;">⚖️</div>
+    <p style="font-size:1.8rem;">VW Bus für die <span class="blue">Seele</span>.</p>
+    <p style="font-size:1.8rem;">Wohnwagen für den <span class="accent">Verstand</span>.</p>
+    <p style="font-size:1.8rem; margin-top:20px;">Und wenn du <span class="red">beides</span> willst?</p>
+    <p style="font-size:2.2rem; margin-top:16px; font-weight:900;">Kauf dir ein Zelt. 🏕️</p>
+  </div>
+  <p class="sub" style="text-align:center; margin-top:20px;">Danke fürs Nichts-Wissen! Fragen werden mit Schulterzucken beantwortet. 🤷</p>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button onclick="go(-1)">◀ Zurück</button>
+  <button onclick="go(1)">Weiter ▶</button>
+</div>
+
+<script>
+  let current = 1;
+  const total = 12;
+
+  function show(n) {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    document.getElementById('s' + n).classList.add('active');
+    document.getElementById('counter').textContent = n + ' / ' + total;
+  }
+
+  function go(dir) {
+    current = Math.max(1, Math.min(total, current + dir));
+    show(current);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') go(1);
+    if (e.key === 'ArrowLeft') go(-1);
+  });
+</script>
+</body>
+</html>

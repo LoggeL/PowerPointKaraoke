@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Die geheime Karriere von Baustellenorakeln</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <style>
+    :root {
+      --r-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --r-heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --r-main-font-size: 36px;
+      --r-background-color: #111;
+      --r-main-color: #eee;
+      --r-heading-color: #fff;
+    }
+
+    .reveal {
+      font-family: var(--r-main-font);
+    }
+
+    /* General Slide Layout */
+    .reveal .slides section {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      padding: 4vh 4vw;
+      box-sizing: border-box;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    .visual-col, .text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding: 2vw;
+      box-sizing: border-box;
+    }
+
+    .visual-col {
+      flex: 0 0 40%;
+      align-items: center;
+    }
+
+    .text-col {
+      flex: 0 0 60%;
+      text-align: left;
+      align-self: center;
+    }
+
+    /* Visual Column Content */
+    .visual-col img {
+      max-width: 95%;
+      max-height: 75vh;
+      object-fit: contain;
+      filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.05));
+    }
+
+    /* Text Column Content */
+    .text-col h2, .text-col h3, .text-col p, .icon-container {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .text-col h2 {
+      font-size: 2.1em;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+      line-height: 1.2;
+      color: var(--r-heading-color);
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .text-col h3 {
+      font-size: 1.3em;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 1em;
+      opacity: 0.9;
+    }
+
+    .icon-container {
+      font-size: 1.8em;
+      margin-bottom: 0.7em;
+    }
+
+    .icon-container i {
+      margin-right: 0.5em;
+      opacity: 0.9;
+      transition: transform 0.2s ease-in-out;
+    }
+    .icon-container i:hover {
+        transform: scale(1.1);
+    }
+
+    .text-col p {
+      font-size: 1.05em;
+      line-height: 1.6;
+      color: var(--r-main-color);
+    }
+
+    /* Title Slide Specific Styling */
+    .reveal .slides section.title-slide .text-col h2 {
+      font-size: 2.6em;
+    }
+    .reveal .slides section.title-slide .text-col h3 {
+      font-size: 1.5em;
+    }
+    .reveal .slides section.title-slide .text-col p.tagline {
+        font-size: 1.1em;
+        font-style: italic;
+        opacity: 0.7;
+        margin-top: 1.5em;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 1em;
+    }
+
+    /* Responsive Design for Mobile */
+    @media (max-width: 768px) {
+      .reveal .slides section {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 5vh 5vw;
+      }
+
+      .visual-col, .text-col {
+        flex: 1 1 auto;
+        width: 100%;
+        height: auto;
+        padding: 2vh 2vw;
+      }
+
+      .visual-col {
+        order: 1; /* Image on top */
+        padding-bottom: 4vh;
+        max-height: 40vh;
+      }
+      .visual-col img {
+        max-height: 100%;
+      }
+
+      .text-col {
+        order: 2; /* Text below */
+        text-align: center;
+      }
+      
+      .text-col h2 { font-size: 1.6em; }
+      .text-col h3 { font-size: 1.1em; }
+      .text-col p { font-size: 0.95em; }
+      .icon-container { justify-content: center; display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1 -->
+      <section class="title-slide">
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRkQ3MDAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkhlbG0tVmlzaW9uPC90ZXh0PgogIDx0ZXh0IHg9IjE0MCIgeT0iMzIwIiBmaWxsPSIjZTJlOGYwIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0MCI+TGV1Y2h0ZW5kZXIgSGVsbSBpbiBCYXVzdGVsbGVubmViZWw8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNjQwIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI2OCIgZm9udC13ZWlnaHQ9IjcwMCI+RWluc3RpZWcgaW5zIE9yYWtlbC1MZWJlbjwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE3MjUiIGZpbGw9IiNjYmQ1ZTEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0Ij5LSS1nZW5lcmllcnRlIELDvGhuZW5mb2xpZSDCtyBQb3dlclBvaW50IEthcmFva2U8L3RleHQ+Cjwvc3ZnPg==" alt="Helm-Vision">
+        </div>
+        <div class="text-col">
+          <h2>Einstieg ins Orakel-Leben</h2>
+          <h3 style="color: #FFD700;">Vom Helm zum Hellseher</h3>
+          <div class="icon-container" style="color: #FFD700;">
+            <i class="fa-solid fa-hard-hat"></i>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <p>Stellen Sie sich vor, ein normaler Bauarbeiter stolpert über eine magische Schaufel und wird zum Orakel. Plötzlich prophezeit er nicht nur Verzögerungen, sondern das Ende der Welt durch abrutschende Gerüste. Die Karriere beginnt mit einem simplen 'Achtung, fallende Steine' – und endet in kosmischen Visionen.</p>
+          <p class="tagline">Vorhersagen aus Beton und Mysterium</p>
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4QjQ1MTMiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPk1vcmdlbm15c3RpazwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjMyMCIgZmlsbD0iI2UyZThmMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiPkthZmZlZXRhc3NlIG1pdCB3aXJiZWxuZGVuIEthYmVsbjwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE2NDAiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjY4IiBmb250LXdlaWdodD0iNzAwIj5UYWdlc3JvdXRpbmUgZGVyIFByb3BoZXRlbjwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE3MjUiIGZpbGw9IiNjYmQ1ZTEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0Ij5LSS1nZW5lcmllcnRlIELDvGhuZW5mb2xpZSDCtyBQb3dlclBvaW50IEthcmFva2U8L3RleHQ+Cjwvc3ZnPg==" alt="Morgenmystik">
+        </div>
+        <div class="text-col">
+          <h2>Tagesroutine der Propheten</h2>
+          <h3 style="color: #8B4513;">Kaffee, Kabel und Klarträume</h3>
+          <div class="icon-container" style="color: #8B4513;">
+            <i class="fa-solid fa-coffee"></i>
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <p>Jeden Morgen trinkt das Baustellenorakel seinen Kaffee aus einem Eimer und liest die Zukunft in Kabelsalat. Es warnt vor explodierenden Baggern und verpassten Fristen, die zu apokalyptischen Staus führen. Die Routine endet mit einem Nickerchen auf dem Betonmischer, wo die Visionen am klarsten sind.</p>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwOEIiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPk5hY2h0cml0dWFsPC90ZXh0PgogIDx0ZXh0IHg9IjE0MCIgeT0iMzIwIiBmaWxsPSIjZTJlOGYwIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0MCI+VGFuemVuZGUgRmlndXJlbiB1bSBsZXVjaHRlbmRlcyBHZXLDvHN0PC90ZXh0PgogIDx0ZXh0IHg9IjE0MCIgeT0iMTY0MCIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPkdlaGVpbWUgUml0dWFsZSBhbSBCYXU8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNzI1IiBmaWxsPSIjY2JkNWUxIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+S0ktZ2VuZXJpZXJ0ZSBCw7xobmVuZm9saWUgwrcgUG93ZXJQb2ludCBLYXJhb2tlPC90ZXh0Pgo8L3N2Zz4=" alt="Nachtritual">
+        </div>
+        <div class="text-col">
+          <h2>Geheime Rituale am Bau</h2>
+          <h3 style="color: #00008B;">Tänze mit dem Bohrer</h3>
+          <div class="icon-container" style="color: #00008B;">
+            <i class="fa-solid fa-hammer"></i>
+            <i class="fa-solid fa-moon"></i>
+          </div>
+          <p>Bei Mondschein tanzen die Orakel mit Bohrern um das Gerüst, um Geister der Verzögerung zu besänftigen. Sie flüstern Zaubersprüche in Betonmischer, die dann magische Mauern errichten. Ein falscher Schritt, und der ganze Bau wird zu einem Labyrinth der Prophezeiungen.</p>
+        </div>
+      </section>
+
+      <!-- Slide 4 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRjQ1MDAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPlByb3BoZXplaXVuZ3NzdHVybTwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjMyMCIgZmlsbD0iI2UyZThmMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiPlJlZ25lbmRlIFNjaG9rb2xhZGUgw7xiZXIgSG9jaGhhdXM8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNjQwIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI2OCIgZm9udC13ZWlnaHQ9IjcwMCI+QmVyw7xobXRlIFZvcmhlcnNhZ2VuPC90ZXh0PgogIDx0ZXh0IHg9IjE0MCIgeT0iMTcyNSIgZmlsbD0iI2NiZDVlMSIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiPktJLWdlbmVyaWVydGUgQsO8aG5lbmZvbGllIMK3IFBvd2VyUG9pbnQgS2FyYW9rZTwvdGV4dD4KPC9zdmc+" alt="Prophezeiungssturm">
+        </div>
+        <div class="text-col">
+          <h2>Berühmte Vorhersagen</h2>
+          <h3 style="color: #FF4500;">Von Einsturz bis Ewigkeit</h3>
+          <div class="icon-container" style="color: #FF4500;">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-exclamation-triangle"></i>
+          </div>
+          <p>Ein Orakel sagte voraus, dass ein Hochhaus in Schokolade ertrinken würde – und prompt regnete es Kakao. Eine andere Vision warnte vor singenden Stahlträgern, die Opernarien trällerten. Diese Prophezeiungen machten die Orakel zu Legenden, gefürchtet von Architekten weltweit.</p>
+        </div>
+      </section>
+
+      <!-- Slide 5 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMkNEMzIiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkF1ZnN0aWVnc2xlaXRlcjwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjMyMCIgZmlsbD0iI2UyZThmMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiPkxlaXRlciBhdXMgS2llcyB6dSBsZXVjaHRlbmRlciBLdWdlbDwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE2NDAiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjY4IiBmb250LXdlaWdodD0iNzAwIj5LYXJyaWVyZS1Iw7ZoZXB1bmt0ZTwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE3MjUiIGZpbGw9IiNjYmQ1ZTEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0Ij5LSS1nZW5lcmllcnRlIELDvGhuZW5mb2xpZSDCtyBQb3dlclBvaW50IEthcmFva2U8L3RleHQ+Cjwvc3ZnPg==" alt="Aufstiegsleiter">
+        </div>
+        <div class="text-col">
+          <h2>Karriere-Höhepunkte</h2>
+          <h3 style="color: #32CD32;">Von Kiesgrube zur Kristallkugel</h3>
+          <div class="icon-container" style="color: #32CD32;">
+            <i class="fa-solid fa-trophy"></i>
+            <i class="fa-solid fa-arrow-up"></i>
+          </div>
+          <p>Der Aufstieg beginnt in der Kiesgrube, wo Steine flüstern. Bald beraten Orakel Präsidenten über bröckelnde Brücken als Metapher für Politik. Der Höhepunkt: Ein Orakel wird Bauminister und prophezeit, dass alle Straßen zu Schlaraffenland führen.</p>
+        </div>
+      </section>
+
+      <!-- Slide 6 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRjAwMDAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkdlZmFocmVuZ3J1YmU8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIzMjAiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIj5HZWlzdGVyYmFnZ2VyIGluIGR1bmtsZW0gTG9jaDwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE2NDAiIGZpbGw9IiNmZmZmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjY4IiBmb250LXdlaWdodD0iNzAwIj5SaXNpa2VuIGRlcyBCZXJ1ZnM8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNzI1IiBmaWxsPSIjY2JkNWUxIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+S0ktZ2VuZXJpZXJ0ZSBCw7xobmVuZm9saWUgwrcgUG93ZXJQb2ludCBLYXJhb2tlPC90ZXh0Pgo8L3N2Zz4=" alt="Gefahrengrube">
+        </div>
+        <div class="text-col">
+          <h2>Risiken des Berufs</h2>
+          <h3 style="color: #FF0000;">Flüche aus dem Fundament</h3>
+          <div class="icon-container" style="color: #FF0000;">
+            <i class="fa-solid fa-skull"></i>
+            <i class="fa-solid fa-exclamation"></i>
+          </div>
+          <p>Ein falsches Orakel kann zu ewigen Verkehrsstaus führen, oder der Orakler wird selbst zu Stein. Gefahren lauern in jedem Loch: Geisterhafte Bagger greifen an, wenn die Vorhersage schiefgeht. Trotzdem wagen sie es, denn der Adrenalinrausch ist betonhart.</p>
+        </div>
+      </section>
+
+      <!-- Slide 7 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4MDAwODAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkR1ZWxsc3RhdWI8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIzMjAiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIj5Lw6RtcGZlbmRlIEZpZ3VyZW4gaW4gWmVtZW50d29sa2U8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNjQwIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI2OCIgZm9udC13ZWlnaHQ9IjcwMCI+S29sbGVnZW4gdW5kIEtvbmt1cnJlbno8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNzI1IiBmaWxsPSIjY2JkNWUxIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+S0ktZ2VuZXJpZXJ0ZSBCw7xobmVuZm9saWUgwrcgUG93ZXJQb2ludCBLYXJhb2tlPC90ZXh0Pgo8L3N2Zz4=" alt="Duellstaub">
+        </div>
+        <div class="text-col">
+          <h2>Kollegen und Konkurrenz</h2>
+          <h3 style="color: #800080;">Rivalen mit Rechen</h3>
+          <div class="icon-container" style="color: #800080;">
+            <i class="fa-solid fa-users"></i>
+            <i class="fa-solid fa-gun"></i> <!-- fa-swords is pro, using fa-gun as a replacement -->
+          </div>
+          <p>Andere Orakel neiden den Erfolg und sabotieren mit verzauberten Rechen. Kollegen teilen Tipps: 'Lies die Zukunft im Zementstaub!' Die Konkurrenz eskaliert zu Duellen, wo Prophezeiungen wie Feuerwerk explodieren.</p>
+        </div>
+      </section>
+
+      <!-- Slide 8 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMEZGRkYiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkN5YmVyLVZpc2lvbjwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjMyMCIgZmlsbD0iI2UyZThmMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiPlZSLUhlbG0gYXVmIGRpZ2l0YWxlbSBHZXLDvHN0PC90ZXh0PgogIDx0ZXh0IHg9IjE0MCIgeT0iMTY0MCIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPlp1a3VuZnQgZGVyIE9yYWtlbDwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjE3MjUiIGZpbGw9IiNjYmQ1ZTEiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0Ij5LSS1nZW5lcmllcnRlIELDvGhuZW5mb2xpZSDCtyBQb3dlclBvaW50IEthcmFva2U8L3RleHQ+Cjwvc3ZnPg==" alt="Cyber-Vision">
+        </div>
+        <div class="text-col">
+          <h2>Zukunft der Orakel</h2>
+          <h3 style="color: #00FFFF;">Digitaler Betonzauber</h3>
+          <div class="icon-container" style="color: #00FFFF;">
+            <i class="fa-solid fa-robot"></i>
+            <i class="fa-solid fa-vr-cardboard"></i> <!-- fa-crystal-ball is pro, using vr-cardboard -->
+          </div>
+          <p>Bald prophezeien Orakel via App, mit VR-Brillen auf dem Helm. Sie sehen Brücken kollabieren in virtuellen Welten, bevor es passiert. Die Karriere evolviert zu cybernetischen Visionen, wo Algorithmen mit Magie tanzen.</p>
+        </div>
+      </section>
+
+      <!-- Slide 9 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGNEE0NjAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPlNhbmRrYXN0ZW4tU2FnZTwvdGV4dD4KICA8dGV4dCB4PSIxNDAiIHk9IjMyMCIgZmlsbD0iI2UyZThmMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiPlN0YWR0IGFscyByaWVzaWdlciBTYW5ka2FzdGVuPC90ZXh0PgogIDx0ZXh0IHg9IjE0MCIgeT0iMTY0MCIgZmlsbD0iI2ZmZmZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNjgiIGZvbnQtd2VpZ2h0PSI3MDAiPk15dGhlbiB1bmQgTGVnZW5kZW48L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNzI1IiBmaWxsPSIjY2JkNWUxIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+S0ktZ2VuZXJpZXJ0ZSBCw7xobmVuZm9saWUgwrcgUG93ZXJQb2ludCBLYXJhb2tlPC90ZXh0Pgo8L3N2Zz4=" alt="Sandkasten-Sage">
+        </div>
+        <div class="text-col">
+          <h2>Mythen und Legenden</h2>
+          <h3 style="color: #F4A460;">Ewige Baustellen-Sagen</h3>
+          <div class="icon-container" style="color: #F4A460;">
+            <i class="fa-solid fa-book-open"></i>
+            <i class="fa-solid fa-ghost"></i>
+          </div>
+          <p>Legenden erzählen von einem Orakel, das eine Stadt in einen riesigen Sandkasten verwandelte. Andere Mythen flüstern von unsterblichen Helmen, die ewig prophezeien. Diese Geschichten inspirieren neue Generationen zu absurden Karrieren.</p>
+        </div>
+      </section>
+
+      <!-- Slide 10 -->
+      <section>
+        <div class="visual-col">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDgwIiBoZWlnaHQ9IjE5MjAiIHZpZXdCb3g9IjAgMCAxMDgwIDE5MjAiPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJiZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTExODI3IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNGRkQ3MDAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTA4MCIgaGVpZ2h0PSIxOTIwIiBmaWxsPSJ1cmwoI2JnKSIgLz4KICA8Y2lyY2xlIGN4PSI4NjAiIGN5PSIzMjAiIHI9IjE4MCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgLz4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIxNDYwIiByPSIyMjAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIC8+CiAgPHJlY3QgeD0iOTAiIHk9IjEyMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSIxNjgwIiByeD0iNDgiIGZpbGw9InJnYmEoMCwwLDAsMC4yNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjE4KSIgLz4KICA8dGV4dCB4PSIxNDAiIHk9IjI0MCIgZmlsbD0iI2Y4ZmFmYyIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkZpbmFsZSBWaXNpb248L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIzMjAiIGZpbGw9IiNlMmU4ZjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIj5MZXVjaHRlbmRlciBIZWxtIMO8YmVyIGVuZGxvc2VuIEJhdXN0ZWxsZW48L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNjQwIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI2OCIgZm9udC13ZWlnaHQ9IjcwMCI+QWJzY2hsdXNzIHVuZCBBdWZydWY8L3RleHQ+CiAgPHRleHQgeD0iMTQwIiB5PSIxNzI1IiBmaWxsPSIjY2JkNWUxIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCI+S0ktZ2VuZXJpZXJ0ZSBCw7xobmVuZm9saWUgwrcgUG93ZXJQb2ludCBLYXJhb2tlPC90ZXh0Pgo8L3N2Zz4=" alt="Finale Vision">
+        </div>
+        <div class="text-col">
+          <h2>Abschluss und Aufruf</h2>
+          <h3 style="color: #FFD700;">Werde selbst Orakel!</h3>
+          <div class="icon-container" style="color: #FFD700;">
+            <i class="fa-solid fa-circle-check"></i> <!-- fa-check-circle is solid -->
+            <i class="fa-solid fa-wand-magic-sparkles"></i> <!-- fa-magic-wand-sparkles is solid -->
+          </div>
+          <p>Die geheime Karriere endet nie – sie baut sich ewig auf. Schnappen Sie sich einen Helm und lauschen Sie dem Beton. Wer weiß, vielleicht prophezeien Sie als Nächstes den Weltfrieden durch perfekte Pflastersteine.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: false,
+      width: "100%",
+      height: "100%",
+      margin: 0,
+      minScale: 1,
+      maxScale: 1,
+      plugins: []
+    });
+  </script>
+</body>
+</html>

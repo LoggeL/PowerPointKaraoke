@@ -231,6 +231,62 @@
         backdrop-filter: blur(12px);
       }
 
+      .mobile-controls {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .hud {
+          left: 16px;
+          right: 16px;
+          bottom: 88px;
+          text-align: center;
+          font-size: 0.82rem;
+        }
+
+        .mobile-controls {
+          position: fixed;
+          left: 16px;
+          right: 16px;
+          bottom: 18px;
+          z-index: 30;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .mobile-btn {
+          appearance: none;
+          border: 1px solid rgba(255, 255, 255, 0.14);
+          background: rgba(9, 11, 16, 0.88);
+          color: var(--text);
+          min-height: 52px;
+          padding: 12px 14px;
+          border-radius: 999px;
+          font: inherit;
+          font-weight: 800;
+          letter-spacing: 0.02em;
+          backdrop-filter: blur(12px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .mobile-btn:disabled {
+          opacity: 0.45;
+        }
+
+        .mobile-page {
+          min-width: 72px;
+          text-align: center;
+          padding: 10px 12px;
+          border-radius: 999px;
+          background: rgba(9, 11, 16, 0.82);
+          border: 1px solid rgba(255,255,255,0.1);
+          font-size: 0.82rem;
+          font-weight: 700;
+        }
+      }
+
       @media (max-width: 1100px) {
         .slide {
           padding: 16px;
@@ -346,13 +402,29 @@
       </section>
     </main>
 
-    <div class="hud">Pfeile, Leertaste, Home, End</div>
+    <div class="hud">Desktop: Pfeile, Leertaste, Home, End · Mobil: Buttons oder Wischen</div>
+
+    <div class="mobile-controls" aria-label="Mobile Präsentationssteuerung">
+      <button type="button" class="mobile-btn" data-nav="prev">← Zurück</button>
+      <div class="mobile-page" data-mobile-page>1 / 4</div>
+      <button type="button" class="mobile-btn" data-nav="next">Weiter →</button>
+    </div>
 
     <script>
       const slides = Array.from(document.querySelectorAll("[data-slide]"));
       const params = new URLSearchParams(window.location.search);
       const requestedSlide = Number.parseInt(params.get("slide") || "1", 10);
       let currentIndex = Number.isFinite(requestedSlide) ? requestedSlide - 1 : 0;
+      const prevButton = document.querySelector('[data-nav="prev"]');
+      const nextButton = document.querySelector('[data-nav="next"]');
+      const mobilePage = document.querySelector('[data-mobile-page]');
+      let touchStartX = null;
+
+      function syncControls() {
+        if (mobilePage) mobilePage.textContent = `${currentIndex + 1} / ${slides.length}`;
+        if (prevButton) prevButton.disabled = currentIndex === 0;
+        if (nextButton) nextButton.disabled = currentIndex === slides.length - 1;
+      }
 
       function renderSlide(nextIndex) {
         currentIndex = Math.max(0, Math.min(nextIndex, slides.length - 1));
@@ -363,11 +435,29 @@
         const url = new URL(window.location.href);
         url.searchParams.set("slide", String(currentIndex + 1));
         window.history.replaceState({}, "", url);
+        syncControls();
       }
 
       function advance(delta) {
         renderSlide(currentIndex + delta);
       }
+
+      prevButton?.addEventListener('click', () => advance(-1));
+      nextButton?.addEventListener('click', () => advance(1));
+
+      window.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? null;
+      }, { passive: true });
+
+      window.addEventListener('touchend', (event) => {
+        if (touchStartX === null) return;
+        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+        const deltaX = touchEndX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(deltaX) < 48) return;
+        if (deltaX < 0) advance(1);
+        else advance(-1);
+      }, { passive: true });
 
       window.addEventListener("keydown", (event) => {
         if (["ArrowRight", "PageDown", " ", "Spacebar"].includes(event.key)) {

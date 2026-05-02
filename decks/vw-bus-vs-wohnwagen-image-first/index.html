@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VW Bus vs. Wohnwagen: Image First</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #06070a;
+        --text: #f7f4ee;
+        --muted: rgba(247, 244, 238, 0.78);
+        --shadow: rgba(0, 0, 0, 0.38);
+        --panel: rgba(10, 12, 18, 0.26);
+        --panel-strong: rgba(8, 10, 14, 0.58);
+        --accent-bus: #78d7ff;
+        --accent-caravan: #ffd277;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 26%),
+          linear-gradient(180deg, #12151c 0%, #06070a 100%);
+        font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+        color: var(--text);
+      }
+
+      body {
+        position: relative;
+      }
+
+      .deck {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slide {
+        position: absolute;
+        inset: 0;
+        display: none;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .slide.active {
+        display: grid;
+      }
+
+      .frame {
+        width: min(100%, 1920px);
+        aspect-ratio: 16 / 9;
+        position: relative;
+        overflow: hidden;
+        border-radius: 28px;
+        background: #111;
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+      }
+
+      .frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .shade {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 24%, transparent 65%, rgba(0, 0, 0, 0.56) 100%);
+        pointer-events: none;
+      }
+
+      .shade.split {
+        background:
+          linear-gradient(90deg, rgba(7, 10, 14, 0.62) 0%, rgba(7, 10, 14, 0.18) 28%, rgba(7, 10, 14, 0.18) 72%, rgba(7, 10, 14, 0.62) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, transparent 22%, transparent 66%, rgba(0, 0, 0, 0.5) 100%);
+      }
+
+      .content {
+        position: absolute;
+        inset: 0;
+        padding: 54px 62px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .topline {
+        display: inline-flex;
+        align-self: flex-start;
+        padding: 10px 16px;
+        border-radius: 999px;
+        backdrop-filter: blur(12px);
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .topline.bus {
+        color: var(--accent-bus);
+      }
+
+      .topline.caravan {
+        color: var(--accent-caravan);
+      }
+
+      .title-block {
+        max-width: 48%;
+        display: grid;
+        gap: 14px;
+        padding: 22px 24px 24px;
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(9, 12, 18, 0.18), rgba(9, 12, 18, 0.48));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+        text-wrap: balance;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 5vw, 5.5rem);
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+      }
+
+      h2 {
+        font-size: clamp(2.5rem, 4vw, 4.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+      }
+
+      .subtitle {
+        font-size: clamp(1.12rem, 1.45vw, 1.48rem);
+        line-height: 1.4;
+        color: var(--muted);
+        max-width: 34ch;
+      }
+
+      .split-headline {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        align-items: start;
+      }
+
+      .split-card {
+        max-width: 88%;
+        padding: 20px 22px 22px;
+        border-radius: 22px;
+        backdrop-filter: blur(10px);
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.11);
+      }
+
+      .split-card:last-child {
+        justify-self: end;
+        text-align: right;
+      }
+
+      .split-card p {
+        margin-top: 10px;
+        font-size: clamp(1rem, 1.3vw, 1.3rem);
+        line-height: 1.36;
+        color: var(--muted);
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 24px;
+      }
+
+      .footer-note {
+        padding: 14px 18px;
+        border-radius: 18px;
+        background: var(--panel-strong);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 42ch;
+        font-size: 1rem;
+        line-height: 1.35;
+        color: var(--muted);
+      }
+
+      .pager {
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(6, 8, 12, 0.62);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        font-size: 0.92rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .hud {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 20;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(9, 11, 16, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(247, 244, 238, 0.82);
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        backdrop-filter: blur(12px);
+      }
+
+      @media (max-width: 1100px) {
+        .slide {
+          padding: 16px;
+        }
+
+        .content {
+          padding: 34px 38px 34px;
+        }
+
+        .title-block {
+          max-width: 58%;
+        }
+
+        .footer-note {
+          max-width: 34ch;
+        }
+      }
+
+      @media (max-aspect-ratio: 16/9) {
+        .frame {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      @media (min-aspect-ratio: 16/9) {
+        .frame {
+          width: auto;
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck" aria-live="polite">
+      <section class="slide active" data-slide>
+        <div class="frame">
+          <img src="./slide-01-cover.png" alt="Dramatischer Vergleich zwischen VW Bus und Wohnwagen an einer Küste" />
+          <div class="shade"></div>
+          <div class="content">
+            <div class="topline">Experimentelles Bilddeck</div>
+            <div class="title-block">
+              <h1>VW Bus vs. Wohnwagen</h1>
+              <p class="subtitle">Zwei Fahrzeuge. Zwei Lebensentwürfe. Eine sehr deutsche Debatte mit Meerblick.</p>
+            </div>
+            <div class="footer">
+              <div class="footer-note">These: Der VW Bus verkauft Freiheit. Der Wohnwagen verkauft planbare Freiheit mit Schubladensystem.</div>
+              <div class="pager">01 / 04</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide>
+        <div class="frame">
+          <img src="./slide-02-freiheit-vs-grundriss.png" alt="Kontrast zwischen spontaner VW-Bus-Reise und präzise organisiertem Wohnwagen-Camping" />
+          <div class="shade split"></div>
+          <div class="content">
+            <div class="split-headline">
+              <div class="split-card">
+                <div class="topline bus">Team Bus</div>
+                <h2>Freiheit</h2>
+                <p>Improvisation, Kaffeeflecken und die feste Überzeugung, dass ein Surfbrett auch ein Möbelsystem ist.</p>
+              </div>
+              <div class="split-card">
+                <div class="topline caravan">Team Wohnwagen</div>
+                <h2>Grundriss</h2>
+                <p>Ordnung, Außenbeleuchtung und dieses tiefe Glück, wenn jede Klappbox einen Zweck erfüllt.</p>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="footer-note">Beide Seiten nennen es Abenteuer. Die eine meint Wildheit, die andere meint Reservierung.</div>
+              <div class="pager">02 / 04</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide>
+        <div class="frame">
+          <img src="./slide-03-scoreboard.png" alt="Humorvolle, dramatische Vergleichsbühne für VW Bus und Wohnwagen" />
+          <div class="shade"></div>
+          <div class="content">
+            <div class="topline">Gefühlte Bewertungsmatrix</div>
+            <div class="title-block">
+              <h2>Wer gewinnt wirklich?</h2>
+              <p class="subtitle">Der Bus punktet bei Coolness und spontanen Richtungswechseln. Der Wohnwagen gewinnt bei Platz, Regenfestigkeit und friedlicher Sockenschublade.</p>
+            </div>
+            <div class="footer">
+              <div class="footer-note">Objektive Wahrheit ist unmöglich. Subjektive Dramatisierung hingegen läuft stabil.</div>
+              <div class="pager">03 / 04</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide>
+        <div class="frame">
+          <img src="./slide-04-finale.png" alt="Versöhnliches Finale mit VW Bus und Wohnwagen beim gemeinsamen Frühstück in den Alpen" />
+          <div class="shade"></div>
+          <div class="content">
+            <div class="topline">Finale</div>
+            <div class="title-block">
+              <h2>Die eigentliche Pointe</h2>
+              <p class="subtitle">Am Ende wollen beide Lager dasselbe: morgens irgendwo schön stehen und so tun, als hätten sie alles perfekt geplant.</p>
+            </div>
+            <div class="footer">
+              <div class="footer-note">Fazit: Nicht das Fahrzeug entscheidet. Entscheidend ist, wie selbstbewusst man seine Campingstühle aufstellt.</div>
+              <div class="pager">04 / 04</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="hud">Pfeile, Leertaste, Home, End</div>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll("[data-slide]"));
+      const params = new URLSearchParams(window.location.search);
+      const requestedSlide = Number.parseInt(params.get("slide") || "1", 10);
+      let currentIndex = Number.isFinite(requestedSlide) ? requestedSlide - 1 : 0;
+
+      function renderSlide(nextIndex) {
+        currentIndex = Math.max(0, Math.min(nextIndex, slides.length - 1));
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("active", index === currentIndex);
+          slide.setAttribute("aria-hidden", index === currentIndex ? "false" : "true");
+        });
+        const url = new URL(window.location.href);
+        url.searchParams.set("slide", String(currentIndex + 1));
+        window.history.replaceState({}, "", url);
+      }
+
+      function advance(delta) {
+        renderSlide(currentIndex + delta);
+      }
+
+      window.addEventListener("keydown", (event) => {
+        if (["ArrowRight", "PageDown", " ", "Spacebar"].includes(event.key)) {
+          event.preventDefault();
+          advance(1);
+          return;
+        }
+
+        if (["ArrowLeft", "PageUp"].includes(event.key)) {
+          event.preventDefault();
+          advance(-1);
+          return;
+        }
+
+        if (event.key === "Home") {
+          event.preventDefault();
+          renderSlide(0);
+          return;
+        }
+
+        if (event.key === "End") {
+          event.preventDefault();
+          renderSlide(slides.length - 1);
+        }
+      });
+
+      renderSlide(currentIndex);
+    </script>
+  </body>
+</html>

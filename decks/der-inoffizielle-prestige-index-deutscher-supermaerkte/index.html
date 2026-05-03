@@ -7,216 +7,312 @@
     <style>
       :root {
         color-scheme: dark;
-        --bg: #07080b;
-        --panel: rgba(10, 11, 14, 0.84);
-        --line: rgba(255,255,255,0.13);
-        --text: #f7f1e3;
-        --muted: rgba(247, 241, 227, 0.72);
-        --gold: #d6b25e;
-        --cyan: #75cbd4;
-        --danger: #ff6f67;
+        --bg: #08070a;
+        --ink: #17110b;
+        --paper: #fff1cf;
+        --cream: #fff8e8;
+        --muted: rgba(23, 17, 11, 0.64);
+        --line: rgba(23, 17, 11, 0.18);
+        --shadow: rgba(23, 17, 11, 0.16);
+        --red: #ef3f36;
+        --blue: #1267c8;
+        --green: #13874a;
+        --yellow: #f6c744;
+        --purple: #7655c7;
+        --orange: #ef7d26;
+        --black: #111111;
+        --ui: rgba(8, 7, 10, 0.82);
+        --ui-line: rgba(255, 255, 255, 0.14);
+        --ui-text: #fff7e8;
       }
 
       * { box-sizing: border-box; }
-
-      html, body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background:
-          radial-gradient(circle at 16% 0%, rgba(214,178,94,0.15), transparent 30%),
-          radial-gradient(circle at 88% 92%, rgba(117,203,212,0.12), transparent 28%),
-          linear-gradient(135deg, #050609, #12100d 48%, #07080b);
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-        color: var(--text);
+          radial-gradient(circle at 14% 8%, rgba(246,199,68,0.22), transparent 31%),
+          radial-gradient(circle at 82% 78%, rgba(19,135,74,0.22), transparent 30%),
+          linear-gradient(135deg, #050507, #19110b 48%, #06070b);
+        color: var(--ui-text);
       }
 
-      .shell {
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        gap: 14px;
-        padding: 14px;
+      .app { height: 100vh; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; padding: 14px; }
+      .topbar, .bottombar {
+        display: flex; align-items: center; justify-content: space-between; gap: 14px;
+        padding: 10px 14px; border: 1px solid var(--ui-line); border-radius: 18px;
+        background: var(--ui); backdrop-filter: blur(18px);
       }
+      .brand { display: grid; gap: 2px; min-width: 0; }
+      .eyebrow { color: var(--yellow); text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; font-weight: 950; }
+      .deck-title { font-weight: 950; font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .deck-subtitle { color: rgba(255,247,232,.7); font-size: .82rem; }
+      .status { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+      .pill { border: 1px solid var(--ui-line); background: rgba(255,255,255,.055); border-radius: 999px; padding: 9px 13px; font-weight: 900; font-size: .84rem; }
+      .timer { min-width: 92px; text-align: center; font-size: .96rem; }
+      .timer.danger { color: #ff756b; border-color: rgba(255,117,107,.44); background: rgba(255,117,107,.1); }
 
-      .topbar,
-      .bottombar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 10px 14px;
-        border-radius: 16px;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        backdrop-filter: blur(16px);
-      }
-
-      .brand { display: grid; gap: 2px; }
-      .eyebrow {
-        font-size: 0.72rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--gold);
-        font-weight: 900;
-      }
-      .title { font-size: 1rem; font-weight: 900; }
-      .subtitle { font-size: 0.82rem; color: var(--muted); }
-
-      .status-cluster {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 38px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.045);
-        font-size: 0.82rem;
-        font-weight: 800;
-      }
-      .pill.timer { min-width: 92px; font-size: 0.95rem; color: var(--text); }
-      .pill.timer.danger {
-        color: var(--danger);
-        border-color: rgba(255,111,103,0.38);
-        background: rgba(255,111,103,0.08);
-      }
-
-      .stage {
-        position: relative;
-        overflow: hidden;
-        border-radius: 22px;
-        border: 1px solid rgba(255,255,255,0.08);
-        background: #050609;
-        box-shadow: 0 30px 90px rgba(0,0,0,0.42);
-      }
-      .deck { width: 100%; height: 100%; position: relative; overflow: hidden; }
-      .slide {
-        position: absolute;
-        inset: 0;
-        display: none;
-        place-items: center;
-        padding: 18px;
-      }
+      .stage { position: relative; overflow: hidden; border-radius: 24px; background: #050507; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 32px 92px rgba(0,0,0,.46); }
+      .deck { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      .slide { position: absolute; inset: 0; display: none; place-items: center; padding: 18px; }
       .slide.active { display: grid; }
+
       .frame {
-        width: min(100%, 1920px);
-        aspect-ratio: 16 / 9;
-        overflow: hidden;
-        border-radius: 18px;
-        background: #111;
-        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
+        position: relative; width: min(100%, 1920px); aspect-ratio: 16 / 9; overflow: hidden;
+        border-radius: 22px; color: var(--ink); background: var(--paper); box-shadow: 0 30px 82px rgba(0,0,0,.5);
       }
-      .frame picture,
-      .frame img {
-        width: 100%;
-        height: 100%;
-        display: block;
+      .frame::before {
+        content: ""; position: absolute; inset: 0; opacity: .56; pointer-events: none;
+        background:
+          linear-gradient(rgba(23,17,11,.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(23,17,11,.04) 1px, transparent 1px),
+          radial-gradient(circle at 14% 12%, rgba(246,199,68,.42), transparent 27%),
+          radial-gradient(circle at 86% 83%, rgba(19,135,74,.24), transparent 33%);
+        background-size: 42px 42px, 42px 42px, auto, auto;
       }
-      .frame img { object-fit: cover; }
+      .frame::after { content: ""; position: absolute; inset: 18px; border: 3px solid rgba(23,17,11,.16); border-radius: 26px; pointer-events: none; }
+      .slide-content { position: relative; z-index: 1; width: 100%; height: 100%; padding: 58px 72px; display: grid; gap: 24px; }
+      .kicker { color: #875021; text-transform: uppercase; letter-spacing: .13em; font-size: clamp(.85rem, 1.18vw, 1.22rem); font-weight: 950; }
+      h1, h2 { margin: 0; letter-spacing: -.075em; line-height: .88; }
+      h1 { font-size: clamp(4.7rem, 8.7vw, 10rem); max-width: 1240px; }
+      h2 { font-size: clamp(3.7rem, 6.8vw, 8.1rem); max-width: 1280px; }
+      h3 { margin: 0; font-size: clamp(1.6rem, 2.4vw, 3rem); line-height: .95; letter-spacing: -.055em; }
+      .lead { max-width: 1020px; color: rgba(23,17,11,.75); font-size: clamp(1.35rem, 2.05vw, 2.42rem); line-height: 1.1; font-weight: 780; }
+      .fine { color: var(--muted); font-weight: 760; font-size: clamp(.95rem, 1.18vw, 1.28rem); line-height: 1.25; }
+      .sticker { display: inline-flex; width: fit-content; align-items: center; justify-content: center; padding: 12px 18px; border: 5px solid currentColor; color: var(--red); background: rgba(255,255,255,.32); text-transform: uppercase; letter-spacing: .1em; font-weight: 950; transform: rotate(-4deg); box-shadow: 8px 10px 0 var(--shadow); }
 
-      .commentary { max-width: 650px; display: grid; gap: 6px; }
-      .commentary-label {
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        color: var(--cyan);
-        font-weight: 900;
-      }
-      .commentary-text {
-        font-size: 0.88rem;
-        line-height: 1.4;
-        color: var(--muted);
-      }
+      .cover { grid-template-columns: 1.08fr .92fr; align-items: center; }
+      .receipt { justify-self: end; width: min(500px, 37vw); padding: 28px; background: var(--cream); border: 3px solid var(--line); box-shadow: 16px 18px 0 var(--shadow); transform: rotate(3deg); }
+      .receipt-row { display: flex; justify-content: space-between; gap: 18px; border-top: 2px dashed rgba(23,17,11,.24); padding: 12px 0; font-weight: 900; font-size: clamp(1rem, 1.25vw, 1.42rem); }
+      .receipt-total { margin-top: 14px; padding-top: 16px; border-top: 5px solid rgba(23,17,11,.28); font-size: clamp(1.5rem, 2.2vw, 2.6rem); font-weight: 950; display: flex; justify-content: space-between; }
 
+      .logo-wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-content: center; }
+      .logo-card { min-height: 154px; border: 4px solid rgba(23,17,11,.22); border-radius: 28px; display: grid; place-items: center; text-align: center; color: #fff8e8; font-weight: 950; font-size: clamp(1.15rem, 1.7vw, 2rem); box-shadow: 8px 10px 0 var(--shadow); transform: rotate(var(--r)); background: var(--c); }
+      .logo-card small { display: block; opacity: .82; font-size: .58em; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+
+      .matrix { position: relative; min-height: 545px; border: 5px solid rgba(23,17,11,.24); border-radius: 32px; background: rgba(255,255,255,.30); overflow: hidden; }
+      .matrix::before, .matrix::after { content: ""; position: absolute; background: rgba(23,17,11,.24); }
+      .matrix::before { left: 50%; top: 28px; bottom: 28px; width: 4px; }
+      .matrix::after { top: 50%; left: 28px; right: 28px; height: 4px; }
+      .axis-label { position: absolute; font-weight: 950; color: rgba(23,17,11,.58); text-transform: uppercase; letter-spacing: .08em; font-size: 1.02rem; }
+      .axis-label.top { top: 18px; left: 50%; transform: translateX(-50%); }
+      .axis-label.bottom { bottom: 18px; left: 50%; transform: translateX(-50%); }
+      .axis-label.left { left: 22px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; }
+      .axis-label.right { right: 22px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: right center; }
+      .bubble { position: absolute; left: var(--x); top: var(--y); width: var(--s); height: var(--s); transform: translate(-50%, -50%); border-radius: 999px; display: grid; place-items: center; padding: 10px; text-align: center; border: 4px solid rgba(23,17,11,.42); background: var(--c); color: #fff8e8; font-weight: 950; font-size: clamp(.82rem, 1.12vw, 1.22rem); box-shadow: 8px 10px 0 rgba(23,17,11,.13); }
+
+      .ranking { display: grid; gap: 14px; align-content: center; }
+      .rank-row { display: grid; grid-template-columns: 86px 1fr auto; align-items: center; gap: 18px; padding: 16px 22px; border: 3px solid rgba(23,17,11,.2); border-radius: 24px; background: rgba(255,255,255,.36); box-shadow: 7px 8px 0 rgba(23,17,11,.1); }
+      .rank-no { color: #875021; font-size: clamp(1.7rem, 2.6vw, 3.2rem); font-weight: 950; }
+      .rank-name { font-size: clamp(1.35rem, 2vw, 2.42rem); font-weight: 950; letter-spacing: -.045em; }
+      .rank-note { color: var(--muted); font-weight: 780; }
+      .score { color: var(--green); font-size: clamp(1.2rem, 1.8vw, 2.1rem); font-weight: 950; }
+
+      .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-content: stretch; }
+      .card { min-height: 350px; padding: 24px; border-radius: 28px; border: 3px solid rgba(23,17,11,.22); background: rgba(255,255,255,.36); box-shadow: 8px 10px 0 rgba(23,17,11,.1); display: grid; align-content: start; gap: 14px; }
+      .emoji { font-size: clamp(3.4rem, 5vw, 6rem); line-height: 1; }
+      .card p { margin: 0; color: rgba(23,17,11,.68); font-size: clamp(.98rem, 1.2vw, 1.24rem); line-height: 1.24; font-weight: 760; }
+
+      .split { grid-template-columns: .9fr 1.1fr; align-items: center; }
+      .shelf { height: 610px; border: 5px solid rgba(23,17,11,.25); border-radius: 34px; padding: 28px; background: rgba(255,255,255,.28); box-shadow: 12px 14px 0 rgba(23,17,11,.12); display: grid; grid-template-rows: repeat(4, 1fr); gap: 18px; }
+      .shelf-row { border-radius: 18px; border: 3px solid rgba(23,17,11,.2); background: rgba(255,255,255,.34); display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; padding: 12px; align-items: end; }
+      .product { border-radius: 12px 12px 8px 8px; background: var(--c); min-height: var(--h); box-shadow: inset 0 0 0 3px rgba(23,17,11,.16); }
+
+      .map { position: relative; min-height: 610px; border: 5px solid rgba(23,17,11,.24); border-radius: 42% 58% 48% 52% / 52% 40% 60% 48%; background: radial-gradient(circle at 39% 22%, var(--green) 0 11%, transparent 12%), radial-gradient(circle at 63% 40%, var(--yellow) 0 13%, transparent 14%), radial-gradient(circle at 50% 63%, #73c7f5 0 14%, transparent 15%), radial-gradient(circle at 70% 73%, var(--red) 0 9%, transparent 10%), #d9c9a6; box-shadow: 14px 18px 0 rgba(23,17,11,.13); }
+      .pin { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, -50%); padding: 10px 14px; border-radius: 999px; background: var(--cream); border: 3px solid rgba(23,17,11,.28); font-weight: 950; box-shadow: 6px 7px 0 rgba(23,17,11,.12); }
+
+      .formula { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+      .formula-card { border: 3px solid rgba(23,17,11,.2); border-radius: 24px; padding: 22px; background: rgba(255,255,255,.36); box-shadow: 8px 10px 0 rgba(23,17,11,.1); }
+      .formula-card b { display: block; font-size: clamp(2rem, 3.2vw, 3.6rem); line-height: .9; letter-spacing: -.06em; margin-bottom: 10px; }
+      .formula-card span { color: var(--muted); font-size: clamp(.92rem, 1.12vw, 1.2rem); font-weight: 780; }
+      .giant { font-size: clamp(2rem, 3.2vw, 4rem); color: #875021; font-weight: 950; }
+
+      .finale { place-items: center; text-align: center; }
+      .finale h2 { margin-inline: auto; max-width: 1320px; }
+      .finale .lead { margin-inline: auto; }
+
+      .commentary { max-width: 760px; display: grid; gap: 5px; }
+      .commentary-label { color: #73c7f5; font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 950; }
+      .commentary-text { color: rgba(255,247,232,.72); font-size: .88rem; line-height: 1.38; }
       .controls { display: flex; align-items: center; gap: 10px; }
-      .btn {
-        appearance: none;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.045);
-        color: var(--text);
-        min-height: 42px;
-        padding: 10px 14px;
-        border-radius: 999px;
-        font: inherit;
-        font-weight: 900;
-        cursor: pointer;
-      }
-      .btn:disabled { opacity: 0.4; cursor: default; }
-      .btn.primary {
-        background: linear-gradient(135deg, var(--gold), var(--cyan));
-        color: #081014;
-        border-color: transparent;
-      }
-      .slide-count {
-        min-width: 82px;
-        text-align: center;
-        font-size: 0.86rem;
-        font-weight: 900;
-        color: var(--muted);
-      }
+      .btn { appearance: none; border: 1px solid var(--ui-line); background: rgba(255,255,255,.055); color: var(--ui-text); min-height: 42px; padding: 10px 14px; border-radius: 999px; font: inherit; font-weight: 950; cursor: pointer; }
+      .btn.primary { background: linear-gradient(135deg, var(--yellow), #54cf84); color: #081014; border-color: transparent; }
+      .btn:disabled { opacity: .42; cursor: default; }
+      .slide-count { min-width: 88px; text-align: center; color: rgba(255,247,232,.7); font-weight: 950; }
 
       @media (max-width: 900px) {
-        .shell { padding: 10px; gap: 10px; }
-        .topbar,
-        .bottombar { padding: 10px 12px; border-radius: 14px; }
-        .topbar { align-items: flex-start; flex-direction: column; }
-        .status-cluster { width: 100%; justify-content: space-between; }
-        .slide { padding: 12px; }
-        .frame { width: 100%; height: auto; }
-        .bottombar { flex-direction: column; align-items: stretch; }
-        .commentary { max-width: none; }
-        .controls { width: 100%; display: grid; grid-template-columns: 1fr auto 1fr; }
+        .app { padding: 10px; gap: 10px; }
+        .topbar, .bottombar { flex-direction: column; align-items: stretch; border-radius: 14px; }
+        .status { justify-content: space-between; }
+        .slide { padding: 10px; }
+        .slide-content { padding: 34px; }
+        .cover, .split { grid-template-columns: 1fr; }
+        .logo-wall { grid-template-columns: repeat(2, 1fr); }
+        .cards, .formula { grid-template-columns: 1fr; }
+        .receipt { width: 100%; justify-self: stretch; }
+        .shelf, .map, .matrix { min-height: 430px; }
+        .controls { display: grid; grid-template-columns: 1fr auto 1fr; }
         .btn { min-height: 52px; }
       }
     </style>
   </head>
   <body>
-    <main class="shell">
+    <main class="app">
       <header class="topbar">
         <div class="brand">
-          <div class="eyebrow">PowerPoint Karaoke · Image-first Deck</div>
-          <div class="title">Der inoffizielle Prestige-Index deutscher Supermärkte</div>
-          <div class="subtitle">Bitte mit maximaler Consulting-Würde vortragen, obwohl nichts davon offiziell ist.</div>
+          <div class="eyebrow">PowerPoint Karaoke · komplett unseriöse Marktstudie</div>
+          <div class="deck-title">Der inoffizielle Prestige-Index deutscher Supermärkte</div>
+          <div class="deck-subtitle">10 Slides · 60 Sekunden pro Folie · keine Fakten, nur Führungskraft-Energie</div>
         </div>
-        <div class="status-cluster">
-          <div class="pill" id="slideTitle">Slide 1 · Luxus im Einkaufswagen</div>
+        <div class="status">
+          <div class="pill" id="slideTitle">Slide 1 · Vorstandsvorlage</div>
           <div class="pill timer" id="countdown">01:00</div>
         </div>
       </header>
 
       <section class="stage">
         <main class="deck" aria-live="polite">
-          <section class="slide active" data-slide data-title="Slide 1 · Luxus im Einkaufswagen" data-joke="Eröffne so, als hätte dich eine sehr ernste Stiftung für Einkaufswagen-Ethik eingeladen.">
-            <div class="frame"><img src="./slide-01-cover.webp" alt="Titelfolie: Der inoffizielle Prestige-Index deutscher Supermärkte" /></div>
+          <section class="slide active" data-slide data-title="Slide 1 · Vorstandsvorlage" data-joke="Starte maximal seriös. So, als hätte dich Edeka gerade in den Aufsichtsrat berufen.">
+            <div class="frame"><div class="slide-content cover">
+              <div>
+                <div class="kicker">Institut für angewandte Einkaufspsychologie</div>
+                <h1>Prestige beginnt am Pfandautomaten.</h1>
+                <p class="lead">Der Supermarkt ist nicht Versorgung. Er ist Bühne, Beichte und Bonitätsprüfung mit Kühlkette.</p>
+                <span class="sticker">nicht peer reviewed</span>
+              </div>
+              <aside class="receipt">
+                <h3>Kassenbon der sozialen Wahrheit</h3>
+                <div class="receipt-row"><span>Bio-Aura</span><b>+18</b></div>
+                <div class="receipt-row"><span>Käsethekennähe</span><b>+42</b></div>
+                <div class="receipt-row"><span>Prospekt-Scham</span><b>-7</b></div>
+                <div class="receipt-row"><span>Pfand-Dominanz</span><b>∞</b></div>
+                <div class="receipt-total"><span>Prestige</span><b>94%</b></div>
+              </aside>
+            </div></div>
           </section>
-          <section class="slide" data-slide data-title="Slide 2 · These mit Kühlregal" data-joke="Wenn du hier zögerst, merkt das Publikum, dass du Supermärkte noch für Gebäude hältst.">
-            <div class="frame"><img src="./slide-02-these.webp" alt="These: Supermärkte sind Identitätsbühnen mit Kühlregal" /></div>
+
+          <section class="slide" data-slide data-title="Slide 2 · Alle Marken, alle Vorurteile" data-joke="Bitte jede Marke mit unnötiger Sicherheit einordnen. Du bist jetzt Supermarktsoziologe.">
+            <div class="frame"><div class="slide-content">
+              <div><div class="kicker">Markenlandschaft</div><h2>Deutschland, erklärt durch Eingänge mit Backstation.</h2></div>
+              <div class="logo-wall">
+                <div class="logo-card" style="--c:#1f7a42;--r:-2deg">Edeka<small>Käsethekenadel</small></div>
+                <div class="logo-card" style="--c:#c41f30;--r:2deg">Rewe<small>Snack-Mitte</small></div>
+                <div class="logo-card" style="--c:#ef3f36;--r:-1deg">Aldi<small>Effizienz</small></div>
+                <div class="logo-card" style="--c:#1267c8;--r:3deg">Lidl<small>Discounter 2.0</small></div>
+                <div class="logo-card" style="--c:#7655c7;--r:-3deg">Bio<small>Gewissen</small></div>
+                <div class="logo-card" style="--c:#ef7d26;--r:2deg">Netto<small>Plot Twist</small></div>
+              </div>
+            </div></div>
           </section>
-          <section class="slide" data-slide data-title="Slide 3 · Matrix ohne Demut" data-joke="Verkauf die Achsen bitte, als wären sie in Davos hinter verschlossenen Türen beschlossen worden.">
-            <div class="frame"><img src="./slide-03-prestige-matrix.webp" alt="Prestige-Matrix deutscher Supermärkte" /></div>
+
+          <section class="slide" data-slide data-title="Slide 3 · Die Prestige-Matrix" data-joke="Die Matrix ist frei erfunden. Genau deshalb mit Beraterstimme präsentieren.">
+            <div class="frame"><div class="slide-content">
+              <div><div class="kicker">Vier-Felder-Modell</div><h2>Jeder Einkauf bewegt sich zwischen Angst und Aperol.</h2></div>
+              <div class="matrix">
+                <div class="axis-label top">viel Selbstbild</div><div class="axis-label bottom">viel Realismus</div><div class="axis-label left">Sparsamkeit</div><div class="axis-label right">Inszenierung</div>
+                <div class="bubble" style="--x:22%;--y:68%;--s:122px;--c:#ef3f36">Aldi</div>
+                <div class="bubble" style="--x:37%;--y:49%;--s:112px;--c:#1267c8">Lidl</div>
+                <div class="bubble" style="--x:63%;--y:42%;--s:132px;--c:#c41f30">Rewe</div>
+                <div class="bubble" style="--x:78%;--y:25%;--s:154px;--c:#13874a">Edeka</div>
+                <div class="bubble" style="--x:84%;--y:70%;--s:118px;--c:#7655c7">Bio</div>
+                <div class="bubble" style="--x:49%;--y:76%;--s:100px;--c:#875021">Netto</div>
+              </div>
+            </div></div>
           </section>
-          <section class="slide" data-slide data-title="Slide 4 · Kennzahlen-Oper" data-joke="Sag „Wagenwürde“ mit der Ruhe eines Menschen, der dazu gleich ein Whitepaper verschickt.">
-            <div class="frame"><img src="./slide-04-score-system.webp" alt="Vier-Faktor-Score für soziale Einkaufsgravitation" /></div>
+
+          <section class="slide" data-slide data-title="Slide 4 · Das Ranking" data-joke="Sag bei jedem Rang: 'überraschend stabil'. Auch wenn nichts stabil ist.">
+            <div class="frame"><div class="slide-content">
+              <div><div class="kicker">Prestige-Ranking 2026, gefühlt erhoben</div><h2>Wer kauft, sendet Signale.</h2></div>
+              <div class="ranking">
+                <div class="rank-row"><div class="rank-no">01</div><div><div class="rank-name">Edeka</div><div class="rank-note">lokaler Patriarch mit Käsetheke und Parkplatzanspruch</div></div><div class="score">94</div></div>
+                <div class="rank-row"><div class="rank-no">02</div><div><div class="rank-name">Bio-Markt</div><div class="rank-note">moralisch teuer, psychologisch sehr wirksam</div></div><div class="score">88</div></div>
+                <div class="rank-row"><div class="rank-no">03</div><div><div class="rank-name">Rewe</div><div class="rank-note">urbaner Mittelstand mit Sushi-Optimismus</div></div><div class="score">76</div></div>
+                <div class="rank-row"><div class="rank-no">04</div><div><div class="rank-name">Aldi</div><div class="rank-note">Effizienzreligion mit Aktionsware</div></div><div class="score">69</div></div>
+                <div class="rank-row"><div class="rank-no">05</div><div><div class="rank-name">Lidl</div><div class="rank-note">Aldi, aber mit mehr TikTok im Gang</div></div><div class="score">66</div></div>
+              </div>
+            </div></div>
           </section>
-          <section class="slide" data-slide data-title="Slide 5 · Soziologie mit Einkaufszettel" data-joke="Analysiere jetzt fremde Menschen anhand ihres Supermarkts. Genau dafür ist diese Folie viel zu schön gebaut.">
-            <div class="frame"><img src="./slide-05-archetypen.webp" alt="Einkaufstypen und Supermarkt-Archetypen" /></div>
+
+          <section class="slide" data-slide data-title="Slide 5 · Kundentypen" data-joke="Jetzt bitte Menschen anhand ihres Einkaufsverhaltens komplett unfair typisieren.">
+            <div class="frame"><div class="slide-content">
+              <div><div class="kicker">Segmentierung</div><h2>Vier Menschen. Vier Körbe. Keine Unschuld.</h2></div>
+              <div class="cards">
+                <article class="card"><div class="emoji">🧾</div><h3>Der Bon-Archivar</h3><p>Vergleicht Kilopreise seit 2009 und nennt es Achtsamkeit.</p></article>
+                <article class="card"><div class="emoji">🥬</div><h3>Die Bio-Souveräne</h3><p>Kauft Haferdrink wie andere Menschen Kunst sammeln.</p></article>
+                <article class="card"><div class="emoji">🍣</div><h3>Der Rewe-Optimist</h3><p>Glaubt, ein fertiger Wrap sei schon Meal Prep.</p></article>
+                <article class="card"><div class="emoji">🛠️</div><h3>Der Aktionswaren-Abenteurer</h3><p>Kam für Milch. Ging mit Kompressor und Kajak-Handschuhen.</p></article>
+              </div>
+            </div></div>
           </section>
-          <section class="slide" data-slide data-title="Slide 6 · Kartografie des Wollens" data-joke="Tu so, als wäre diese Karte ein sensibler Indikator für nationale Gemütslagen. Niemand wird es prüfen.">
-            <div class="frame"><img src="./slide-06-aspirationskarte.webp" alt="Emotionale Deutschlandkarte der Supermarkt-Aspiration" /></div>
+
+          <section class="slide" data-slide data-title="Slide 6 · Regalpsychologie" data-joke="Behaupte, die Regalhöhe sei ein soziales Kastensystem. Nicht lachen. Durchziehen.">
+            <div class="frame"><div class="slide-content split">
+              <div>
+                <div class="kicker">Regalanalyse</div>
+                <h2>Augenhöhe ist keine Lage. Sie ist Klassenkampf.</h2>
+                <p class="lead">Oben steht die Hoffnung, unten die Realität, in der Mitte die Marge.</p>
+              </div>
+              <div class="shelf" aria-hidden="true">
+                <div class="shelf-row"><i class="product" style="--c:#13874a;--h:62%"></i><i class="product" style="--c:#f6c744;--h:80%"></i><i class="product" style="--c:#ef3f36;--h:58%"></i><i class="product" style="--c:#1267c8;--h:76%"></i><i class="product" style="--c:#7655c7;--h:69%"></i><i class="product" style="--c:#ef7d26;--h:72%"></i><i class="product" style="--c:#13874a;--h:55%"></i></div>
+                <div class="shelf-row"><i class="product" style="--c:#ef3f36;--h:82%"></i><i class="product" style="--c:#1267c8;--h:65%"></i><i class="product" style="--c:#13874a;--h:74%"></i><i class="product" style="--c:#f6c744;--h:88%"></i><i class="product" style="--c:#ef7d26;--h:61%"></i><i class="product" style="--c:#7655c7;--h:77%"></i><i class="product" style="--c:#1267c8;--h:70%"></i></div>
+                <div class="shelf-row"><i class="product" style="--c:#875021;--h:45%"></i><i class="product" style="--c:#875021;--h:52%"></i><i class="product" style="--c:#ef3f36;--h:48%"></i><i class="product" style="--c:#1267c8;--h:50%"></i><i class="product" style="--c:#875021;--h:43%"></i><i class="product" style="--c:#ef7d26;--h:47%"></i><i class="product" style="--c:#875021;--h:55%"></i></div>
+                <div class="shelf-row"><i class="product" style="--c:#111;--h:30%"></i><i class="product" style="--c:#111;--h:34%"></i><i class="product" style="--c:#111;--h:28%"></i><i class="product" style="--c:#111;--h:36%"></i><i class="product" style="--c:#111;--h:32%"></i><i class="product" style="--c:#111;--h:31%"></i><i class="product" style="--c:#111;--h:37%"></i></div>
+              </div>
+            </div></div>
           </section>
-          <section class="slide" data-slide data-title="Slide 7 · Zertifizierter Unsinn" data-joke="Schließe mit maximaler Würde. Wer jetzt lacht, hat die Methodik nicht verstanden.">
-            <div class="frame"><img src="./slide-07-finale.webp" alt="Finale: Prestige entsteht beim Behaupten" /></div>
+
+          <section class="slide" data-slide data-title="Slide 7 · Deutschlandkarte" data-joke="Tu so, als könne man aus Mozzarella-Preisen direkt das Bruttoinlandsgefühl ableiten.">
+            <div class="frame"><div class="slide-content split">
+              <div>
+                <div class="kicker">Regionale Einkaufsmentalitäten</div>
+                <h2>Die Republik ist ein Regal.</h2>
+                <p class="lead">Norden: pragmatisch. Süden: qualitätsbewusst. Berlin: steht vorm Kühlregal und nennt es kuratiert.</p>
+              </div>
+              <div class="map" aria-hidden="true">
+                <span class="pin" style="--x:45%;--y:20%">Pfandruhe</span>
+                <span class="pin" style="--x:62%;--y:38%">Bio-Neid</span>
+                <span class="pin" style="--x:48%;--y:55%">Prospektkernland</span>
+                <span class="pin" style="--x:70%;--y:72%">Käsethekenmacht</span>
+                <span class="pin" style="--x:35%;--y:75%">Aldi-Souveränität</span>
+              </div>
+            </div></div>
+          </section>
+
+          <section class="slide" data-slide data-title="Slide 8 · Die Formel" data-joke="Formeln machen Unsinn sofort führungskräftetauglich. Das ist der ganze Trick.">
+            <div class="frame"><div class="slide-content">
+              <div><div class="kicker">Berechnung des Sozialprestiges</div><h2>Der Warenkorb-Score.</h2></div>
+              <div class="formula">
+                <div class="formula-card"><b>W</b><span>Wagenwürde: quietscht der Wagen oder du?</span></div>
+                <div class="formula-card"><b>K</b><span>Käsethekennähe: Meter bis zur Überlegenheit.</span></div>
+                <div class="formula-card"><b>B</b><span>Bio-Aura: sichtbare moralische Beleuchtung.</span></div>
+                <div class="formula-card"><b>P</b><span>Pfandkontrolle: Ruhe am Automaten.</span></div>
+                <div class="formula-card"><b>S</b><span>Snackquote: Scham dividiert durch Hunger.</span></div>
+              </div>
+              <div class="giant">Prestige = (W × K) + B + P² − S</div>
+            </div></div>
+          </section>
+
+          <section class="slide" data-slide data-title="Slide 9 · Handlungsempfehlungen" data-joke="Jetzt so tun, als wären diese Empfehlungen morgen im Vorstand entscheidungsreif.">
+            <div class="frame"><div class="slide-content">
+              <div><div class="kicker">Strategische Implikationen</div><h2>Drei Maßnahmen für mehr Einkaufswürde.</h2></div>
+              <div class="cards">
+                <article class="card"><div class="emoji">🧀</div><h3>Käsetheke ausbauen</h3><p>Mehr Glas, mehr Fachpersonal, mehr Gefühl von geerbtem Altbau.</p></article>
+                <article class="card"><div class="emoji">🛒</div><h3>Wagen entquietschen</h3><p>Jeder quietschende Wagen kostet 3,7 Prestige-Punkte pro Gang.</p></article>
+                <article class="card"><div class="emoji">🥐</div><h3>Backstation kuratieren</h3><p>Aus Croissant wird durch Beleuchtung sofort Lebensentwurf.</p></article>
+                <article class="card"><div class="emoji">📈</div><h3>Prospekt schämen lassen</h3><p>Rabatte ja, aber bitte aussehen lassen wie Investment Research.</p></article>
+              </div>
+            </div></div>
+          </section>
+
+          <section class="slide" data-slide data-title="Slide 10 · Finale" data-joke="Schließe groß. Als würdest du gleich einen Supermarkt in den DAX aufnehmen.">
+            <div class="frame"><div class="slide-content finale">
+              <div>
+                <div class="kicker">Management Summary</div>
+                <h2>Am Ende kaufen wir nicht Produkte. Wir kaufen eine Version von uns, die besser parkt.</h2>
+                <p class="lead">Der Prestige-Index ist inoffiziell, methodisch fragwürdig und emotional leider komplett plausibel.</p>
+                <span class="sticker">validiert durch Bauchgefühl</span>
+              </div>
+            </div></div>
           </section>
         </main>
       </section>
@@ -224,11 +320,11 @@
       <footer class="bottombar">
         <div class="commentary">
           <div class="commentary-label">Karaoke-Hinweis</div>
-          <div class="commentary-text" id="jokeText">Eröffne so, als hätte dich eine sehr ernste Stiftung für Einkaufswagen-Ethik eingeladen.</div>
+          <div class="commentary-text" id="jokeText">Starte maximal seriös. So, als hätte dich Edeka gerade in den Aufsichtsrat berufen.</div>
         </div>
         <div class="controls">
           <button type="button" class="btn" id="prevBtn">← Zurück</button>
-          <div class="slide-count" id="slideCount">1 / 7</div>
+          <div class="slide-count" id="slideCount">1 / 10</div>
           <button type="button" class="btn primary" id="nextBtn">Weiter →</button>
         </div>
       </footer>
@@ -239,9 +335,9 @@
       const params = new URLSearchParams(window.location.search);
       const requestedSlide = Number.parseInt(params.get('slide') || '1', 10);
       let currentIndex = Number.isFinite(requestedSlide) ? Math.max(0, Math.min(slides.length - 1, requestedSlide - 1)) : 0;
-      let touchStartX = null;
       let remainingMs = 60000;
       let timerId = null;
+      let touchStartX = null;
 
       const slideTitle = document.getElementById('slideTitle');
       const countdown = document.getElementById('countdown');
@@ -272,67 +368,38 @@
         remainingMs = 60000;
         if (timerId) clearInterval(timerId);
         timerId = setInterval(() => {
-          remainingMs -= 250;
-          if (remainingMs <= 0) {
-            remainingMs = 0;
-            updateStatus();
-            clearInterval(timerId);
-            timerId = null;
-            if (currentIndex < slides.length - 1) renderSlide(currentIndex + 1);
-            return;
-          }
+          remainingMs = Math.max(0, remainingMs - 250);
           updateStatus();
+          if (remainingMs === 0) { clearInterval(timerId); timerId = null; }
         }, 250);
       }
 
-      function renderSlide(nextIndex) {
-        currentIndex = Math.max(0, Math.min(nextIndex, slides.length - 1));
-        slides.forEach((slide, index) => {
-          const active = index === currentIndex;
-          slide.classList.toggle('active', active);
-          slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-        });
+      function showSlide(index) {
+        currentIndex = Math.max(0, Math.min(slides.length - 1, index));
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === currentIndex));
         const url = new URL(window.location.href);
         url.searchParams.set('slide', String(currentIndex + 1));
-        window.history.replaceState({}, '', url);
+        window.history.replaceState(null, '', url);
         resetTimer();
         updateStatus();
       }
 
-      function advance(delta) {
-        renderSlide(currentIndex + delta);
-      }
-
-      prevBtn.addEventListener('click', () => advance(-1));
-      nextBtn.addEventListener('click', () => advance(1));
-
-      window.addEventListener('touchstart', (event) => {
-        touchStartX = event.changedTouches[0]?.clientX ?? null;
-      }, { passive: true });
-
+      prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+      nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+      window.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); showSlide(currentIndex + 1); }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); showSlide(currentIndex - 1); }
+        if (event.key.toLowerCase() === 'r') { resetTimer(); updateStatus(); }
+      });
+      window.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0]?.clientX ?? null; }, { passive: true });
       window.addEventListener('touchend', (event) => {
         if (touchStartX === null) return;
-        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
-        const deltaX = touchEndX - touchStartX;
+        const dx = (event.changedTouches[0]?.clientX ?? touchStartX) - touchStartX;
+        if (Math.abs(dx) > 50) showSlide(currentIndex + (dx < 0 ? 1 : -1));
         touchStartX = null;
-        if (Math.abs(deltaX) < 48) return;
-        if (deltaX < 0) advance(1);
-        else advance(-1);
       }, { passive: true });
 
-      window.addEventListener('keydown', (event) => {
-        if (['ArrowRight', 'PageDown', ' ', 'Spacebar'].includes(event.key)) {
-          event.preventDefault();
-          advance(1);
-          return;
-        }
-        if (['ArrowLeft', 'PageUp'].includes(event.key)) {
-          event.preventDefault();
-          advance(-1);
-        }
-      });
-
-      renderSlide(currentIndex);
+      showSlide(currentIndex);
     </script>
   </body>
 </html>

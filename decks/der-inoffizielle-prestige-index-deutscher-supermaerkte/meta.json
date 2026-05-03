@@ -1,6 +1,58 @@
 {
   "title": "Der inoffizielle Prestige-Index deutscher Supermärkte",
-  "description": "Eine image-first Prestige-Studie über Aldi, Edeka, Bio-Aura und die stille Standespolitik des Einkaufswagens.",
-  "emoji": "🛒",
-  "language": "de"
+  "subtitle": "Eine komplett unseriöse Marktstudie mit viel zu seriöser Typografie.",
+  "format": "image-first",
+  "imageModel": "openai/gpt-image-2",
+  "slides": [
+    {
+      "title": "Vorstandsvorlage",
+      "image": "slide-01-prestige-beginnt-am-pfandautomaten.png",
+      "hint": "Starte maximal seriös. So, als hätte dich Edeka gerade in den Aufsichtsrat berufen."
+    },
+    {
+      "title": "Alle Marken, alle Vorurteile",
+      "image": "slide-02-markenlandschaft.png",
+      "hint": "Bitte jede Marke mit unnötiger Sicherheit einordnen. Du bist jetzt Supermarktsoziologe."
+    },
+    {
+      "title": "Die Prestige-Matrix",
+      "image": "slide-03-prestige-matrix.png",
+      "hint": "Die Matrix ist frei erfunden. Genau deshalb mit Beraterstimme präsentieren."
+    },
+    {
+      "title": "Das Ranking",
+      "image": "slide-04-ranking.png",
+      "hint": "Sag bei jedem Rang: überraschend stabil. Auch wenn nichts stabil ist."
+    },
+    {
+      "title": "Kundentypen",
+      "image": "slide-05-kundentypen.png",
+      "hint": "Jetzt bitte Menschen anhand ihres Einkaufsverhaltens komplett unfair typisieren."
+    },
+    {
+      "title": "Regalpsychologie",
+      "image": "slide-06-regalpsychologie.png",
+      "hint": "Behaupte, die Regalhöhe sei ein soziales Kastensystem. Nicht lachen. Durchziehen."
+    },
+    {
+      "title": "Regionale Einkaufsmentalitäten",
+      "image": "slide-07-regionale-mentalitaeten.png",
+      "hint": "Tu so, als könne man aus Mozzarella-Preisen direkt das Bruttoinlandsgefühl ableiten."
+    },
+    {
+      "title": "Der Warenkorb-Score",
+      "image": "slide-08-warenkorb-score.png",
+      "hint": "Formeln machen Unsinn sofort führungskräftetauglich. Das ist der ganze Trick."
+    },
+    {
+      "title": "Handlungsempfehlungen",
+      "image": "slide-09-handlungsempfehlungen.png",
+      "hint": "Jetzt so tun, als wären diese Empfehlungen morgen im Vorstand entscheidungsreif."
+    },
+    {
+      "title": "Finale",
+      "image": "slide-10-finale.png",
+      "hint": "Schließe groß. Als würdest du gleich einen Supermarkt in den DAX aufnehmen."
+    }
+  ]
 }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel-Frühstück als Charaktertest</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #18110a;
+        --panel: rgba(10, 12, 17, 0.78);
+        --line: rgba(255,255,255,0.12);
+        --text: #f7f4ee;
+        --muted: rgba(247, 244, 238, 0.72);
+        --accent: #ffcf5a;
+        --accent-2: #78d4ff;
+        --danger: #ff8f8f;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: radial-gradient(circle at top, color-mix(in srgb, var(--accent-2) 16%, transparent), transparent 28%), radial-gradient(circle at bottom left, color-mix(in srgb, var(--accent) 12%, transparent), transparent 24%), var(--bg); font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: var(--text); }
+      .shell { width: 100vw; height: 100vh; display: grid; grid-template-rows: auto 1fr auto; gap: 14px; padding: 14px; }
+      .topbar, .bottombar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(14px); }
+      .brand { display: grid; gap: 2px; }
+      .eyebrow { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 800; }
+      .title { font-size: 1rem; font-weight: 800; }
+      .subtitle { font-size: 0.82rem; color: var(--muted); }
+      .status-cluster { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+      .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,0.04); font-size: 0.82rem; font-weight: 700; }
+      .pill.timer { min-width: 92px; font-size: 0.95rem; color: var(--text); }
+      .pill.timer.danger { color: var(--danger); border-color: rgba(255,143,143,0.36); background: rgba(255,143,143,0.08); }
+      .stage { position: relative; overflow: hidden; border-radius: 28px; border: 1px solid rgba(255,255,255,0.08); background: #0b0d12; box-shadow: 0 30px 90px rgba(0,0,0,0.36); }
+      .deck { width: 100%; height: 100%; position: relative; overflow: hidden; }
+      .slide { position: absolute; inset: 0; display: none; place-items: center; padding: 20px; }
+      .slide.active { display: grid; }
+      .frame { width: min(100%, calc((100vh - 240px) * 16 / 9), 1920px); aspect-ratio: 16 / 9; overflow: hidden; border-radius: 24px; background: #111; box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45); }
+      .frame picture, .frame img { width: 100%; height: 100%; display: block; }
+      .frame img { object-fit: cover; }
+      .commentary { max-width: 560px; display: grid; gap: 6px; }
+      .commentary-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-2); font-weight: 800; }
+      .commentary-text { font-size: 0.88rem; line-height: 1.4; color: var(--muted); }
+      .controls { display: flex; align-items: center; gap: 10px; }
+      .btn { appearance: none; border: 1px solid var(--line); background: rgba(255,255,255,0.04); color: var(--text); min-height: 42px; padding: 10px 14px; border-radius: 999px; font: inherit; font-weight: 800; cursor: pointer; }
+      .btn:disabled { opacity: 0.4; cursor: default; }
+      .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #061018; border-color: transparent; }
+      .slide-count { min-width: 82px; text-align: center; font-size: 0.86rem; font-weight: 800; color: var(--muted); }
+      @media (max-width: 900px) {
+        .shell { padding: 10px; gap: 10px; }
+        .topbar, .bottombar { padding: 10px 12px; border-radius: 16px; }
+        .topbar { align-items: flex-start; flex-direction: column; }
+        .status-cluster { width: 100%; justify-content: space-between; }
+        .slide { padding: 12px; }
+        .frame { width: 100%; height: auto; }
+        .bottombar { flex-direction: column; align-items: stretch; }
+        .commentary { max-width: none; }
+        .controls { width: 100%; display: grid; grid-template-columns: 1fr auto 1fr; }
+        .btn { min-height: 52px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="eyebrow">PowerPoint Karaoke · Image-first Deck</div>
+          <div class="title">Hotel-Frühstück als Charaktertest</div>
+          <div class="subtitle">Alles Wichtige ist ins Bild gebacken. Du musst es nur noch würdevoll behaupten.</div>
+        </div>
+        <div class="status-cluster">
+          <div class="pill" id="slideTitle">Slide 1</div>
+          <div class="pill timer" id="countdown">01:00</div>
+        </div>
+      </header>
+      <section class="stage">
+        <main class="deck" aria-live="polite">
+          <section class="slide active" data-slide data-title="Slide 1 · PERSÖNLICHKEITSDIAGNOSTIK" data-joke="Tu so, als hättest du eine Langzeitstudie zwischen Saftspender und Brotkorb durchgeführt.">
+            <div class="frame"><picture><source srcset="./slide-01-cover.webp" type="image/webp" /><img src="./slide-01-cover.png" alt="Fertige Bildfolie: Hotel-Frühstück als Charaktertest" /></picture></div>
+          </section>
+          <section class="slide" data-slide data-title="Slide 2 · PHASE 1" data-joke="Sag „Obst“ so, als wäre es ein moralischer Vorwurf mit Ballaststoffen.">
+            <div class="frame"><picture><source srcset="./slide-02-erster-gang.webp" type="image/webp" /><img src="./slide-02-erster-gang.png" alt="Fertige Bildfolie: Der erste Gang verrät alles" /></picture></div>
+          </section>
+          <section class="slide" data-slide data-title="Slide 3 · BUFFET-PSYCHOLOGIE" data-joke="Jede Buffetfigur bitte wie eine offiziell anerkannte Persönlichkeitsskala verkaufen.">
+            <div class="frame"><picture><source srcset="./slide-03-buffettypen.webp" type="image/webp" /><img src="./slide-03-buffettypen.png" alt="Fertige Bildfolie: Vier Typen vor dem Wärmebehälter" /></picture></div>
+          </section>
+          <section class="slide" data-slide data-title="Slide 4 · SOZIALE BELASTUNGSPROBE" data-joke="Hier wird es ernst: Die Kaffeemaschine ist dein Harvard-Campus mit Tropfschale.">
+            <div class="frame"><picture><source srcset="./slide-04-kaffeemaschine.webp" type="image/webp" /><img src="./slide-04-kaffeemaschine.png" alt="Fertige Bildfolie: Die Kaffeemaschine ist das Assessment Center" /></picture></div>
+          </section>
+          <section class="slide" data-slide data-title="Slide 5 · MORALISCHE MIKROENTSCHEIDUNGEN" data-joke="Bitte nicht lachen. Mini-Marmelade ist in diesem Modell ein harter Governance-Faktor.">
+            <div class="frame"><picture><source srcset="./slide-05-miniportionen.webp" type="image/webp" /><img src="./slide-05-miniportionen.png" alt="Fertige Bildfolie: Mini-Marmelade ist kein Eigentum" /></picture></div>
+          </section>
+          <section class="slide" data-slide data-title="Slide 6 · RISIKOMANAGEMENT" data-joke="Sprich über Eier, als ginge es um Derivatehandel mit Schalenbruchrisiko.">
+            <div class="frame"><picture><source srcset="./slide-06-eierkocher.webp" type="image/webp" /><img src="./slide-06-eierkocher.png" alt="Fertige Bildfolie: Der Eierkocher trennt Mut von Hybris" /></picture></div>
+          </section>
+          <section class="slide" data-slide data-title="Slide 7 · FAZIT" data-joke="Schließe mit der Autorität eines Menschen, der heimlich auch ein Croissant eingepackt hat.">
+            <div class="frame"><picture><source srcset="./slide-07-finale.webp" type="image/webp" /><img src="./slide-07-finale.png" alt="Fertige Bildfolie: Am Ende frühstückt niemand unbeobachtet" /></picture></div>
+          </section>
+        </main>
+      </section>
+      <footer class="bottombar">
+        <div class="commentary">
+          <div class="commentary-label">Karaoke-Hinweis</div>
+          <div class="commentary-text" id="jokeText">Tu so, als hättest du eine Langzeitstudie zwischen Saftspender und Brotkorb durchgeführt.</div>
+        </div>
+        <div class="controls">
+          <button type="button" class="btn" id="prevBtn">← Zurück</button>
+          <div class="slide-count" id="slideCount">1 / 7</div>
+          <button type="button" class="btn primary" id="nextBtn">Weiter →</button>
+        </div>
+      </footer>
+    </main>
+    <script>
+      const slides = Array.from(document.querySelectorAll('[data-slide]'));
+      const params = new URLSearchParams(window.location.search);
+      const requestedSlide = Number.parseInt(params.get('slide') || '1', 10);
+      let currentIndex = Number.isFinite(requestedSlide) ? Math.max(0, Math.min(slides.length - 1, requestedSlide - 1)) : 0;
+      let touchStartX = null;
+      let remainingMs = 60000;
+      let timerId = null;
+      const slideTitle = document.getElementById('slideTitle');
+      const countdown = document.getElementById('countdown');
+      const jokeText = document.getElementById('jokeText');
+      const slideCount = document.getElementById('slideCount');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      function formatMs(ms) {
+        const totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+        return String(Math.floor(totalSeconds / 60)).padStart(2, '0') + ':' + String(totalSeconds % 60).padStart(2, '0');
+      }
+      function updateStatus() {
+        const slide = slides[currentIndex];
+        slideTitle.textContent = slide.dataset.title || 'Slide ' + (currentIndex + 1);
+        jokeText.textContent = slide.dataset.joke || '';
+        slideCount.textContent = (currentIndex + 1) + ' / ' + slides.length;
+        countdown.textContent = formatMs(remainingMs);
+        countdown.classList.toggle('danger', remainingMs <= 15000);
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === slides.length - 1;
+      }
+      function resetTimer() {
+        remainingMs = 60000;
+        if (timerId) clearInterval(timerId);
+        timerId = setInterval(() => {
+          remainingMs -= 250;
+          if (remainingMs <= 0) {
+            remainingMs = 0;
+            updateStatus();
+            clearInterval(timerId);
+            timerId = null;
+            if (currentIndex < slides.length - 1) renderSlide(currentIndex + 1);
+            return;
+          }
+          updateStatus();
+        }, 250);
+      }
+      function renderSlide(nextIndex) {
+        currentIndex = Math.max(0, Math.min(nextIndex, slides.length - 1));
+        slides.forEach((slide, index) => {
+          const active = index === currentIndex;
+          slide.classList.toggle('active', active);
+          slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+        });
+        const url = new URL(window.location.href);
+        url.searchParams.set('slide', String(currentIndex + 1));
+        window.history.replaceState({}, '', url);
+        resetTimer();
+        updateStatus();
+      }
+      function advance(delta) { renderSlide(currentIndex + delta); }
+      prevBtn.addEventListener('click', () => advance(-1));
+      nextBtn.addEventListener('click', () => advance(1));
+      window.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0]?.clientX ?? null; }, { passive: true });
+      window.addEventListener('touchend', (event) => {
+        if (touchStartX === null) return;
+        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+        const deltaX = touchEndX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(deltaX) < 48) return;
+        advance(deltaX < 0 ? 1 : -1);
+      }, { passive: true });
+      window.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'PageDown', ' ', 'Spacebar'].includes(event.key)) { event.preventDefault(); advance(1); return; }
+        if (['ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); advance(-1); return; }
+        if (event.key === 'Home') { event.preventDefault(); renderSlide(0); return; }
+        if (event.key === 'End') { event.preventDefault(); renderSlide(slides.length - 1); }
+      });
+      renderSlide(currentIndex);
+    </script>
+  </body>
+</html>

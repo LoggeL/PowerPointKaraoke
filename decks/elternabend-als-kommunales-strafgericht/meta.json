@@ -1,0 +1,60 @@
+{
+  "title": "Elternabend als kommunales Strafgericht",
+  "description": "Zehn image-first Karaoke-Folien über Elternabend, Kuchenlisten, WhatsApp-Gruppen und kommunale Mikro-Eskalation. Edgy, deutsch, absurd-seriös.",
+  "emoji": "🧃",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "cinematic German municipal school-night satire with baked slide text",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Elternabend: Das kommunale Strafgericht",
+      "hint": "Eröffne mit der Würde eines Bürgermeisters, der weiß, dass gleich Apfelschorle eskaliert."
+    },
+    {
+      "image": "slide-02-agenda.png",
+      "title": "Agenda: Begrüßung, Kopfläuse, Machtübernahme",
+      "hint": "Lies die Agenda so, als wäre Punkt 3 völlig normal und haushaltsrechtlich geprüft."
+    },
+    {
+      "image": "slide-03-sitzordnung.png",
+      "title": "Sitzordnung als Kriegsgebiet",
+      "hint": "Erklär die Fensterfront bitte wie eine geostrategische Ressource."
+    },
+    {
+      "image": "slide-04-elternbeirat.png",
+      "title": "Elternbeirat: Amt ohne Macht, E-Mails ohne Ende",
+      "hint": "Kling wie jemand, der Demokratie verteidigt, aber nur noch Reply-all sieht."
+    },
+    {
+      "image": "slide-05-kuchenliste.png",
+      "title": "Kuchenliste als Gesellschaftstest",
+      "hint": "Mach aus Muffins eine Frage der Zivilisation. Keine Ironie zeigen."
+    },
+    {
+      "image": "slide-06-whatsapp.png",
+      "title": "WhatsApp-Gruppe als Kriseninkubator",
+      "hint": "Sag „nur kurz zur Info“ mit der Vorahnung eines Mannes, der Sirenen hört."
+    },
+    {
+      "image": "slide-07-kind.png",
+      "title": "Hochbegabt vs. sehr präsent",
+      "hint": "Hier maximal diplomatisch werden. Also komplett gefährlich."
+    },
+    {
+      "image": "slide-08-protokoll.png",
+      "title": "Protokoll oder es ist nie passiert",
+      "hint": "Verkauf den Kugelschreiber als letzte Säule des Rechtsstaats."
+    },
+    {
+      "image": "slide-09-eskalation.png",
+      "title": "Eskalationsleiter",
+      "hint": "Steigere dich pro Listenpunkt leicht rein, als würdest du live die Kontrolle verlieren."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Es endet nur in der Gruppe",
+      "hint": "Finale schön düster: Der Elternabend ist vorbei, aber Telegram hat gerade angefangen."
+    }
+  ]
+}

@@ -81,69 +81,23 @@
         .btn { min-height: 52px; }
       }
 
-      /* Minimal presenter chrome: let generated slides own the screen. */
+
+
+      /* Ultra-minimal presenter chrome: the slide is the product. */
       .shell {
         position: relative;
         display: block;
         width: 100vw;
         height: 100vh;
         padding: 0;
-        background: #050609;
-      }
-      .topbar,
-      .bottombar {
-        position: fixed;
-        z-index: 20;
-        border-radius: 14px;
-        border-color: rgba(255,255,255,0.10);
-        background: rgba(5, 6, 9, 0.54);
-        box-shadow: 0 18px 48px rgba(0,0,0,0.28);
-        backdrop-filter: blur(18px) saturate(1.1);
-      }
-      .topbar {
-        top: 12px;
-        left: 12px;
-        right: 12px;
-        min-height: 0;
-        padding: 8px 10px;
-      }
-      .bottombar {
-        left: 50%;
-        bottom: 12px;
-        width: min(960px, calc(100vw - 24px));
-        transform: translateX(-50%);
-        padding: 8px 10px;
-      }
-      .subtitle,
-      .eyebrow,
-      .commentary-label {
-        display: none;
-      }
-      .title,
-      .deck-title {
-        max-width: min(52vw, 760px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: 0.86rem;
-        letter-spacing: -0.01em;
-      }
-      .pill {
-        min-height: 30px;
-        padding: 5px 9px;
-        background: rgba(255,255,255,0.06);
-        font-size: 0.74rem;
-      }
-      .pill.timer {
-        min-width: 70px;
-        font-size: 0.82rem;
+        background: #030406;
       }
       .stage {
         position: absolute;
         inset: 0;
         border: 0;
         border-radius: 0;
-        background: radial-gradient(circle at 50% 8%, rgba(255,255,255,0.05), transparent 32%), #050609;
+        background: #030406;
         box-shadow: none;
       }
       .deck {
@@ -152,92 +106,159 @@
       }
       .slide {
         inset: 0;
-        padding: 16px;
+        padding: 10px;
         min-width: 0;
         min-height: 0;
       }
       .frame {
-        width: min(calc(100vw - 32px), calc((100vh - 32px) * 16 / 9));
-        max-height: calc(100vh - 32px);
-        border-radius: 18px;
+        width: min(calc(100vw - 20px), calc((100vh - 20px) * 16 / 9), 1920px);
+        max-height: calc(100vh - 20px);
+        border-radius: 10px;
+        box-shadow: 0 18px 70px rgba(0,0,0,0.42);
       }
       .slide img {
         display: block;
-        max-width: calc(100vw - 32px);
-        max-height: calc(100vh - 32px);
-        border-radius: 18px;
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        border-radius: 10px;
       }
-      .commentary {
-        max-width: 58vw;
+      .topbar,
+      .bottombar {
+        position: fixed;
+        z-index: 20;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(3, 4, 6, 0.28);
+        box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+        backdrop-filter: blur(16px) saturate(1.05);
+        opacity: 0.18;
+        transition: opacity 160ms ease, background 160ms ease, transform 160ms ease;
       }
+      .topbar:hover,
+      .topbar:focus-within,
+      .bottombar:hover,
+      .bottombar:focus-within,
+      body.show-ui .topbar,
+      body.show-ui .bottombar {
+        opacity: 1;
+        background: rgba(3, 4, 6, 0.62);
+      }
+      .topbar {
+        top: 10px;
+        left: 10px;
+        right: auto;
+        max-width: min(520px, calc(100vw - 20px));
+        min-height: 0;
+        padding: 6px 8px;
+        border-radius: 999px;
+      }
+      .bottombar {
+        left: 50%;
+        bottom: 10px;
+        width: auto;
+        max-width: calc(100vw - 20px);
+        transform: translateX(-50%) translateY(0);
+        padding: 6px 8px;
+        border-radius: 999px;
+      }
+      .brand {
+        min-width: 0;
+      }
+      .eyebrow,
+      .subtitle,
+      .commentary,
+      .commentary-label,
       .commentary-text {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
+        display: none !important;
+      }
+      .title,
+      .deck-title {
+        max-width: min(360px, 42vw);
         overflow: hidden;
-        font-size: 0.78rem;
-        line-height: 1.25;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.72rem;
+        line-height: 1;
+        color: rgba(255,255,255,0.78);
+      }
+      .status-cluster,
+      .status {
+        gap: 6px;
+      }
+      .pill {
+        min-height: 24px;
+        padding: 3px 7px;
+        border-color: rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.045);
+        font-size: 0.66rem;
+        color: rgba(255,255,255,0.72);
+      }
+      .pill.timer {
+        min-width: 52px;
+        font-size: 0.7rem;
       }
       .controls {
-        gap: 7px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
       }
       .btn {
-        min-height: 34px;
-        padding: 7px 10px;
-        border-radius: 10px;
-        background: rgba(255,255,255,0.06);
-        font-size: 0.8rem;
+        min-height: 28px;
+        padding: 5px 8px;
+        border-radius: 999px;
+        border-color: rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.045);
+        color: rgba(255,255,255,0.76);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+      .btn.primary {
+        background: rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.9);
+        border-color: rgba(255,255,255,0.12);
       }
       .slide-count {
-        min-width: 58px;
-        font-size: 0.76rem;
+        min-width: 44px;
+        font-size: 0.68rem;
+        color: rgba(255,255,255,0.62);
       }
       @media (max-width: 900px) {
+        .slide {
+          padding: 6px;
+        }
+        .frame,
+        .slide img {
+          max-width: calc(100vw - 12px);
+          max-height: calc(100vh - 12px);
+          border-radius: 8px;
+        }
         .topbar {
-          left: 8px;
-          right: 8px;
-          top: 8px;
+          top: 6px;
+          left: 6px;
+          max-width: calc(100vw - 12px);
           flex-direction: row;
           align-items: center;
         }
         .bottombar {
-          bottom: 8px;
-          width: calc(100vw - 16px);
+          bottom: 6px;
+          max-width: calc(100vw - 12px);
           flex-direction: row;
           align-items: center;
         }
         .title,
         .deck-title {
-          max-width: 48vw;
-          font-size: 0.78rem;
+          max-width: 42vw;
+          font-size: 0.68rem;
         }
         .status-cluster,
         .status {
           width: auto;
           justify-content: flex-end;
         }
-        .slide {
-          padding: 8px;
-        }
-        .frame,
-        .slide img {
-          max-width: calc(100vw - 16px);
-          max-height: calc(100vh - 16px);
-          border-radius: 12px;
-        }
-        .commentary {
-          display: none;
-        }
         .controls {
-          margin-left: auto;
-          display: flex;
+          margin-left: 0;
           width: auto;
         }
-        .btn {
-          min-height: 34px;
-        }
       }
-
     </style>
   </head>
   <body>
@@ -290,6 +311,7 @@
       let touchStartX = null;
       let remainingMs = 60000;
       let timerId = null;
+      let uiRevealTimer = null;
 
       const slideTitle = document.getElementById('slideTitle');
       const countdown = document.getElementById('countdown');
@@ -305,6 +327,13 @@
         return `${minutes}:${seconds}`;
       }
 
+      function revealUiBriefly() {
+        document.body.classList.add('show-ui');
+        if (uiRevealTimer) clearTimeout(uiRevealTimer);
+        uiRevealTimer = setTimeout(() => document.body.classList.remove('show-ui'), 1400);
+      }
+      window.addEventListener('mousemove', revealUiBriefly, { passive: true });
+      window.addEventListener('keydown', revealUiBriefly);
       function updateStatus() {
         const slide = slides[currentIndex];
         slideTitle.textContent = slide.dataset.title || `Slide ${currentIndex + 1}`;

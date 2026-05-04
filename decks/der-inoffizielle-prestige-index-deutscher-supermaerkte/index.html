@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
     <title>Der inoffizielle Prestige-Index deutscher Supermärkte</title>
     <style>
       :root {
@@ -168,6 +169,37 @@
         padding: 0;
         border-radius: 0;
       }
+      .home-link {
+        position: fixed;
+        z-index: 22;
+        top: 12px;
+        right: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        min-height: 28px;
+        padding: 5px 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 999px;
+        background: rgba(3, 4, 6, 0.68);
+        box-shadow: 0 14px 44px rgba(0,0,0,0.34);
+        color: rgba(255,255,255,0.78);
+        font-size: 0.72rem;
+        font-weight: 750;
+        line-height: 1;
+        text-decoration: none;
+        backdrop-filter: blur(18px) saturate(1.08);
+        -webkit-backdrop-filter: blur(18px) saturate(1.08);
+        opacity: 0.34;
+        transition: opacity 140ms ease, transform 140ms ease, color 140ms ease;
+      }
+      .home-link:hover,
+      .home-link:focus-visible,
+      body.show-ui .home-link {
+        opacity: 1;
+        color: rgba(255,255,255,0.94);
+        transform: translateY(0);
+      }
       body.show-ui .bottombar,
       .bottombar:hover,
       .bottombar:focus-within {
@@ -255,6 +287,13 @@
           flex-direction: row;
           align-items: center;
         }
+        .home-link {
+          top: 8px;
+          right: 8px;
+          min-height: 28px;
+          padding: 5px 9px;
+          font-size: 0.68rem;
+        }
         .bottombar {
           bottom: 8px;
           max-width: calc(100vw - 16px);
@@ -279,6 +318,7 @@
     </style>
   </head>
   <body>
+    <a class="home-link" href="../../index.html" aria-label="Zur Deck-Galerie">← Index</a>
     <main class="shell">
       <header class="topbar">
         <div class="brand">

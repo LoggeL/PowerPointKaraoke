@@ -1,6 +1,61 @@
 {
-  "title": "Als Frau im Mittelalter: Image First",
-  "description": "Vier bildbasierte Karaoke-Folien über mittelalterliche Überlebensstrategien, soziale Risikosteuerung und verdächtig nützliches Kräuterwissen.",
+  "title": "Als Frau im Mittelalter: 10 Überlebenstipps",
+  "description": "Zehn image-first Karaoke-Folien über mittelalterliches Überleben als absurdes Risikomanagement im Patriarchats-Sumpf.",
   "emoji": "🏰",
-  "language": "de"
+  "language": "de",
+  "source": "p1",
+  "model": "openai/gpt-image-2",
+  "style": "edgy medieval editorial satire, baked slide text, thin presenter shell",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Als Frau im Mittelalter",
+      "hint": "Verkauf das wie eine Keynote aus einem Kloster, das gerade VC-Funding entdeckt hat."
+    },
+    {
+      "image": "slide-02-ehemann.png",
+      "title": "Heirat ist Risikomanagement mit Ring",
+      "hint": "Sag „M&A“ mit so viel Ernst, dass der Bräutigam kurz wie ein Excel-Sheet wirkt."
+    },
+    {
+      "image": "slide-03-kraeuter.png",
+      "title": "Kräuterwissen: nützlich bis verdächtig",
+      "hint": "Tu so, als wäre Petersilie ein reguliertes Hochrisiko-Asset."
+    },
+    {
+      "image": "slide-04-kirche.png",
+      "title": "Compliance-Strategie 1327",
+      "hint": "Hier bitte maximal brav klingen, während du innerlich schon die Firewall umgehst."
+    },
+    {
+      "image": "slide-05-dorfchat.png",
+      "title": "Das Dorf ist WhatsApp mit Mistgabeln",
+      "hint": "Erklär den Gossip-Graphen wie eine Social-Media-Agentur mit zu viel Budget."
+    },
+    {
+      "image": "slide-06-unsichtbar.png",
+      "title": "Unsichtbarkeit schlägt Argumente",
+      "hint": "Mach daraus eine harte Management-Lektion: Wer nicht im Meeting ist, kann nicht geopfert werden."
+    },
+    {
+      "image": "slide-07-bildung.png",
+      "title": "Lesen können ist OP",
+      "hint": "Sag „Patch Notes“ so, als hätte Hildegard von Bingen gerade Balancing-Probleme gemeldet."
+    },
+    {
+      "image": "slide-08-diplomatie.png",
+      "title": "Nicken, lächeln, Ausgang merken",
+      "hint": "Kling freundlich, aber mit der Energie einer Person, die jeden Fluchtweg schon ausgemessen hat."
+    },
+    {
+      "image": "slide-09-kloster.png",
+      "title": "Kloster ist LinkedIn mit Kerzen",
+      "hint": "Verkauf das Kloster bitte als Premium-Coworking-Space mit Schweigepflicht."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Unterschätzt werden, bis es zu spät ist",
+      "hint": "Finale mit Pathos: als wäre diese Folie gleichzeitig TED Talk und Fluchtplan."
+    }
+  ]
 }

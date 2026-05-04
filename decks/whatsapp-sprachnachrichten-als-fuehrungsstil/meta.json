@@ -1,6 +1,60 @@
 {
   "title": "WhatsApp-Sprachnachrichten als Führungsstil",
-  "description": "Ein image-first Karaoke-Deck über akustische Macht, 3:47-Minuten-Memos und Führung ohne Agenda.",
+  "description": "Zehn image-first Karaoke-Folien über akustische Macht, Audio-Kaskaden, Antwortdruck und toxische Voice-Note-Leadership. Neu generiert im dunklen Corporate-Satire-Stil.",
   "emoji": "🎙️",
-  "language": "de"
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark corporate satire, green waveform leadership mythology, baked slide text",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "WhatsApp-Sprachnachrichten als Führungsstil",
+      "hint": "Eröffne wie ein Leadership-Guru, der gerade entdeckt hat, dass Rückfragen optional sind."
+    },
+    {
+      "image": "slide-02-definition.png",
+      "title": "Meeting ohne Widerstand",
+      "hint": "Sag „asynchron“ so, als wäre es kein Tool, sondern ein Machtinstrument."
+    },
+    {
+      "image": "slide-03-autoritaet.png",
+      "title": "Pause als Autorität",
+      "hint": "Lass nach dem Titel selbst kurz eine unangenehme Pause. Kunst muss wehtun."
+    },
+    {
+      "image": "slide-04-agenda.png",
+      "title": "Keine Agenda, nur Stimmung",
+      "hint": "Verkauf Stimmung bitte als belastbare Führungsmethode mit Quartalswirkung."
+    },
+    {
+      "image": "slide-05-laengenmatrix.png",
+      "title": "Die Längen-Matrix",
+      "hint": "Hier schön wissenschaftlich werden. 6:32 Minuten sind natürlich keine Nachricht mehr, sondern Diagnose."
+    },
+    {
+      "image": "slide-06-antwortdruck.png",
+      "title": "Antwortdruck",
+      "hint": "Sprich „hör mal kurz rein“ wie eine freundliche Drohung aus dem mittleren Management."
+    },
+    {
+      "image": "slide-07-audiokaskade.png",
+      "title": "Die Audio-Kaskade",
+      "hint": "Zeig, wie aus einem Nuscheln eine Roadmap wird. Ganz normaler Konzernprozess."
+    },
+    {
+      "image": "slide-08-krisenmodus.png",
+      "title": "Krisenmodus",
+      "hint": "Bei „kein Stress“ bitte so nicken, als würdest du innerlich schon Brandschutzübungen starten."
+    },
+    {
+      "image": "slide-09-nachfolge.png",
+      "title": "Nachfolgeplanung",
+      "hint": "Mach aus Transkription einen Initiationsritus. Willkommen im Leadership-Kult."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Wer spricht, regiert",
+      "hint": "Finale mit maximaler Ernsthaftigkeit: Die Diktatur des Play-Buttons ist real."
+    }
+  ]
 }

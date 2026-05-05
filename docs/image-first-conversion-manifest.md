@@ -33,10 +33,12 @@ Goal: migrate legacy `p*/index.html` decks into `decks/<slug>/` image-first deck
 | `p23` | `decks/kickboxen-und-gefuehle-ein-forschungsdesaster/` | Backlog | Rewrite sexual disorder premise into sports masculinity/emotional avoidance satire, non-explicit. |
 | `p24` | `decks/creepshow-theater-eskalationshandbuch/` | Backlog | Dark theater-production satire; non-graphic, no exploitation. |
 | `p25` | `decks/baustellenorakel-karrierepfad/` | Backlog | Absurd urban prophecy/career satire; safe. |
-| `p26` | `decks/vw-bus-vs-wohnwagen-image-first/` | Converted | Existing image-first deck, but only 4 slides; consider later expansion if user wants full 10. |
+| `p26` | `decks/vw-bus-vs-wohnwagen-image-first/` | Converted + redone | Expanded/reworked to a full 10-slide GPT Image 2 camping identity satire deck. |
 
 ## Batch log
 
 - 2026-05-04: Converted batch 1: `p2` → `streckbank-als-design-thinking-tool`, `p3` → `schnelles-geld-im-mittelalter-grift-guide`, `p10` → `moderne-nervmethoden-spassedition`. `npm run check` passed.
 
 - 2026-05-04: Converted batch 2: `p11` → `spa-in-der-hoelle-businessplan`, `p12` → `buehnen-boesewicht-fuer-fortgeschrittene`, `p13` → `erbstreit-als-familien-startup`. `npm run check` passed.
+
+- 2026-05-05: Redid visible old gallery decks in the new 10-slide GPT Image 2 style: `hotel-fruehstueck-als-charaktertest`, `linkedin-posts-als-moderne-hofberichterstattung`, `der-inoffizielle-prestige-index-deutscher-supermaerkte`, and expanded `vw-bus-vs-wohnwagen-image-first` from 4 to 10 slides. `npm run check` passed.

@@ -1,60 +1,61 @@
 {
   "title": "Hotel-Frühstück als Charaktertest",
-  "description": "Zehn image-first Karaoke-Folien über Buffetstrategie, Kaffeemaschinenpanik und die moralische Prüfung zwischen Rührei und Mini-Croissant.",
+  "description": "Zehn GPT-Image-2-Folien über Buffetmoral, Croissant-Ethik und die Wahrheit am Eierkocher – dunkel, premium und maximal unseriös.",
   "emoji": "🥐",
   "language": "de",
   "model": "openai/gpt-image-2",
-  "style": "dark corporate satire, hotel breakfast character assessment, baked slide text",
+  "style": "dark edgy premium editorial satire with baked German slide text",
+  "source": "visible-old",
   "slides": [
     {
       "image": "slide-01-cover.png",
-      "title": "HOTEL-FRÜHSTÜCK ALS CHARAKTERTEST",
-      "hint": "Eröffne wie ein Psychologe, der seine Studie am Warmhaltebehälter verloren hat."
+      "title": "Hotel-Frühstück als Charaktertest",
+      "hint": "Eröffne wie eine Marktstudie über Croissant-Ethik. Das Buffet ist dein Tatort."
     },
     {
       "image": "slide-02-erster-gang.png",
-      "title": "DER ERSTE GANG",
-      "hint": "Sprich langsam. Alle im Raum sollen sich an ihren schlimmsten Buffetmoment erinnern."
+      "title": "Der erste Gang",
+      "hint": "Analysiere den ersten Teller wie ein forensisches Persönlichkeitsgutachten."
     },
     {
       "image": "slide-03-buffettypen.png",
-      "title": "BUFFET-ARCHETYPEN",
-      "hint": "Stell sie vor wie Verdächtige in einem sehr deutschen Krimi."
+      "title": "Buffettypen im Feld",
+      "hint": "Ordne Menschen unfair, aber mit wissenschaftlicher Ruhe, ihren Buffetrollen zu."
     },
     {
       "image": "slide-04-kaffeemaschine.png",
-      "title": "KAFFEEMASCHINE = ENDGEGNER",
-      "hint": "Mach aus Cappuccino-Auswahl eine Hochrisikosituation."
+      "title": "Die Kaffeemaschine",
+      "hint": "Mach aus dem Touchscreen-Drama einen Zivilisationstest unter Koffeindruck."
     },
     {
       "image": "slide-05-miniportionen.png",
-      "title": "MINIPORTIONEN-ÖKONOMIE",
-      "hint": "Hier bitte wie ein Ökonom über sehr kleine Verpackungen dozieren."
+      "title": "Miniportionen",
+      "hint": "Verkauf Marmeladendiebstahl als stille Volkswirtschaft der Hotellerie."
     },
     {
-      "image": "slide-06-eierkocher.png",
-      "title": "DER EIERKOCHER",
-      "hint": "Behandle den Eierkocher wie einen UNO-Sicherheitsrat mit Dampf."
+      "image": "slide-06-eierstation.png",
+      "title": "Die Eierstation",
+      "hint": "Hier bitte mit der Ernsthaftigkeit eines Atomkraftwerks über weiche Eier sprechen."
     },
     {
-      "image": "slide-07-tischwahl.png",
-      "title": "TISCHWAHL ALS STATUS",
-      "hint": "Erklär Sitzplätze wie Immobilienlagen mit Frühstücksgeruch."
+      "image": "slide-07-brotkorb.png",
+      "title": "Der Brotkorb",
+      "hint": "Erklär Brötchen als Klassensystem. Je trockener, desto überzeugter."
     },
     {
-      "image": "slide-08-hygienetheater.png",
-      "title": "HYGIENE-THEATER",
-      "hint": "Ganz ernst bleiben. Die Brötchenzange ist der dünne Lack der Zivilisation."
+      "image": "slide-08-sitzplatzpolitik.png",
+      "title": "Sitzplatzpolitik",
+      "hint": "Mach aus Fensterplätzen geopolitische Einflusszonen mit Frühstücksblick."
     },
     {
-      "image": "slide-09-checkoutdruck.png",
-      "title": "CHECK-OUT-DRUCK",
-      "hint": "Steigere die Panik wie bei einem Thriller, aber es geht nur um Saft."
+      "image": "slide-09-checkout.png",
+      "title": "Der Checkout-Beweis",
+      "hint": "Die Banane in der Tasche ist kein Snack, sondern ein Bekenntnis."
     },
     {
       "image": "slide-10-finale.png",
-      "title": "FAZIT",
-      "hint": "Finale wie ein Gerichtsurteil: Niemand verlässt das Buffet unschuldig."
+      "title": "Finale",
+      "hint": "Schließe feierlich: Das Buffet richtet nicht, es dokumentiert."
     }
   ]
 }

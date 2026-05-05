@@ -1,60 +1,61 @@
 {
   "title": "Der inoffizielle Prestige-Index deutscher Supermärkte",
-  "description": "Zehn image-first Karaoke-Folien über Pfandautomaten, Regalpsychologie und den sozialen Klassenkampf zwischen Discounter und Feinkost-Fiktion.",
+  "description": "Zehn GPT-Image-2-Folien über Pfandautomaten, Regalpsychologie und deutsche Einkaufsidentität als unseriöse Premium-Marktstudie.",
   "emoji": "🛒",
   "language": "de",
   "model": "openai/gpt-image-2",
-  "style": "dark corporate satire, German supermarket prestige sociology, baked slide text",
+  "style": "dark edgy premium editorial satire with baked German slide text",
+  "source": "visible-old",
   "slides": [
     {
-      "image": "slide-01-prestige-beginnt-am-pfandautomaten.png",
-      "title": "DER INOFFIZIELLE PRESTIGE-INDEX DEUTSCHER SUPERMÄRKTE",
-      "hint": "Eröffne wie ein McKinsey-Soziologe, der gerade zwischen Bio-Gurke und Scham promoviert."
+      "image": "slide-01-cover.png",
+      "title": "Der inoffizielle Prestige-Index deutscher Supermärkte",
+      "hint": "Starte maximal seriös, als hinge der DAX ab morgen an der Olivenbar."
     },
     {
-      "image": "slide-02-markenlandschaft.png",
-      "title": "DIE MARKENLANDSCHAFT",
-      "hint": "Lies die Liste wie eine Adelsrangfolge, nicht wie Einkaufsoptionen."
+      "image": "slide-02-pfand.png",
+      "title": "Prestige beginnt am Pfandautomaten",
+      "hint": "Pfand ist hier kein Recycling, sondern sozialer Eignungstest."
     },
     {
-      "image": "slide-03-prestige-matrix.png",
-      "title": "PRESTIGE-MATRIX",
-      "hint": "Mach daraus bitte ein völlig legitimes Beratungsframework."
+      "image": "slide-03-matrix.png",
+      "title": "Die Prestige-Matrix",
+      "hint": "Beraterstimme an: Jede Achse ist frei erfunden und deshalb wichtig."
     },
     {
       "image": "slide-04-ranking.png",
-      "title": "AKTUELLES RANKING 2026",
-      "hint": "Beim Ranking nicht lachen. Das ist nationale Infrastruktur."
+      "title": "Das Ranking",
+      "hint": "Verteile Statuspunkte mit übertriebener Sicherheit und null empirischer Demut."
     },
     {
       "image": "slide-05-kundentypen.png",
-      "title": "KUNDENTYPEN",
-      "hint": "Stell jeden Typen vor, als hätte er ein LinkedIn-Profil und innere Dämonen."
+      "title": "Kundentypen",
+      "hint": "Jetzt Menschen anhand ihres Warenkorbs komplett unfair typisieren."
     },
     {
       "image": "slide-06-regalpsychologie.png",
-      "title": "REGALPSYCHOLOGIE",
-      "hint": "Hier schön pädagogisch werden. Das Regal ist der eigentliche Therapeut."
+      "title": "Regalpsychologie",
+      "hint": "Erklär Regalhöhe als Kastensystem. Keine Pointe verraten, nur behaupten."
     },
     {
-      "image": "slide-07-regionale-mentalitaeten.png",
-      "title": "REGIONALE MENTALITÄTEN",
-      "hint": "Bitte keine Folklore, sondern knallharte Feldforschung spielen."
+      "image": "slide-07-warenkorbscore.png",
+      "title": "Der Warenkorb-Score",
+      "hint": "Formeln machen Unsinn führungskräftetauglich. Das ist die Folie."
     },
     {
-      "image": "slide-08-warenkorb-score.png",
-      "title": "DER WARENKORB-SCORE",
-      "hint": "Verkauf den Score als App, die niemand braucht und alle heimlich checken."
+      "image": "slide-08-regionen.png",
+      "title": "Regionale Einkaufsmentalitäten",
+      "hint": "Leite aus Mozzarella-Preisen direkt das Bruttoinlandsgefühl ab."
     },
     {
-      "image": "slide-09-handlungsempfehlungen.png",
-      "title": "HANDLUNGSEMPFEHLUNGEN",
-      "hint": "Kling wie ein Coach für urbane Einkaufssouveränität."
+      "image": "slide-09-empfehlungen.png",
+      "title": "Handlungsempfehlungen",
+      "hint": "Tu so, als müsste der Vorstand diese Vorschläge bis Montag umsetzen."
     },
     {
       "image": "slide-10-finale.png",
-      "title": "FAZIT",
-      "hint": "Finale mit existentialistischem Ernst: Zwischen Kasse und Ausgang entscheidet sich alles."
+      "title": "Finale",
+      "hint": "Groß schließen: Der Einkauf war immer eine Selbstauskunft."
     }
   ]
 }

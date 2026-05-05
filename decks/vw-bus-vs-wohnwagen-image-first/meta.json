@@ -1,6 +1,61 @@
 {
-  "title": "VW Bus vs. Wohnwagen: Image First",
-  "description": "Experimentelles Bilddeck mit vier vollflächigen Slides über Freiheitsromantik, Ordnungsliebe und rollende Identitätsfragen.",
+  "title": "VW Bus vs. Wohnwagen",
+  "description": "Zehn GPT-Image-2-Folien über Freiheitsromantik, Vorzeltmacht und rollende Identitätsfragen im deutschen Freizeitmobilkrieg.",
   "emoji": "🚐",
-  "language": "de"
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark edgy premium editorial satire with baked German slide text",
+  "source": "p26 / visible-old",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "VW Bus vs. Wohnwagen",
+      "hint": "Eröffne wie eine Friedenskonferenz zwischen zwei Camping-Stämmen."
+    },
+    {
+      "image": "slide-02-identitaet.png",
+      "title": "Identität vor Stauraum",
+      "hint": "Mach klar: Niemand kauft ein Fahrzeug. Alle kaufen eine Ausrede."
+    },
+    {
+      "image": "slide-03-grundriss.png",
+      "title": "Der Grundriss-Konflikt",
+      "hint": "Erklär Raumplanung als ideologischen Grabenkrieg mit Klapptisch."
+    },
+    {
+      "image": "slide-04-packliste.png",
+      "title": "Packliste als Weltanschauung",
+      "hint": "Jeder Adapter ist eine Entscheidung über das eigene Menschenbild."
+    },
+    {
+      "image": "slide-05-campingplatz.png",
+      "title": "Campingplatz-Diplomatie",
+      "hint": "Parzelle, Strom, Sanitärblock: die drei Säulen der Freizeit-Außenpolitik."
+    },
+    {
+      "image": "slide-06-technik.png",
+      "title": "Technik, die Nähe simuliert",
+      "hint": "Sprich über Solarmoral und Gasflaschenangst wie über Paartherapie."
+    },
+    {
+      "image": "slide-07-nachbarn.png",
+      "title": "Nachbarn auf Zeit",
+      "hint": "48 Stunden Sozialexperiment mit Grillzange und unausgesprochener Playlistkritik."
+    },
+    {
+      "image": "slide-08-scoreboard.png",
+      "title": "Das Scoreboard",
+      "hint": "Vergleiche beide Lager wie Sportmoderation für Menschen mit Vorzelt."
+    },
+    {
+      "image": "slide-09-zukunft.png",
+      "title": "Die Zukunft des Campings",
+      "hint": "App-gesteuerte Freiheit bitte als endgültigen Widerspruch verkaufen."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Finale",
+      "hint": "Versöhnlich schließen: Am Ende suchen alle Ruhe, Strom und Ausrede."
+    }
+  ]
 }

@@ -1,6 +1,61 @@
 {
   "title": "LinkedIn-Posts als moderne Hofberichterstattung",
-  "description": "Ein image-first Karaoke-Deck über Business-Barden, Demut mit Reichweite und höfische Selbstvermeldung.",
+  "description": "Zehn GPT-Image-2-Folien über Business-Barden, Demut mit Reichweite und höfische Selbstvermeldung im Corporate Court.",
   "emoji": "👑",
-  "language": "de"
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark edgy premium editorial satire with baked German slide text",
+  "source": "visible-old",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "LinkedIn-Posts als moderne Hofberichterstattung",
+      "hint": "Beginne wie ein Hofchronist mit KPI-Dashboard und Samtumhang."
+    },
+    {
+      "image": "slide-02-hofstaat.png",
+      "title": "Der digitale Hofstaat",
+      "hint": "Erklär Kommentare als Applauspflicht. Niemand liked freiwillig, alle dienen."
+    },
+    {
+      "image": "slide-03-demut.png",
+      "title": "Demut mit Reichweite",
+      "hint": "Sag „unfassbar dankbar“ so, dass jede Silbe nach Eigenlob riecht."
+    },
+    {
+      "image": "slide-04-formel.png",
+      "title": "Die Post-Formel",
+      "hint": "Zerlege die virale Struktur wie Alchemie für Menschen mit OKRs."
+    },
+    {
+      "image": "slide-05-barden.png",
+      "title": "Business-Barden",
+      "hint": "Mach die Founder-Poesie groß. Sehr groß. Leider nicht gut."
+    },
+    {
+      "image": "slide-06-zeremonie.png",
+      "title": "Die Beförderungszeremonie",
+      "hint": "Lies Beförderungsankündigungen wie königliche Erlasse mit Dankespflicht."
+    },
+    {
+      "image": "slide-07-algorithmus.png",
+      "title": "Der Algorithmus",
+      "hint": "Beschreibe den Algorithmus als launische Gottheit mit Content-Hunger."
+    },
+    {
+      "image": "slide-08-kommentaradel.png",
+      "title": "Der Kommentaradel",
+      "hint": "Jede Kommentarphrase ist ein Rang im digitalen Feudalismus."
+    },
+    {
+      "image": "slide-09-krise.png",
+      "title": "Krisenkommunikation",
+      "hint": "Übernimm Verantwortung maximal wolkig und mit Lernkurven-Nebelmaschine."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Finale",
+      "hint": "Schließe mit einer höfischen Verbeugung vor dem Like-Button."
+    }
+  ]
 }

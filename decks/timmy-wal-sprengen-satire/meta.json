@@ -1,0 +1,21 @@
+{
+  "title": "Wal Timmy sprengen – Die einzig wahre Lösung",
+  "description": "Zehn image-first Karaoke-Folien als maximal derbe, klar fiktionale Walrettungs-Fiasko-Satire. Nicht-nachmachen, keine echten Anleitungen, nur absurde Bühne.",
+  "emoji": "🐋",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium German tabloid keynote satire with baked German slide text",
+  "thumbnail": "thumb-01-cover.webp",
+  "slides": [
+    { "image": "slide-01-cover.png", "title": "Titelfolie", "hint": "Starte so, als würdest du einen völlig illegalen Gedanken als seriöse Infrastrukturpolitik verkaufen." },
+    { "image": "slide-02-millionen.png", "title": "1,5 Millionen Euro", "hint": "Mach aus Empörung eine PowerPoint-Kennzahl. Je weniger Beweise, desto breiter stehen." },
+    { "image": "slide-03-oekonomie.png", "title": "Ökonomie", "hint": "Bitte klingen wie ein Einkaufsleiter, der Ethik gerade aus Excel rausgefiltert hat." },
+    { "image": "slide-04-zinksalbe.png", "title": "Zinksalbe", "hint": "Sag „Zinksalbe“ mit der Verachtung eines Menschen, der das Wort nie wieder hören will." },
+    { "image": "slide-05-oregon.png", "title": "Historisches Vorbild", "hint": "Hier wird Geschichte zur Management-Folie. Tu so, als sei Oregon 1970 eine ISO-Norm." },
+    { "image": "slide-06-tourismus.png", "title": "Tourismus-Fail", "hint": "Verkaufe Mecklenburg-Vorpommern jetzt als Eventmarke mit sehr fragwürdigem USP." },
+    { "image": "slide-07-peilsender.png", "title": "Peilsender-Debakel", "hint": "Benutze das Wort „Skagerrak“ mit maximaler kriminalistischer Schwere." },
+    { "image": "slide-08-mitmachzeit.png", "title": "Mitmach-Zeit", "hint": "Publikum aktivieren. Wer nicht mitmacht, ist Teil der 1,5-Millionen-Euro-Lüge." },
+    { "image": "slide-09-konsens.png", "title": "Politischer Konsens", "hint": "Tu so, als hätten alle Institutionen nur auf deinen völlig bescheuerten Kompromiss gewartet." },
+    { "image": "slide-10-fazit.png", "title": "Explosives Fazit", "hint": "Finale mit staatsmännischer Würde. Wichtig: Es bleibt Theater. Leider sehr überzeugendes Theater." }
+  ]
+}

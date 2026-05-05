@@ -16,16 +16,8 @@ function escapeHtml(value = '') {
 
 function readMeta(deckPath, slug) {
   const metaPath = path.join(deckPath, 'meta.json');
-  if (fs.existsSync(metaPath)) {
-    return JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-  }
-  return {
-    title: slug.replaceAll('-', ' '),
-    description: 'Ein spielbares HTML-Deck für spontane PowerPoint-Karaoke-Runden.',
-    emoji: '🎤',
-    language: 'de',
-    slides: []
-  };
+  if (fs.existsSync(metaPath)) return JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+  return { title: slug.replaceAll('-', ' '), description: 'Ein spielbares HTML-Deck für spontane PowerPoint-Karaoke-Runden.', emoji: '🎤', language: 'de', slides: [] };
 }
 
 const decks = fs.existsSync(decksDir)
@@ -34,8 +26,7 @@ const decks = fs.existsSync(decksDir)
       .map((entry) => {
         const slug = entry.name;
         const deckPath = path.join(decksDir, slug);
-        const indexPath = path.join(deckPath, 'index.html');
-        if (!fs.existsSync(indexPath)) return null;
+        if (!fs.existsSync(path.join(deckPath, 'index.html'))) return null;
         const meta = readMeta(deckPath, slug);
         const firstSlide = Array.isArray(meta.slides) && meta.slides[0]?.image ? meta.slides[0].image : null;
         return {
@@ -45,35 +36,29 @@ const decks = fs.existsSync(decksDir)
           emoji: meta.emoji ?? '🎤',
           language: meta.language ?? 'de',
           slideCount: Array.isArray(meta.slides) ? meta.slides.length : 0,
-          firstSlide: firstSlide ? `decks/${slug}/${firstSlide}` : null
+          firstSlide: firstSlide ? `decks/${slug}/${firstSlide}` : null,
+          href: `decks/${slug}/index.html`
         };
       })
       .filter(Boolean)
       .sort((a, b) => a.title.localeCompare(b.title, 'de'))
   : [];
 
-const selectedDeck = decks.find((deck) => deck.slug === 'elternabend-als-kommunales-strafgericht') ?? decks[0] ?? null;
+const defaultIndex = Math.max(0, decks.findIndex((deck) => deck.slug === 'elternabend-als-kommunales-strafgericht'));
 
 const thumbnails = decks.length
-  ? decks
-      .map((deck, index) => {
-        const isActive = selectedDeck && deck.slug === selectedDeck.slug;
-        const preview = deck.firstSlide
-          ? `<img src="${escapeHtml(deck.firstSlide)}" alt="Slide 1 Vorschau: ${escapeHtml(deck.title)}" />`
-          : `<div class="empty-preview"><span>${escapeHtml(deck.emoji)}</span></div>`;
-        return `
-          <a class="deck-thumb${isActive ? ' active' : ''}" href="decks/${escapeHtml(deck.slug)}/index.html" aria-label="${escapeHtml(deck.title)} öffnen">
+  ? decks.map((deck, index) => {
+      const preview = deck.firstSlide
+        ? `<img src="${escapeHtml(deck.firstSlide)}" alt="Slide 1 Vorschau: ${escapeHtml(deck.title)}" />`
+        : `<div class="empty-preview"><span>${escapeHtml(deck.emoji)}</span></div>`;
+      return `
+          <article class="deck-thumb${index === defaultIndex ? ' active' : ''}" data-deck-index="${index}" tabindex="0" aria-label="${escapeHtml(deck.title)} auswählen">
             <span class="thumb-number">${index + 1}</span>
-            <span class="thumb-frame">${preview}</span>
-            <span class="thumb-title">${escapeHtml(deck.title)}</span>
-          </a>`;
-      })
-      .join('\n')
+            <span class="thumb-frame">${preview}<span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-meta"><span class="thumb-title">${escapeHtml(deck.title)}</span><span class="thumb-sub">${deck.slideCount || 10} Folien · ${escapeHtml(deck.language)}</span></span>
+          </article>`;
+    }).join('\n')
   : `<div class="empty-state">Keine Decks gefunden.</div>`;
-
-const selectedPreview = selectedDeck?.firstSlide
-  ? `<img src="${escapeHtml(selectedDeck.firstSlide)}" alt="Große Vorschau: ${escapeHtml(selectedDeck.title)} · Slide 1" />`
-  : `<div class="canvas-empty">Noch keine Slide-Vorschau verfügbar.</div>`;
 
 const html = `<!DOCTYPE html>
 <html lang="de">
@@ -84,279 +69,172 @@ const html = `<!DOCTYPE html>
     <meta name="description" content="Eine kuratierte Galerie spielbarer HTML-Decks für PowerPoint Karaoke." />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <style>
-      :root {
-        color-scheme: light;
-        --ppt: #b7472a;
-        --ppt-dark: #7f2a16;
-        --ppt-hot: #d65a37;
-        --chrome: #f7f6f5;
-        --workspace: #d8d8d8;
-        --pane: #f3f2f1;
-        --line: #c8c6c4;
-        --line-soft: #e5e2df;
-        --text: #201f1e;
-        --muted: #605e5c;
-        --blue: #2b579a;
-      }
-
+      :root { color-scheme: light; --ppt:#b7472a; --ppt-dark:#7f2a16; --ppt-hot:#d65a37; --workspace:#d8d8d8; --line:#c8c6c4; --text:#201f1e; --muted:#605e5c; --blue:#2b579a; }
       * { box-sizing: border-box; }
-
-      html, body { margin: 0; min-height: 100%; }
-      body {
-        height: 100vh;
-        overflow: hidden;
-        background: #2b2b2b;
-        color: var(--text);
-        font-family: "Segoe UI", Arial, sans-serif;
-      }
-      a { color: inherit; }
-
-      .app {
-        height: 100vh;
-        display: grid;
-        grid-template-rows: 32px 124px minmax(0, 1fr) 25px;
-        background: var(--workspace);
-      }
-
-      .titlebar {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 10px;
-        padding: 0 10px;
-        background: var(--ppt-dark);
-        color: #fff;
-        font-size: 12px;
-        user-select: none;
-      }
-      .quick { display: flex; gap: 8px; align-items: center; opacity: .92; }
-      .quick span { width: 15px; height: 15px; display: grid; place-items: center; }
-      .doc-title { min-width: 0; text-align: center; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .controls { display: flex; align-items: stretch; height: 100%; }
-      .controls span { width: 42px; display: grid; place-items: center; }
-      .controls span:hover { background: rgba(255,255,255,.12); }
-
-      .ribbon { background: #fff; border-bottom: 1px solid #bab7b3; box-shadow: 0 1px 3px rgba(0,0,0,.12); overflow: hidden; }
-      .tabs { height: 35px; display: flex; align-items: end; gap: 1px; background: var(--ppt); color: #fff; padding-left: 8px; }
-      .tab { height: 31px; display: flex; align-items: center; padding: 0 13px; border-radius: 2px 2px 0 0; text-decoration: none; font-size: 13px; white-space: nowrap; }
-      .tab.file { background: rgba(0,0,0,.18); font-weight: 700; }
-      .tab.active { background: #fff; color: var(--ppt-dark); font-weight: 600; }
-
-      .toolstrip { height: 89px; display: flex; gap: 0; padding: 7px 10px 6px; overflow-x: auto; }
-      .group { min-width: 96px; padding: 0 10px; border-right: 1px solid #edebe9; display: grid; grid-template-rows: 1fr auto; }
-      .group.wide { min-width: 170px; }
-      .group-body { display: flex; align-items: center; justify-content: center; gap: 7px; }
-      .group-label { color: #605e5c; text-align: center; font-size: 10px; }
-      .button { display: grid; place-items: center; gap: 2px; font-size: 10px; color: #323130; }
-      .icon { width: 28px; height: 24px; display: grid; place-items: center; border: 1px solid #edebe9; border-radius: 2px; background: linear-gradient(#fff,#f5f4f2); font-size: 14px; }
-      .button.big .icon { width: 42px; height: 38px; font-size: 21px; }
-      .palette { display: grid; grid-template-columns: repeat(7, 14px); gap: 3px; }
-      .palette span { width: 14px; height: 14px; border: 1px solid rgba(0,0,0,.18); }
-
-      .editor {
-        min-height: 0;
-        display: grid;
-        grid-template-columns: 286px minmax(0, 1fr);
-        background: var(--workspace);
-      }
-
-      .thumb-pane {
-        min-height: 0;
-        overflow: auto;
-        padding: 14px 10px 18px 12px;
-        background: #ece9e6;
-        border-right: 1px solid #b9b6b2;
-      }
-      .pane-title {
-        margin: 0 0 10px 30px;
-        color: #3b3a39;
-        font-size: 12px;
-        font-weight: 600;
-      }
-
-      .deck-list { display: grid; gap: 10px; }
-      .deck-thumb {
-        display: grid;
-        grid-template-columns: 22px 124px minmax(0, 1fr);
-        gap: 9px;
-        align-items: center;
-        padding: 7px 8px 7px 0;
-        color: var(--text);
-        text-decoration: none;
-        border: 2px solid transparent;
-        border-radius: 3px;
-      }
-      .deck-thumb:hover { background: rgba(255,255,255,.55); }
-      .deck-thumb.active { background: #fff; border-color: var(--ppt-hot); box-shadow: 0 2px 6px rgba(0,0,0,.13); }
-      .thumb-number { color: #605e5c; font-size: 12px; text-align: right; }
-      .thumb-frame {
-        aspect-ratio: 16 / 9;
-        display: block;
-        overflow: hidden;
-        background: #fff;
-        border: 1px solid #a19f9d;
-        box-shadow: 0 2px 5px rgba(0,0,0,.16);
-      }
-      .thumb-frame img { width: 100%; height: 100%; display: block; object-fit: cover; }
-      .empty-preview { height: 100%; display: grid; place-items: center; background: linear-gradient(135deg,#b7472a,#f6b26b); color: white; font-size: 28px; }
-      .thumb-title { min-width: 0; color: #323130; font-size: 12px; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-      .canvas-area {
-        min-width: 0;
-        min-height: 0;
-        display: grid;
-        grid-template-rows: 1fr 120px;
-        background: #d9d9d9;
-      }
-      .slide-workspace {
-        min-height: 0;
-        display: grid;
-        place-items: center;
-        padding: clamp(22px, 4vw, 54px);
-        background:
-          linear-gradient(90deg, rgba(255,255,255,.28) 1px, transparent 1px),
-          linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px),
-          #d5d5d5;
-        background-size: 24px 24px;
-        overflow: auto;
-      }
-      .slide-shell {
-        width: min(100%, calc((100vh - 260px) * 16 / 9));
-        max-width: 1180px;
-        min-width: min(760px, 100%);
-      }
-      .slide-canvas {
-        aspect-ratio: 16 / 9;
-        background: #fff;
-        border: 1px solid #8f8f8f;
-        box-shadow: 0 18px 44px rgba(0,0,0,.32);
-        overflow: hidden;
-      }
-      .slide-canvas img { width: 100%; height: 100%; display: block; object-fit: cover; }
-      .canvas-empty { height: 100%; display: grid; place-items: center; color: #605e5c; }
-
-      .notes {
-        border-top: 1px solid #b9b6b2;
-        background: #f7f6f5;
-        padding: 12px 18px;
-      }
-      .notes h2 { margin: 0 0 7px; color: #605e5c; font-size: 12px; font-weight: 600; }
-      .notes p { margin: 0; color: #323130; font-size: 13px; line-height: 1.35; }
-      .open-button {
-        display: inline-flex;
-        margin-top: 9px;
-        padding: 6px 11px;
-        border-radius: 2px;
-        background: var(--ppt);
-        color: #fff;
-        text-decoration: none;
-        font-size: 12px;
-        font-weight: 700;
-      }
-      .open-button:hover { background: var(--ppt-dark); }
-
-      .statusbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 0 12px;
-        background: #f3f2f1;
-        border-top: 1px solid #c8c6c4;
-        color: #605e5c;
-        font-size: 12px;
-      }
-      .status-left, .status-right { display: flex; align-items: center; gap: 16px; white-space: nowrap; }
-      .zoom { width: 92px; height: 3px; border-radius: 999px; background: #c8c6c4; position: relative; }
-      .zoom::after { content: ""; position: absolute; left: 62%; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: #605e5c; transform: translate(-50%,-50%); }
-
-      @media (max-width: 900px) {
-        body { overflow: auto; }
-        .app { min-height: 100vh; height: auto; grid-template-rows: 32px auto auto 25px; }
-        .toolstrip { display: none; }
-        .ribbon { height: 35px; }
-        .tabs { overflow-x: auto; }
-        .editor { grid-template-columns: 1fr; }
-        .thumb-pane { max-height: 260px; border-right: 0; border-bottom: 1px solid #b9b6b2; }
-        .deck-thumb { grid-template-columns: 22px 138px minmax(0,1fr); }
-        .canvas-area { grid-template-rows: auto auto; }
-        .slide-workspace { padding: 18px; }
-        .slide-shell { width: 100%; min-width: 0; }
-      }
-
-      @media (max-width: 620px) {
-        .titlebar { grid-template-columns: 1fr auto; }
-        .quick { display: none; }
-        .doc-title { text-align: left; }
-        .controls span { width: 30px; }
-        .thumb-pane { padding-left: 8px; padding-right: 8px; }
-        .deck-thumb { grid-template-columns: 20px 112px minmax(0,1fr); gap: 7px; }
-        .thumb-title { font-size: 11px; }
-        .notes { padding: 10px 12px; }
-        .status-right { display: none; }
-      }
+      html, body { margin:0; min-height:100%; }
+      body { height:100vh; overflow:hidden; background:#2b2b2b; color:var(--text); font-family:"Segoe UI", Arial, sans-serif; }
+      a { color:inherit; }
+      button { font:inherit; }
+      .app { height:100vh; display:grid; grid-template-rows:32px 132px minmax(0,1fr) 25px; background:var(--workspace); }
+      .titlebar { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:10px; padding:0 10px; background:var(--ppt-dark); color:#fff; font-size:12px; user-select:none; }
+      .quick { display:flex; gap:8px; align-items:center; opacity:.92; }
+      .quick span { width:15px; height:15px; display:grid; place-items:center; }
+      .doc-title { min-width:0; text-align:center; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      .controls { display:flex; align-items:stretch; height:100%; }
+      .controls span { width:42px; display:grid; place-items:center; }
+      .controls span:hover { background:rgba(255,255,255,.12); }
+      .ribbon { background:#fff; border-bottom:1px solid #bab7b3; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; }
+      .tabs { height:35px; display:flex; align-items:end; gap:1px; background:var(--ppt); color:#fff; padding-left:8px; }
+      .tab { height:31px; display:flex; align-items:center; padding:0 13px; border:0; border-radius:2px 2px 0 0; background:transparent; color:inherit; text-decoration:none; font-size:13px; white-space:nowrap; cursor:pointer; }
+      .tab.file { background:rgba(0,0,0,.18); font-weight:700; }
+      .tab.active { background:#fff; color:var(--ppt-dark); font-weight:600; }
+      .toolstrip { height:97px; display:flex; gap:0; padding:7px 10px 6px; overflow-x:auto; }
+      .group { min-width:102px; padding:0 10px; border-right:1px solid #edebe9; display:grid; grid-template-rows:1fr auto; }
+      .group.wide { min-width:184px; }
+      .group.fun { min-width:236px; }
+      .group-body { display:flex; align-items:center; justify-content:center; gap:7px; }
+      .group-label { color:#605e5c; text-align:center; font-size:10px; }
+      .ribbon-button { display:grid; place-items:center; gap:2px; border:0; background:transparent; color:#323130; font-size:10px; cursor:pointer; padding:2px; border-radius:3px; }
+      .ribbon-button:hover { background:#fff4ce; outline:1px solid #f2c811; }
+      .icon { width:30px; height:25px; display:grid; place-items:center; border:1px solid #edebe9; border-radius:2px; background:linear-gradient(#fff,#f5f4f2); font-size:15px; }
+      .ribbon-button.big .icon { width:44px; height:40px; font-size:22px; }
+      .palette { display:grid; grid-template-columns:repeat(7,14px); gap:3px; }
+      .palette button { width:14px; height:14px; border:1px solid rgba(0,0,0,.18); cursor:pointer; padding:0; }
+      .editor { min-height:0; display:grid; grid-template-columns:306px minmax(0,1fr); background:var(--workspace); }
+      .thumb-pane { min-height:0; overflow:auto; padding:14px 10px 18px 12px; background:#ece9e6; border-right:1px solid #b9b6b2; }
+      .pane-title { margin:0 0 10px 30px; color:#3b3a39; font-size:12px; font-weight:600; }
+      .deck-list { display:grid; gap:10px; }
+      .deck-thumb { display:grid; grid-template-columns:22px 132px minmax(0,1fr); gap:9px; align-items:center; padding:7px 8px 7px 0; color:var(--text); border:2px solid transparent; border-radius:3px; cursor:pointer; position:relative; }
+      .deck-thumb:hover, .deck-thumb:focus-visible { background:rgba(255,255,255,.62); outline:0; }
+      .deck-thumb.active { background:#fff; border-color:var(--ppt-hot); box-shadow:0 2px 6px rgba(0,0,0,.13); }
+      .thumb-number { color:#605e5c; font-size:12px; text-align:right; }
+      .thumb-frame { aspect-ratio:16/9; display:block; overflow:hidden; background:#fff; border:1px solid #a19f9d; box-shadow:0 2px 5px rgba(0,0,0,.16); position:relative; }
+      .thumb-frame img { width:100%; height:100%; display:block; object-fit:cover; }
+      .thumb-play { position:absolute; inset:auto 8px 7px 8px; display:grid; place-items:center; min-height:24px; border-radius:999px; background:rgba(183,71,42,.95); color:#fff; font-size:11px; font-weight:800; opacity:0; transform:translateY(5px); transition:opacity 140ms ease, transform 140ms ease; box-shadow:0 7px 14px rgba(0,0,0,.22); }
+      .deck-thumb:hover .thumb-play, .deck-thumb:focus-visible .thumb-play { opacity:1; transform:translateY(0); }
+      .empty-preview { height:100%; display:grid; place-items:center; background:linear-gradient(135deg,#b7472a,#f6b26b); color:white; font-size:28px; }
+      .thumb-meta { min-width:0; display:grid; gap:4px; }
+      .thumb-title { min-width:0; color:#323130; font-size:12px; line-height:1.24; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+      .thumb-sub { color:#777; font-size:10px; }
+      .canvas-area { min-width:0; min-height:0; display:grid; grid-template-rows:1fr 132px; background:#d9d9d9; }
+      .slide-workspace { min-height:0; display:grid; place-items:center; padding:clamp(22px,4vw,54px); background:linear-gradient(90deg,rgba(255,255,255,.28) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.28) 1px,transparent 1px),#d5d5d5; background-size:24px 24px; overflow:auto; }
+      .slide-shell { width:min(100%, calc((100vh - 275px) * 16 / 9)); max-width:1180px; min-width:min(760px,100%); }
+      .slide-canvas { aspect-ratio:16/9; background:#fff; border:1px solid #8f8f8f; box-shadow:0 18px 44px rgba(0,0,0,.32); overflow:hidden; position:relative; }
+      .slide-canvas img { width:100%; height:100%; display:block; object-fit:cover; }
+      .canvas-empty { height:100%; display:grid; place-items:center; color:#605e5c; }
+      .big-play { position:absolute; right:18px; bottom:18px; display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background:rgba(183,71,42,.96); color:#fff; text-decoration:none; font-weight:800; font-size:13px; box-shadow:0 12px 28px rgba(0,0,0,.30); opacity:.92; }
+      .big-play:hover { background:var(--ppt-dark); opacity:1; transform:translateY(-1px); }
+      .notes { border-top:1px solid #b9b6b2; background:#f7f6f5; padding:12px 18px; }
+      .notes h2 { margin:0 0 7px; color:#605e5c; font-size:12px; font-weight:600; }
+      .notes p { margin:0; color:#323130; font-size:13px; line-height:1.35; }
+      .notes-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:9px; }
+      .open-button, .tiny-button { display:inline-flex; align-items:center; gap:6px; padding:6px 11px; border-radius:2px; background:var(--ppt); color:#fff; text-decoration:none; border:0; font-size:12px; font-weight:700; cursor:pointer; }
+      .tiny-button { background:#fff; color:#323130; border:1px solid #c8c6c4; }
+      .open-button:hover { background:var(--ppt-dark); }
+      .tiny-button:hover { background:#fff4ce; }
+      .statusbar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 12px; background:#f3f2f1; border-top:1px solid #c8c6c4; color:#605e5c; font-size:12px; }
+      .status-left, .status-right { display:flex; align-items:center; gap:16px; white-space:nowrap; }
+      .zoom { width:92px; height:3px; border-radius:999px; background:#c8c6c4; position:relative; }
+      .zoom::after { content:""; position:absolute; left:62%; top:50%; width:10px; height:10px; border-radius:50%; background:#605e5c; transform:translate(-50%,-50%); }
+      .toast { position:fixed; left:50%; bottom:38px; z-index:10; max-width:min(520px,calc(100vw - 32px)); padding:10px 14px; border-radius:4px; background:#323130; color:#fff; box-shadow:0 14px 34px rgba(0,0,0,.28); font-size:13px; transform:translate(-50%, 20px); opacity:0; pointer-events:none; transition:opacity 150ms ease, transform 150ms ease; }
+      .toast.show { opacity:1; transform:translate(-50%, 0); }
+      body.karaoke-chaos .slide-canvas { animation:wobble 900ms ease-in-out 2; }
+      @keyframes wobble { 0%,100%{transform:rotate(0)} 25%{transform:rotate(.45deg)} 50%{transform:rotate(-.35deg)} 75%{transform:rotate(.25deg)} }
+      @media (max-width:900px) { body{overflow:auto}.app{min-height:100vh;height:auto;grid-template-rows:32px auto auto 25px}.toolstrip{display:none}.ribbon{height:35px}.tabs{overflow-x:auto}.editor{grid-template-columns:1fr}.thumb-pane{max-height:300px;border-right:0;border-bottom:1px solid #b9b6b2}.deck-thumb{grid-template-columns:22px 138px minmax(0,1fr)}.canvas-area{grid-template-rows:auto auto}.slide-workspace{padding:18px}.slide-shell{width:100%;min-width:0} }
+      @media (max-width:620px) { .titlebar{grid-template-columns:1fr auto}.quick{display:none}.doc-title{text-align:left}.controls span{width:30px}.thumb-pane{padding-left:8px;padding-right:8px}.deck-thumb{grid-template-columns:20px 112px minmax(0,1fr);gap:7px}.thumb-title{font-size:11px}.notes{padding:10px 12px}.status-right{display:none}.big-play{right:10px;bottom:10px;padding:8px 10px;font-size:12px} }
     </style>
   </head>
   <body>
     <main class="app">
       <header class="titlebar" aria-label="PowerPoint Fensterleiste">
         <div class="quick" aria-hidden="true"><span>↶</span><span>↷</span><span>💾</span></div>
-        <div class="doc-title">PowerPoint Karaoke — ${escapeHtml(selectedDeck?.title ?? 'Deck-Galerie')}.pptx</div>
+        <div class="doc-title" data-doc-title>PowerPoint Karaoke — Editor.pptx</div>
         <div class="controls" aria-hidden="true"><span>—</span><span>□</span><span>×</span></div>
       </header>
-
       <nav class="ribbon" aria-label="PowerPoint Ribbon">
         <div class="tabs">
-          <a class="tab file" href="#">Datei</a>
-          <a class="tab active" href="#">Start</a>
-          <a class="tab" href="#">Einfügen</a>
-          <a class="tab" href="#">Entwurf</a>
-          <a class="tab" href="#">Übergänge</a>
-          <a class="tab" href="#">Animationen</a>
-          <a class="tab" href="#">Bildschirmpräsentation</a>
-          <a class="tab" href="#">Ansicht</a>
+          <button class="tab file" data-ribbon="Datei">Datei</button><button class="tab active" data-ribbon="Start">Start</button><button class="tab" data-ribbon="Einfügen">Einfügen</button><button class="tab" data-ribbon="Entwurf">Entwurf</button><button class="tab" data-ribbon="Übergänge">Übergänge</button><button class="tab" data-ribbon="Animationen">Animationen</button><button class="tab" data-ribbon="Bildschirmpräsentation">Bildschirmpräsentation</button><button class="tab" data-ribbon="Ansicht">Ansicht</button>
         </div>
-        <div class="toolstrip" aria-hidden="true">
-          <div class="group"><div class="group-body"><div class="button big"><span class="icon">📋</span><span>Einfügen</span></div></div><div class="group-label">Zwischenablage</div></div>
-          <div class="group wide"><div class="group-body"><div class="button big"><span class="icon">▣</span><span>Neue Folie</span></div><div class="button"><span class="icon">⌄</span><span>Layout</span></div><div class="button"><span class="icon">↺</span><span>Zurücksetzen</span></div></div><div class="group-label">Folien</div></div>
-          <div class="group wide"><div class="group-body"><div class="button"><span class="icon">B</span><span>Fett</span></div><div class="button"><span class="icon">I</span><span>Kursiv</span></div><div class="button"><span class="icon">A</span><span>Farbe</span></div><div class="button"><span class="icon">≡</span><span>Absatz</span></div></div><div class="group-label">Schriftart</div></div>
-          <div class="group wide"><div class="group-body"><div class="palette"><span style="background:#b7472a"></span><span style="background:#f6b26b"></span><span style="background:#4472c4"></span><span style="background:#70ad47"></span><span style="background:#7030a0"></span><span style="background:#111"></span><span style="background:#fff"></span><span style="background:#ffd966"></span><span style="background:#9dc3e6"></span><span style="background:#a9d18e"></span><span style="background:#c55a11"></span><span style="background:#7f7f7f"></span><span style="background:#264478"></span><span style="background:#a64d79"></span></div></div><div class="group-label">Designs</div></div>
-          <div class="group"><div class="group-body"><div class="button big"><span class="icon">▶</span><span>Starten</span></div></div><div class="group-label">Präsentation</div></div>
+        <div class="toolstrip">
+          <div class="group"><div class="group-body"><button class="ribbon-button big" data-action="copy-title"><span class="icon">📋</span><span>Titel kopieren</span></button></div><div class="group-label">Zwischenablage</div></div>
+          <div class="group wide"><div class="group-body"><button class="ribbon-button big" data-action="play"><span class="icon">▶</span><span>Starten</span></button><button class="ribbon-button" data-action="random"><span class="icon">🎲</span><span>Zufall</span></button><button class="ribbon-button" data-action="panic"><span class="icon">😬</span><span>Panik</span></button></div><div class="group-label">Präsentation</div></div>
+          <div class="group fun"><div class="group-body"><button class="ribbon-button" data-action="enhance"><span class="icon">💼</span><span>Executive</span></button><button class="ribbon-button" data-action="laser"><span class="icon">🔴</span><span>Laser</span></button><button class="ribbon-button" data-action="smartart"><span class="icon">🧩</span><span>SmartArt</span></button><button class="ribbon-button" data-action="chaos"><span class="icon">✨</span><span>Chaos</span></button></div><div class="group-label">Karaoke-Tools</div></div>
+          <div class="group wide"><div class="group-body"><div class="palette"><button style="background:#b7472a" data-theme="office" aria-label="Office Orange"></button><button style="background:#4472c4" data-theme="blue" aria-label="Berater Blau"></button><button style="background:#7030a0" data-theme="purple" aria-label="Vorstand Lila"></button><button style="background:#70ad47" data-theme="green" aria-label="Excel Grün"></button><button style="background:#111" data-theme="dark" aria-label="Krisenmodus"></button><button style="background:#ffd966" data-theme="alarm" aria-label="Gelbphase"></button><button style="background:#fff" data-theme="office" aria-label="Zurücksetzen"></button></div></div><div class="group-label">Designs</div></div>
         </div>
       </nav>
-
       <section class="editor" aria-label="PowerPoint Editoransicht">
-        <aside class="thumb-pane" aria-labelledby="thumb-title">
-          <h1 class="pane-title" id="thumb-title">Präsentationen</h1>
-          <div class="deck-list">
-${thumbnails}
-          </div>
-        </aside>
-
+        <aside class="thumb-pane" aria-labelledby="thumb-title"><h1 class="pane-title" id="thumb-title">Präsentationen</h1><div class="deck-list">${thumbnails}</div></aside>
         <section class="canvas-area" aria-labelledby="selected-title">
-          <div class="slide-workspace">
-            <div class="slide-shell">
-              <div class="slide-canvas">
-                ${selectedPreview}
-              </div>
-            </div>
-          </div>
-          <aside class="notes" aria-label="Notizen">
-            <h2>Notizen</h2>
-            <p><strong id="selected-title">${escapeHtml(selectedDeck?.title ?? 'Keine Präsentation')}</strong>${selectedDeck ? ` · Slide 1 von ${selectedDeck.slideCount || 10}. ${escapeHtml(selectedDeck.description)}` : ''}</p>
-            ${selectedDeck ? `<a class="open-button" href="decks/${escapeHtml(selectedDeck.slug)}/index.html">Bildschirmpräsentation starten</a>` : ''}
-          </aside>
+          <div class="slide-workspace"><div class="slide-shell"><div class="slide-canvas"><img data-preview-image alt="Große Vorschau: Slide 1" /><a class="big-play" data-play-link href="#">▶ Bildschirmpräsentation</a></div></div></div>
+          <aside class="notes" aria-label="Notizen"><h2>Notizen</h2><p><strong id="selected-title" data-selected-title></strong><span data-selected-copy></span></p><div class="notes-actions"><a class="open-button" data-notes-play href="#">▶ Präsentation starten</a><button class="tiny-button" data-action="random">🎲 Zufälliges Deck</button><button class="tiny-button" data-action="panic">📝 Panik-Notiz</button></div></aside>
         </section>
       </section>
-
-      <footer class="statusbar" aria-label="Statusleiste">
-        <div class="status-left"><span>Folie 1 von ${selectedDeck?.slideCount || 0}</span><span>${decks.length} Präsentationen</span><span>Deutsch</span></div>
-        <div class="status-right"><span>Notizen</span><span>Kommentare</span><span class="zoom"></span><span>74%</span></div>
-      </footer>
+      <footer class="statusbar" aria-label="Statusleiste"><div class="status-left"><span data-status-slide>Folie 1</span><span>${decks.length} Präsentationen</span><span>Deutsch</span></div><div class="status-right"><span data-easter>Bereit für gepflegte Ahnungslosigkeit</span><span class="zoom"></span><span>74%</span></div></footer>
     </main>
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+    <script id="deck-data" type="application/json">${JSON.stringify(decks).replaceAll('<', '\\u003c')}</script>
+    <script>
+      const decks = JSON.parse(document.getElementById('deck-data').textContent);
+      let selectedIndex = ${defaultIndex};
+      const thumbs = Array.from(document.querySelectorAll('[data-deck-index]'));
+      const preview = document.querySelector('[data-preview-image]');
+      const title = document.querySelector('[data-selected-title]');
+      const copy = document.querySelector('[data-selected-copy]');
+      const docTitle = document.querySelector('[data-doc-title]');
+      const playLinks = [document.querySelector('[data-play-link]'), document.querySelector('[data-notes-play]')];
+      const statusSlide = document.querySelector('[data-status-slide]');
+      const toast = document.querySelector('[data-toast]');
+      const easter = document.querySelector('[data-easter]');
+      const quips = ['Faktenlage optional.', 'Bitte keine echten KPIs verwenden.', 'SmartArt wurde aus ethischen Gründen gedrosselt.', 'Presenter View urteilt leise.', 'Designidee: Ordnungsamt bei Nacht.', 'Applaus wird nach Compliance geprüft.'];
+      function showToast(message) { toast.textContent = message; toast.classList.add('show'); clearTimeout(showToast.t); showToast.t = setTimeout(() => toast.classList.remove('show'), 1900); }
+      function selectDeck(index, { focus = false } = {}) {
+        selectedIndex = Math.max(0, Math.min(index, decks.length - 1));
+        const deck = decks[selectedIndex];
+        thumbs.forEach((thumb, i) => thumb.classList.toggle('active', i === selectedIndex));
+        if (deck.firstSlide) preview.src = deck.firstSlide;
+        preview.alt = 'Große Vorschau: ' + deck.title + ' · Slide 1';
+        title.textContent = deck.title;
+        copy.textContent = ' · Slide 1 von ' + (deck.slideCount || 10) + '. ' + deck.description;
+        docTitle.textContent = 'PowerPoint Karaoke — ' + deck.title + '.pptx';
+        playLinks.forEach((link) => { link.href = deck.href; });
+        statusSlide.textContent = 'Folie 1 von ' + (deck.slideCount || 10);
+        easter.textContent = quips[selectedIndex % quips.length];
+        if (focus) thumbs[selectedIndex]?.focus();
+      }
+      function playSelected() { window.location.href = decks[selectedIndex].href; }
+      thumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', (event) => { event.preventDefault(); selectDeck(index); });
+        thumb.addEventListener('dblclick', () => { window.location.href = decks[index].href; });
+        thumb.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectDeck(index); }
+          if (event.key === 'ArrowDown') { event.preventDefault(); selectDeck(index + 1, { focus: true }); }
+          if (event.key === 'ArrowUp') { event.preventDefault(); selectDeck(index - 1, { focus: true }); }
+        });
+      });
+      document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', async (event) => {
+        const action = event.currentTarget.dataset.action;
+        if (action === 'play') playSelected();
+        if (action === 'random') selectDeck(Math.floor(Math.random() * decks.length), { focus: true });
+        if (action === 'panic') showToast('Panik-Notiz eingefügt: „Hier unbedingt sehr kompetent wirken.“');
+        if (action === 'enhance') showToast('Executive-Modus aktiviert: alles klingt jetzt nach McKinsey, leider.');
+        if (action === 'laser') showToast('Laserpointer gefunden. Bitte nicht auf die Pointe richten.');
+        if (action === 'smartart') showToast('SmartArt verweigert Dienst: zu viel Wahrheit im Deck.');
+        if (action === 'chaos') { document.body.classList.toggle('karaoke-chaos'); showToast('Karaoke-Chaos kurzzeitig in die Folienmaster geschrieben.'); }
+        if (action === 'copy-title') { try { await navigator.clipboard.writeText(decks[selectedIndex].title); showToast('Titel kopiert. Bitte in keinem echten Meeting benutzen.'); } catch { showToast('Clipboard sagt nein. Sehr PowerPoint von ihm.'); } }
+      }));
+      document.querySelectorAll('[data-ribbon]').forEach((tab) => tab.addEventListener('click', () => { document.querySelectorAll('[data-ribbon]').forEach((t) => t.classList.remove('active')); tab.classList.add('active'); showToast(tab.dataset.ribbon + '-Ribbon geladen. Inhalt: überwiegend Selbstbewusstsein.'); }));
+      document.querySelectorAll('[data-theme]').forEach((button) => button.addEventListener('click', () => {
+        const themes = { office:['#b7472a','#7f2a16'], blue:['#4472c4','#203864'], purple:['#7030a0','#4c1d6f'], green:['#70ad47','#385723'], dark:['#111','#000'], alarm:['#ffd966','#bf9000'] };
+        const [hot, dark] = themes[button.dataset.theme] || themes.office;
+        document.documentElement.style.setProperty('--ppt', hot);
+        document.documentElement.style.setProperty('--ppt-dark', dark);
+        document.documentElement.style.setProperty('--ppt-hot', hot);
+        showToast('Design gewechselt. Der Inhalt bleibt unseriös.');
+      }));
+      selectDeck(selectedIndex);
+    </script>
   </body>
-</html>
-`;
+</html>`;
 
 fs.writeFileSync(outPath, html);
 console.log(`Wrote ${outPath} with ${decks.length} playable deck(s).`);

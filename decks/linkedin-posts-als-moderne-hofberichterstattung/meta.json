@@ -1,61 +1,60 @@
 {
   "title": "LinkedIn-Posts als moderne Hofberichterstattung",
-  "description": "Zehn GPT-Image-2-Folien über Business-Barden, Demut mit Reichweite und höfische Selbstvermeldung im Corporate Court.",
+  "description": "Zehn image-first Karaoke-Folien über digitale Höfe, Thought-Leader-Barden und den Algorithmus als Königsmacher.",
   "emoji": "👑",
   "language": "de",
   "model": "openai/gpt-image-2",
-  "style": "dark edgy premium editorial satire with baked German slide text",
-  "source": "visible-old",
+  "style": "dark corporate satire, LinkedIn court chronicle, baked slide text",
   "slides": [
     {
       "image": "slide-01-cover.png",
-      "title": "LinkedIn-Posts als moderne Hofberichterstattung",
-      "hint": "Beginne wie ein Hofchronist mit KPI-Dashboard und Samtumhang."
+      "title": "LINKEDIN-POSTS ALS MODERNE HOFBERICHTERSTATTUNG",
+      "hint": "Eröffne mit königlicher Würde und leichtem Ekel vor Personal Branding."
     },
     {
-      "image": "slide-02-hofstaat.png",
-      "title": "Der digitale Hofstaat",
-      "hint": "Erklär Kommentare als Applauspflicht. Niemand liked freiwillig, alle dienen."
+      "image": "slide-02-hof.png",
+      "title": "DER DIGITALE HOF",
+      "hint": "Zeichne die Plattform als Schloss, aber mit schlechter Beleuchtung und OKRs."
     },
     {
-      "image": "slide-03-demut.png",
-      "title": "Demut mit Reichweite",
-      "hint": "Sag „unfassbar dankbar“ so, dass jede Silbe nach Eigenlob riecht."
+      "image": "slide-03-formeln.png",
+      "title": "DIE LOBFORMELN",
+      "hint": "Lies die Formeln wie liturgische Gesänge aus dem HR-Kloster."
     },
     {
-      "image": "slide-04-formel.png",
-      "title": "Die Post-Formel",
-      "hint": "Zerlege die virale Struktur wie Alchemie für Menschen mit OKRs."
+      "image": "slide-04-zeremonie.png",
+      "title": "DIE BEFÖRDERUNGSZEREMONIE",
+      "hint": "Mach daraus eine Krönung, inklusive unsichtbarer Fanfaren."
     },
     {
       "image": "slide-05-barden.png",
-      "title": "Business-Barden",
-      "hint": "Mach die Founder-Poesie groß. Sehr groß. Leider nicht gut."
+      "title": "DIE THOUGHT-LEADER-BARDEN",
+      "hint": "Hier bitte poetisch werden, aber nur so viel, dass es unangenehm bleibt."
     },
     {
-      "image": "slide-06-zeremonie.png",
-      "title": "Die Beförderungszeremonie",
-      "hint": "Lies Beförderungsankündigungen wie königliche Erlasse mit Dankespflicht."
+      "image": "slide-06-algorithmus.png",
+      "title": "DER ALGORITHMUS",
+      "hint": "Sag Algorithmus so, als wäre er eine mittelalterliche Steuerbehörde."
     },
     {
-      "image": "slide-07-algorithmus.png",
-      "title": "Der Algorithmus",
-      "hint": "Beschreibe den Algorithmus als launische Gottheit mit Content-Hunger."
+      "image": "slide-07-kommentaradel.png",
+      "title": "KOMMENTARADEL",
+      "hint": "Bitte jede Kommentarphrase als politisches Signal deuten."
     },
     {
-      "image": "slide-08-kommentaradel.png",
-      "title": "Der Kommentaradel",
-      "hint": "Jede Kommentarphrase ist ein Rang im digitalen Feudalismus."
+      "image": "slide-08-krisenkommunikation.png",
+      "title": "KRISENKOMMUNIKATION",
+      "hint": "Verkauf das als souveräne Staatskunst, nicht als Ausweichen."
     },
     {
-      "image": "slide-09-krise.png",
-      "title": "Krisenkommunikation",
-      "hint": "Übernimm Verantwortung maximal wolkig und mit Lernkurven-Nebelmaschine."
+      "image": "slide-09-reichweite.png",
+      "title": "REICHWEITE ALS GNADE",
+      "hint": "Mach daraus Wirtschaftsfeudalismus mit Dashboard."
     },
     {
       "image": "slide-10-finale.png",
-      "title": "Finale",
-      "hint": "Schließe mit einer höfischen Verbeugung vor dem Like-Button."
+      "title": "FAZIT",
+      "hint": "Finale trocken, bitter, präzise. Keine Gnade für Networking-Floskeln."
     }
   ]
 }

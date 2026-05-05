@@ -24,7 +24,7 @@
       .btn:hover:not(:disabled), .btn:focus-visible { background: rgba(255,255,255,.10); color: #fff; }
       .btn:disabled { opacity: .32; cursor: default; }
       .count { min-width: 48px; text-align: center; color: rgba(255,255,255,.52); font-size: .68rem; font-weight: 800; }
-      .hint { left: 50%; top: 10px; transform: translateX(-50%) translateY(-8px); max-width: min(840px, calc(100vw - 118px)); padding: 7px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(3,4,6,.48); color: rgba(255,255,255,.70); font-size: .72rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; backdrop-filter: blur(14px); }
+      .hint { left: 50%; top: 10px; transform: translateX(-50%) translateY(-8px); max-width: min(860px, calc(100vw - 118px)); padding: 7px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(3,4,6,.48); color: rgba(255,255,255,.70); font-size: .72rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; backdrop-filter: blur(14px); }
       body.show-ui .hint, .hint:hover { transform: translateX(-50%) translateY(0); }
       @media (max-width: 700px) { .hint { display: none; } .hud { bottom: 8px; } .home-link { top: 8px; right: 8px; } }
     </style>
@@ -32,40 +32,31 @@
   <body>
     <a class="home-link" href="../../index.html" aria-label="Zur Deck-Galerie">← Index</a>
     <main class="deck" aria-live="polite">
-      <section class="slide active" data-slide data-hint="Beginne wie ein Hofchronist mit KPI-Dashboard und Samtumhang."><div class="frame"><img src="./slide-01-cover.png" alt="Folie 1: LinkedIn-Posts als moderne Hofberichterstattung" /></div></section>
-      <section class="slide" data-slide data-hint="Erklär Kommentare als Applauspflicht. Niemand liked freiwillig, alle dienen."><div class="frame"><img src="./slide-02-hofstaat.png" alt="Folie 2: Der digitale Hofstaat" /></div></section>
-      <section class="slide" data-slide data-hint="Sag „unfassbar dankbar“ so, dass jede Silbe nach Eigenlob riecht."><div class="frame"><img src="./slide-03-demut.png" alt="Folie 3: Demut mit Reichweite" /></div></section>
-      <section class="slide" data-slide data-hint="Zerlege die virale Struktur wie Alchemie für Menschen mit OKRs."><div class="frame"><img src="./slide-04-formel.png" alt="Folie 4: Die Post-Formel" /></div></section>
-      <section class="slide" data-slide data-hint="Mach die Founder-Poesie groß. Sehr groß. Leider nicht gut."><div class="frame"><img src="./slide-05-barden.png" alt="Folie 5: Business-Barden" /></div></section>
-      <section class="slide" data-slide data-hint="Lies Beförderungsankündigungen wie königliche Erlasse mit Dankespflicht."><div class="frame"><img src="./slide-06-zeremonie.png" alt="Folie 6: Die Beförderungszeremonie" /></div></section>
-      <section class="slide" data-slide data-hint="Beschreibe den Algorithmus als launische Gottheit mit Content-Hunger."><div class="frame"><img src="./slide-07-algorithmus.png" alt="Folie 7: Der Algorithmus" /></div></section>
-      <section class="slide" data-slide data-hint="Jede Kommentarphrase ist ein Rang im digitalen Feudalismus."><div class="frame"><img src="./slide-08-kommentaradel.png" alt="Folie 8: Der Kommentaradel" /></div></section>
-      <section class="slide" data-slide data-hint="Übernimm Verantwortung maximal wolkig und mit Lernkurven-Nebelmaschine."><div class="frame"><img src="./slide-09-krise.png" alt="Folie 9: Krisenkommunikation" /></div></section>
-      <section class="slide" data-slide data-hint="Schließe mit einer höfischen Verbeugung vor dem Like-Button."><div class="frame"><img src="./slide-10-finale.png" alt="Folie 10: Finale" /></div></section>
+      <section class="slide active" data-slide data-hint="Eröffne mit königlicher Würde und leichtem Ekel vor Personal Branding."><div class="frame"><img src="./slide-01-cover.png" alt="Folie 1: LINKEDIN-POSTS ALS MODERNE HOFBERICHTERSTATTUNG" /></div></section>
+      <section class="slide" data-slide data-hint="Zeichne die Plattform als Schloss, aber mit schlechter Beleuchtung und OKRs."><div class="frame"><img src="./slide-02-hof.png" alt="Folie 2: DER DIGITALE HOF" /></div></section>
+      <section class="slide" data-slide data-hint="Lies die Formeln wie liturgische Gesänge aus dem HR-Kloster."><div class="frame"><img src="./slide-03-formeln.png" alt="Folie 3: DIE LOBFORMELN" /></div></section>
+      <section class="slide" data-slide data-hint="Mach daraus eine Krönung, inklusive unsichtbarer Fanfaren."><div class="frame"><img src="./slide-04-zeremonie.png" alt="Folie 4: DIE BEFÖRDERUNGSZEREMONIE" /></div></section>
+      <section class="slide" data-slide data-hint="Hier bitte poetisch werden, aber nur so viel, dass es unangenehm bleibt."><div class="frame"><img src="./slide-05-barden.png" alt="Folie 5: DIE THOUGHT-LEADER-BARDEN" /></div></section>
+      <section class="slide" data-slide data-hint="Sag Algorithmus so, als wäre er eine mittelalterliche Steuerbehörde."><div class="frame"><img src="./slide-06-algorithmus.png" alt="Folie 6: DER ALGORITHMUS" /></div></section>
+      <section class="slide" data-slide data-hint="Bitte jede Kommentarphrase als politisches Signal deuten."><div class="frame"><img src="./slide-07-kommentaradel.png" alt="Folie 7: KOMMENTARADEL" /></div></section>
+      <section class="slide" data-slide data-hint="Verkauf das als souveräne Staatskunst, nicht als Ausweichen."><div class="frame"><img src="./slide-08-krisenkommunikation.png" alt="Folie 8: KRISENKOMMUNIKATION" /></div></section>
+      <section class="slide" data-slide data-hint="Mach daraus Wirtschaftsfeudalismus mit Dashboard."><div class="frame"><img src="./slide-09-reichweite.png" alt="Folie 9: REICHWEITE ALS GNADE" /></div></section>
+      <section class="slide" data-slide data-hint="Finale trocken, bitter, präzise. Keine Gnade für Networking-Floskeln."><div class="frame"><img src="./slide-10-finale.png" alt="Folie 10: FAZIT" /></div></section>
     </main>
     <div class="hint" data-hint></div>
-    <div class="hud" aria-label="Präsentationssteuerung">
-      <button type="button" class="btn" data-nav="prev">←</button>
-      <span class="count" data-count>1 / 10</span>
-      <button type="button" class="btn" data-nav="next">→</button>
-    </div>
+    <div class="hud" aria-label="Präsentationssteuerung"><button type="button" class="btn" data-nav="prev">←</button><span class="count" data-count>1 / 10</span><button type="button" class="btn" data-nav="next">→</button></div>
     <script>
       const slides = Array.from(document.querySelectorAll('[data-slide]'));
       const params = new URLSearchParams(window.location.search);
       const requestedSlide = Number.parseInt(params.get('slide') || '1', 10);
       let currentIndex = Number.isFinite(requestedSlide) ? requestedSlide - 1 : 0;
-      const prevButton = document.querySelector('[data-nav="prev"]');
-      const nextButton = document.querySelector('[data-nav="next"]');
-      const count = document.querySelector('[data-count]');
-      const hint = document.querySelector('[data-hint]:not([data-slide])');
-      let touchStartX = null;
-      let uiTimer = null;
+      const prevButton = document.querySelector('[data-nav="prev"]'); const nextButton = document.querySelector('[data-nav="next"]'); const count = document.querySelector('[data-count]'); const hint = document.querySelector('[data-hint]:not([data-slide])');
+      let touchStartX = null; let uiTimer = null;
       function showUi() { document.body.classList.add('show-ui'); clearTimeout(uiTimer); uiTimer = setTimeout(() => document.body.classList.remove('show-ui'), 1700); }
-      function syncControls() { count.textContent = (currentIndex + 1) + ' / ' + slides.length; prevButton.disabled = currentIndex === 0; nextButton.disabled = currentIndex === slides.length - 1; hint.textContent = slides[currentIndex].dataset.hint || ''; }
+      function syncControls() { count.textContent = `${currentIndex + 1} / ${slides.length}`; prevButton.disabled = currentIndex === 0; nextButton.disabled = currentIndex === slides.length - 1; hint.textContent = slides[currentIndex].dataset.hint || ''; }
       function renderSlide(nextIndex) { currentIndex = Math.max(0, Math.min(nextIndex, slides.length - 1)); slides.forEach((slide, index) => { slide.classList.toggle('active', index === currentIndex); slide.setAttribute('aria-hidden', index === currentIndex ? 'false' : 'true'); }); const url = new URL(window.location.href); url.searchParams.set('slide', String(currentIndex + 1)); window.history.replaceState({}, '', url); syncControls(); }
       function advance(delta) { renderSlide(currentIndex + delta); showUi(); }
-      prevButton.addEventListener('click', () => advance(-1));
-      nextButton.addEventListener('click', () => advance(1));
+      prevButton.addEventListener('click', () => advance(-1)); nextButton.addEventListener('click', () => advance(1));
       window.addEventListener('mousemove', showUi, { passive: true });
       window.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0]?.clientX ?? null; showUi(); }, { passive: true });
       window.addEventListener('touchend', event => { if (touchStartX === null) return; const deltaX = (event.changedTouches[0]?.clientX ?? touchStartX) - touchStartX; touchStartX = null; if (Math.abs(deltaX) < 48) return; advance(deltaX < 0 ? 1 : -1); }, { passive: true });

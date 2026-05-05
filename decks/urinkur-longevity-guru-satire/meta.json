@@ -1,0 +1,21 @@
+{
+  "title": "Wie eine Urin-Kur dein Leben angeblich verlängert",
+  "description": "Zehn image-first Karaoke-Folien als Pseudo-Health-Guru-Satire über Longevity-Hype, fragwürdige Wellness-Claims und teuer verpackten Unsinn. Klare Nicht-nachmachen-Energie.",
+  "emoji": "🧪",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium editorial pseudo-health satire with baked German slide text",
+  "thumbnail": "thumb-01-cover.webp",
+  "slides": [
+    { "image": "slide-01-cover.png", "title": "Urin-Kur Longevity", "hint": "Eröffne mit der Autorität eines Health-Gurus, der seit Jahren jeden Zweifel als Toxin bezeichnet." },
+    { "image": "slide-02-disclaimer.png", "title": "Der Haftungsausschluss", "hint": "Sag jeden Disclaimer so, als wäre er Teil des Premium-Erlebnisses." },
+    { "image": "slide-03-longevity.png", "title": "Scham outsourcen", "hint": "Verkauf Retreat-Logik mit maximaler Ernsthaftigkeit und minimaler Evidenz." },
+    { "image": "slide-04-laborsprache.png", "title": "Laborsprache", "hint": "Wenn du ein Wort nicht verstehst, sprich es einfach noch langsamer aus." },
+    { "image": "slide-05-testimonials.png", "title": "Testimonials", "hint": "Hier bitte klingen, als sei ein Screenshot mit Sternchen quasi Nature Medicine." },
+    { "image": "slide-06-premium.png", "title": "Premium-Pakete", "hint": "Mach klar: Je teurer die Box, desto älter fühlt sich die Weisheit darin an." },
+    { "image": "slide-07-community.png", "title": "Community", "hint": "Beschreibe Gruppendruck als sanfte soziale Mineralisierung." },
+    { "image": "slide-08-kpi.png", "title": "KPI-Dashboard", "hint": "Lies die absurden Kennzahlen wie einen McKinsey-Bericht über Darmgefühl." },
+    { "image": "slide-09-faktencheck.png", "title": "Faktencheck", "hint": "Tu so, als wären Fakten nur eine schlechte UX-Entscheidung der Schulmedizin." },
+    { "image": "slide-10-finale.png", "title": "Finale", "hint": "Schließ würdevoll ab: nichts empfehlen, aber alles sehr teuer wirken lassen." }
+  ]
+}

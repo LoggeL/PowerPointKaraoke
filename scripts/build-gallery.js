@@ -29,6 +29,7 @@ const decks = fs.existsSync(decksDir)
         if (!fs.existsSync(path.join(deckPath, 'index.html'))) return null;
         const meta = readMeta(deckPath, slug);
         const firstSlide = Array.isArray(meta.slides) && meta.slides[0]?.image ? meta.slides[0].image : null;
+        const thumbnail = meta.thumbnail || meta.thumb || firstSlide;
         return {
           slug,
           title: meta.title ?? slug,
@@ -37,6 +38,7 @@ const decks = fs.existsSync(decksDir)
           language: meta.language ?? 'de',
           slideCount: Array.isArray(meta.slides) ? meta.slides.length : 0,
           firstSlide: firstSlide ? `decks/${slug}/${firstSlide}` : null,
+          thumbnail: thumbnail ? `decks/${slug}/${thumbnail}` : null,
           href: `decks/${slug}/index.html`
         };
       })
@@ -48,8 +50,8 @@ const defaultIndex = Math.max(0, decks.findIndex((deck) => deck.slug === 'eltern
 
 const thumbnails = decks.length
   ? decks.map((deck, index) => {
-      const preview = deck.firstSlide
-        ? `<img src="${escapeHtml(deck.firstSlide)}" alt="Slide 1 Vorschau: ${escapeHtml(deck.title)}" />`
+      const preview = deck.thumbnail
+        ? `<img src="${escapeHtml(deck.thumbnail)}" alt="Slide 1 Vorschau: ${escapeHtml(deck.title)}" />`
         : `<div class="empty-preview"><span>${escapeHtml(deck.emoji)}</span></div>`;
       return `
           <article class="deck-thumb${index === defaultIndex ? ' active' : ''}" data-deck-index="${index}" tabindex="0" aria-label="${escapeHtml(deck.title)} auswählen">

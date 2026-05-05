@@ -64,8 +64,11 @@
       function syncControls() { count.textContent = `${currentIndex + 1} / ${slides.length}`; prevButton.disabled = currentIndex === 0; nextButton.disabled = currentIndex === slides.length - 1; hint.textContent = slides[currentIndex].dataset.hint || ''; }
       function renderSlide(nextIndex) { currentIndex = Math.max(0, Math.min(nextIndex, slides.length - 1)); slides.forEach((slide, index) => { slide.classList.toggle('active', index === currentIndex); slide.setAttribute('aria-hidden', index === currentIndex ? 'false' : 'true'); }); const url = new URL(window.location.href); url.searchParams.set('slide', String(currentIndex + 1)); window.history.replaceState({}, '', url); syncControls(); }
       function advance(delta) { renderSlide(currentIndex + delta); showUi(); }
-      prevButton.addEventListener('click', () => advance(-1));
-      nextButton.addEventListener('click', () => advance(1));
+      prevButton.addEventListener('click', event => { event.stopPropagation(); advance(-1); });
+      nextButton.addEventListener('click', event => { event.stopPropagation(); advance(1); });
+      document.querySelector('.deck').addEventListener('click', event => { if (event.target.closest('a, button, .hud, .home-link')) return; advance(1); });
+      let wheelLocked = false;
+      window.addEventListener('wheel', event => { event.preventDefault(); if (wheelLocked) return; const dominant = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY; if (Math.abs(dominant) < 12) return; wheelLocked = true; advance(dominant > 0 ? 1 : -1); setTimeout(() => { wheelLocked = false; }, 360); }, { passive: false });
       window.addEventListener('mousemove', showUi, { passive: true });
       window.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0]?.clientX ?? null; showUi(); }, { passive: true });
       window.addEventListener('touchend', event => { if (touchStartX === null) return; const deltaX = (event.changedTouches[0]?.clientX ?? touchStartX) - touchStartX; touchStartX = null; if (Math.abs(deltaX) < 48) return; advance(deltaX < 0 ? 1 : -1); }, { passive: true });

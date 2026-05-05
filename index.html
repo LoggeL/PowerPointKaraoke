@@ -48,8 +48,6 @@
       .thumb-number { color:#605e5c; font-size:12px; text-align:right; }
       .thumb-frame { aspect-ratio:16/9; display:block; overflow:hidden; background:#fff; border:1px solid #a19f9d; box-shadow:0 2px 5px rgba(0,0,0,.16); position:relative; }
       .thumb-frame img { width:100%; height:100%; display:block; object-fit:cover; }
-      .thumb-play { position:absolute; inset:auto 8px 7px 8px; display:grid; place-items:center; min-height:24px; border-radius:999px; background:rgba(183,71,42,.95); color:#fff; font-size:11px; font-weight:800; opacity:0; transform:translateY(5px); transition:opacity 140ms ease, transform 140ms ease; box-shadow:0 7px 14px rgba(0,0,0,.22); }
-      .deck-thumb:hover .thumb-play, .deck-thumb:focus-visible .thumb-play { opacity:1; transform:translateY(0); }
       .empty-preview { height:100%; display:grid; place-items:center; background:linear-gradient(135deg,#b7472a,#f6b26b); color:white; font-size:28px; }
       .thumb-meta { min-width:0; display:grid; gap:4px; }
       .thumb-title { min-width:0; color:#323130; font-size:12px; line-height:1.24; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
@@ -60,8 +58,6 @@
       .slide-canvas { aspect-ratio:16/9; background:#fff; border:1px solid #8f8f8f; box-shadow:0 18px 44px rgba(0,0,0,.32); overflow:hidden; position:relative; }
       .slide-canvas img { width:100%; height:100%; display:block; object-fit:cover; }
       .canvas-empty { height:100%; display:grid; place-items:center; color:#605e5c; }
-      .big-play { position:absolute; right:18px; bottom:18px; display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background:rgba(183,71,42,.96); color:#fff; text-decoration:none; font-weight:800; font-size:13px; box-shadow:0 12px 28px rgba(0,0,0,.30); opacity:.92; }
-      .big-play:hover { background:var(--ppt-dark); opacity:1; transform:translateY(-1px); }
       .notes { border-top:1px solid #b9b6b2; background:#f7f6f5; padding:12px 18px; }
       .notes h2 { margin:0 0 7px; color:#605e5c; font-size:12px; font-weight:600; }
       .notes p { margin:0; color:#323130; font-size:13px; line-height:1.35; }
@@ -79,7 +75,7 @@
       body.karaoke-chaos .slide-canvas { animation:wobble 900ms ease-in-out 2; }
       @keyframes wobble { 0%,100%{transform:rotate(0)} 25%{transform:rotate(.45deg)} 50%{transform:rotate(-.35deg)} 75%{transform:rotate(.25deg)} }
       @media (max-width:900px) { body{overflow:auto}.app{min-height:100vh;height:auto;grid-template-rows:32px auto auto 25px}.toolstrip{display:none}.ribbon{height:35px}.tabs{overflow-x:auto}.editor{grid-template-columns:1fr}.thumb-pane{max-height:300px;border-right:0;border-bottom:1px solid #b9b6b2}.deck-thumb{grid-template-columns:22px 138px minmax(0,1fr)}.canvas-area{grid-template-rows:auto auto}.slide-workspace{padding:18px}.slide-shell{width:100%;min-width:0} }
-      @media (max-width:620px) { .titlebar{grid-template-columns:1fr auto}.quick{display:none}.doc-title{text-align:left}.controls span{width:30px}.thumb-pane{padding-left:8px;padding-right:8px}.deck-thumb{grid-template-columns:20px 112px minmax(0,1fr);gap:7px}.thumb-title{font-size:11px}.notes{padding:10px 12px}.status-right{display:none}.big-play{right:10px;bottom:10px;padding:8px 10px;font-size:12px} }
+      @media (max-width:620px) { .titlebar{grid-template-columns:1fr auto}.quick{display:none}.doc-title{text-align:left}.controls span{width:30px}.thumb-pane{padding-left:8px;padding-right:8px}.deck-thumb{grid-template-columns:20px 112px minmax(0,1fr);gap:7px}.thumb-title{font-size:11px}.notes{padding:10px 12px}.status-right{display:none} }
     </style>
   </head>
   <body>
@@ -99,83 +95,83 @@
         <aside class="thumb-pane" aria-labelledby="thumb-title"><h1 class="pane-title" id="thumb-title">Präsentationen</h1><div class="deck-list">
           <article class="deck-thumb" data-deck-index="0" tabindex="0" aria-label="Als Frau im Mittelalter: 10 Überlebenstipps auswählen">
             <span class="thumb-number">1</span>
-            <span class="thumb-frame"><img src="decks/als-frau-im-mittelalter-ueberlebenstipps-image-first/slide-01-cover.png" alt="Slide 1 Vorschau: Als Frau im Mittelalter: 10 Überlebenstipps" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/als-frau-im-mittelalter-ueberlebenstipps-image-first/slide-01-cover.png" alt="Slide 1 Vorschau: Als Frau im Mittelalter: 10 Überlebenstipps" /></span>
             <span class="thumb-meta"><span class="thumb-title">Als Frau im Mittelalter: 10 Überlebenstipps</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="1" tabindex="0" aria-label="Bühnen-Bösewicht für Fortgeschrittene auswählen">
             <span class="thumb-number">2</span>
-            <span class="thumb-frame"><img src="decks/buehnen-boesewicht-fuer-fortgeschrittene/slide-01-cover.png" alt="Slide 1 Vorschau: Bühnen-Bösewicht für Fortgeschrittene" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/buehnen-boesewicht-fuer-fortgeschrittene/slide-01-cover.png" alt="Slide 1 Vorschau: Bühnen-Bösewicht für Fortgeschrittene" /></span>
             <span class="thumb-meta"><span class="thumb-title">Bühnen-Bösewicht für Fortgeschrittene</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="2" tabindex="0" aria-label="Der inoffizielle Prestige-Index deutscher Supermärkte auswählen">
             <span class="thumb-number">3</span>
-            <span class="thumb-frame"><img src="decks/der-inoffizielle-prestige-index-deutscher-supermaerkte/slide-01-cover.png" alt="Slide 1 Vorschau: Der inoffizielle Prestige-Index deutscher Supermärkte" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/der-inoffizielle-prestige-index-deutscher-supermaerkte/slide-01-cover.png" alt="Slide 1 Vorschau: Der inoffizielle Prestige-Index deutscher Supermärkte" /></span>
             <span class="thumb-meta"><span class="thumb-title">Der inoffizielle Prestige-Index deutscher Supermärkte</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="3" tabindex="0" aria-label="Die Streckbank als Design-Thinking-Tool auswählen">
             <span class="thumb-number">4</span>
-            <span class="thumb-frame"><img src="decks/streckbank-als-design-thinking-tool/slide-01-cover.png" alt="Slide 1 Vorschau: Die Streckbank als Design-Thinking-Tool" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/streckbank-als-design-thinking-tool/slide-01-cover.png" alt="Slide 1 Vorschau: Die Streckbank als Design-Thinking-Tool" /></span>
             <span class="thumb-meta"><span class="thumb-title">Die Streckbank als Design-Thinking-Tool</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb active" data-deck-index="4" tabindex="0" aria-label="Elternabend als kommunales Strafgericht auswählen">
             <span class="thumb-number">5</span>
-            <span class="thumb-frame"><img src="decks/elternabend-als-kommunales-strafgericht/slide-01-cover.png" alt="Slide 1 Vorschau: Elternabend als kommunales Strafgericht" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/elternabend-als-kommunales-strafgericht/slide-01-cover.png" alt="Slide 1 Vorschau: Elternabend als kommunales Strafgericht" /></span>
             <span class="thumb-meta"><span class="thumb-title">Elternabend als kommunales Strafgericht</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="5" tabindex="0" aria-label="Erbstreit als Familien-Startup auswählen">
             <span class="thumb-number">6</span>
-            <span class="thumb-frame"><img src="decks/erbstreit-als-familien-startup/slide-01-cover.png" alt="Slide 1 Vorschau: Erbstreit als Familien-Startup" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/erbstreit-als-familien-startup/slide-01-cover.png" alt="Slide 1 Vorschau: Erbstreit als Familien-Startup" /></span>
             <span class="thumb-meta"><span class="thumb-title">Erbstreit als Familien-Startup</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="6" tabindex="0" aria-label="Hotel-Frühstück als Charaktertest auswählen">
             <span class="thumb-number">7</span>
-            <span class="thumb-frame"><img src="decks/hotel-fruehstueck-als-charaktertest/slide-01-cover.png" alt="Slide 1 Vorschau: Hotel-Frühstück als Charaktertest" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/hotel-fruehstueck-als-charaktertest/slide-01-cover.png" alt="Slide 1 Vorschau: Hotel-Frühstück als Charaktertest" /></span>
             <span class="thumb-meta"><span class="thumb-title">Hotel-Frühstück als Charaktertest</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="7" tabindex="0" aria-label="LinkedIn-Posts als moderne Hofberichterstattung auswählen">
             <span class="thumb-number">8</span>
-            <span class="thumb-frame"><img src="decks/linkedin-posts-als-moderne-hofberichterstattung/slide-01-cover.png" alt="Slide 1 Vorschau: LinkedIn-Posts als moderne Hofberichterstattung" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/linkedin-posts-als-moderne-hofberichterstattung/slide-01-cover.png" alt="Slide 1 Vorschau: LinkedIn-Posts als moderne Hofberichterstattung" /></span>
             <span class="thumb-meta"><span class="thumb-title">LinkedIn-Posts als moderne Hofberichterstattung</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="8" tabindex="0" aria-label="Moderne Nervmethoden (Spaßedition) auswählen">
             <span class="thumb-number">9</span>
-            <span class="thumb-frame"><img src="decks/moderne-nervmethoden-spassedition/slide-01-cover.png" alt="Slide 1 Vorschau: Moderne Nervmethoden (Spaßedition)" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/moderne-nervmethoden-spassedition/slide-01-cover.png" alt="Slide 1 Vorschau: Moderne Nervmethoden (Spaßedition)" /></span>
             <span class="thumb-meta"><span class="thumb-title">Moderne Nervmethoden (Spaßedition)</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="9" tabindex="0" aria-label="Schnelles Geld im Mittelalter: Grift Guide auswählen">
             <span class="thumb-number">10</span>
-            <span class="thumb-frame"><img src="decks/schnelles-geld-im-mittelalter-grift-guide/slide-01-cover.png" alt="Slide 1 Vorschau: Schnelles Geld im Mittelalter: Grift Guide" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/schnelles-geld-im-mittelalter-grift-guide/slide-01-cover.png" alt="Slide 1 Vorschau: Schnelles Geld im Mittelalter: Grift Guide" /></span>
             <span class="thumb-meta"><span class="thumb-title">Schnelles Geld im Mittelalter: Grift Guide</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="10" tabindex="0" aria-label="Spa in der Hölle: Businessplan auswählen">
             <span class="thumb-number">11</span>
-            <span class="thumb-frame"><img src="decks/spa-in-der-hoelle-businessplan/slide-01-cover.png" alt="Slide 1 Vorschau: Spa in der Hölle: Businessplan" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/spa-in-der-hoelle-businessplan/slide-01-cover.png" alt="Slide 1 Vorschau: Spa in der Hölle: Businessplan" /></span>
             <span class="thumb-meta"><span class="thumb-title">Spa in der Hölle: Businessplan</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="11" tabindex="0" aria-label="VW-Bus vs. Wohnwagen: Image First auswählen">
             <span class="thumb-number">12</span>
-            <span class="thumb-frame"><img src="decks/vw-bus-vs-wohnwagen-image-first/slide-01-cover.png" alt="Slide 1 Vorschau: VW-Bus vs. Wohnwagen: Image First" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/vw-bus-vs-wohnwagen-image-first/slide-01-cover.png" alt="Slide 1 Vorschau: VW-Bus vs. Wohnwagen: Image First" /></span>
             <span class="thumb-meta"><span class="thumb-title">VW-Bus vs. Wohnwagen: Image First</span><span class="thumb-sub">10 Folien · de</span></span>
           </article>
 
           <article class="deck-thumb" data-deck-index="12" tabindex="0" aria-label="WhatsApp-Sprachnachrichten als Führungsstil auswählen">
             <span class="thumb-number">13</span>
-            <span class="thumb-frame"><img src="decks/whatsapp-sprachnachrichten-als-fuehrungsstil/slide-01-cover.png" alt="Slide 1 Vorschau: WhatsApp-Sprachnachrichten als Führungsstil" /><span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame"><img src="decks/whatsapp-sprachnachrichten-als-fuehrungsstil/slide-01-cover.png" alt="Slide 1 Vorschau: WhatsApp-Sprachnachrichten als Führungsstil" /></span>
             <span class="thumb-meta"><span class="thumb-title">WhatsApp-Sprachnachrichten als Führungsstil</span><span class="thumb-sub">10 Folien · de</span></span>
           </article></div></aside>
         <section class="canvas-area" aria-labelledby="selected-title">
-          <div class="slide-workspace"><div class="slide-shell"><div class="slide-canvas"><img data-preview-image alt="Große Vorschau: Slide 1" /><a class="big-play" data-play-link href="#">▶ Bildschirmpräsentation</a></div></div></div>
+          <div class="slide-workspace"><div class="slide-shell"><div class="slide-canvas"><img data-preview-image alt="Große Vorschau: Slide 1" /></div></div></div>
           <aside class="notes" aria-label="Notizen"><h2>Notizen</h2><p><strong id="selected-title" data-selected-title></strong><span data-selected-copy></span></p><div class="notes-actions"><a class="open-button" data-notes-play href="#">▶ Präsentation starten</a><button class="tiny-button" data-action="random">🎲 Zufälliges Deck</button><button class="tiny-button" data-action="panic">📝 Panik-Notiz</button></div></aside>
         </section>
       </section>
@@ -191,7 +187,7 @@
       const title = document.querySelector('[data-selected-title]');
       const copy = document.querySelector('[data-selected-copy]');
       const docTitle = document.querySelector('[data-doc-title]');
-      const playLinks = [document.querySelector('[data-play-link]'), document.querySelector('[data-notes-play]')];
+      const playLinks = [document.querySelector('[data-notes-play]')];
       const statusSlide = document.querySelector('[data-status-slide]');
       const toast = document.querySelector('[data-toast]');
       const easter = document.querySelector('[data-easter]');
@@ -206,7 +202,7 @@
         title.textContent = deck.title;
         copy.textContent = ' · Slide 1 von ' + (deck.slideCount || 10) + '. ' + deck.description;
         docTitle.textContent = 'PowerPoint Karaoke — ' + deck.title + '.pptx';
-        playLinks.forEach((link) => { link.href = deck.href; });
+        playLinks.forEach((link) => { if (link) link.href = deck.href; });
         statusSlide.textContent = 'Folie 1 von ' + (deck.slideCount || 10);
         easter.textContent = quips[selectedIndex % quips.length];
         if (focus) thumbs[selectedIndex]?.focus();

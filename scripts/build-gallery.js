@@ -54,7 +54,7 @@ const thumbnails = decks.length
       return `
           <article class="deck-thumb${index === defaultIndex ? ' active' : ''}" data-deck-index="${index}" tabindex="0" aria-label="${escapeHtml(deck.title)} auswählen">
             <span class="thumb-number">${index + 1}</span>
-            <span class="thumb-frame">${preview}<span class="thumb-play" aria-hidden="true">▶ Start</span></span>
+            <span class="thumb-frame">${preview}</span>
             <span class="thumb-meta"><span class="thumb-title">${escapeHtml(deck.title)}</span><span class="thumb-sub">${deck.slideCount || 10} Folien · ${escapeHtml(deck.language)}</span></span>
           </article>`;
     }).join('\n')
@@ -110,8 +110,6 @@ const html = `<!DOCTYPE html>
       .thumb-number { color:#605e5c; font-size:12px; text-align:right; }
       .thumb-frame { aspect-ratio:16/9; display:block; overflow:hidden; background:#fff; border:1px solid #a19f9d; box-shadow:0 2px 5px rgba(0,0,0,.16); position:relative; }
       .thumb-frame img { width:100%; height:100%; display:block; object-fit:cover; }
-      .thumb-play { position:absolute; inset:auto 8px 7px 8px; display:grid; place-items:center; min-height:24px; border-radius:999px; background:rgba(183,71,42,.95); color:#fff; font-size:11px; font-weight:800; opacity:0; transform:translateY(5px); transition:opacity 140ms ease, transform 140ms ease; box-shadow:0 7px 14px rgba(0,0,0,.22); }
-      .deck-thumb:hover .thumb-play, .deck-thumb:focus-visible .thumb-play { opacity:1; transform:translateY(0); }
       .empty-preview { height:100%; display:grid; place-items:center; background:linear-gradient(135deg,#b7472a,#f6b26b); color:white; font-size:28px; }
       .thumb-meta { min-width:0; display:grid; gap:4px; }
       .thumb-title { min-width:0; color:#323130; font-size:12px; line-height:1.24; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
@@ -122,8 +120,6 @@ const html = `<!DOCTYPE html>
       .slide-canvas { aspect-ratio:16/9; background:#fff; border:1px solid #8f8f8f; box-shadow:0 18px 44px rgba(0,0,0,.32); overflow:hidden; position:relative; }
       .slide-canvas img { width:100%; height:100%; display:block; object-fit:cover; }
       .canvas-empty { height:100%; display:grid; place-items:center; color:#605e5c; }
-      .big-play { position:absolute; right:18px; bottom:18px; display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background:rgba(183,71,42,.96); color:#fff; text-decoration:none; font-weight:800; font-size:13px; box-shadow:0 12px 28px rgba(0,0,0,.30); opacity:.92; }
-      .big-play:hover { background:var(--ppt-dark); opacity:1; transform:translateY(-1px); }
       .notes { border-top:1px solid #b9b6b2; background:#f7f6f5; padding:12px 18px; }
       .notes h2 { margin:0 0 7px; color:#605e5c; font-size:12px; font-weight:600; }
       .notes p { margin:0; color:#323130; font-size:13px; line-height:1.35; }
@@ -141,7 +137,7 @@ const html = `<!DOCTYPE html>
       body.karaoke-chaos .slide-canvas { animation:wobble 900ms ease-in-out 2; }
       @keyframes wobble { 0%,100%{transform:rotate(0)} 25%{transform:rotate(.45deg)} 50%{transform:rotate(-.35deg)} 75%{transform:rotate(.25deg)} }
       @media (max-width:900px) { body{overflow:auto}.app{min-height:100vh;height:auto;grid-template-rows:32px auto auto 25px}.toolstrip{display:none}.ribbon{height:35px}.tabs{overflow-x:auto}.editor{grid-template-columns:1fr}.thumb-pane{max-height:300px;border-right:0;border-bottom:1px solid #b9b6b2}.deck-thumb{grid-template-columns:22px 138px minmax(0,1fr)}.canvas-area{grid-template-rows:auto auto}.slide-workspace{padding:18px}.slide-shell{width:100%;min-width:0} }
-      @media (max-width:620px) { .titlebar{grid-template-columns:1fr auto}.quick{display:none}.doc-title{text-align:left}.controls span{width:30px}.thumb-pane{padding-left:8px;padding-right:8px}.deck-thumb{grid-template-columns:20px 112px minmax(0,1fr);gap:7px}.thumb-title{font-size:11px}.notes{padding:10px 12px}.status-right{display:none}.big-play{right:10px;bottom:10px;padding:8px 10px;font-size:12px} }
+      @media (max-width:620px) { .titlebar{grid-template-columns:1fr auto}.quick{display:none}.doc-title{text-align:left}.controls span{width:30px}.thumb-pane{padding-left:8px;padding-right:8px}.deck-thumb{grid-template-columns:20px 112px minmax(0,1fr);gap:7px}.thumb-title{font-size:11px}.notes{padding:10px 12px}.status-right{display:none} }
     </style>
   </head>
   <body>
@@ -160,7 +156,7 @@ const html = `<!DOCTYPE html>
       <section class="editor" aria-label="PowerPoint Editoransicht">
         <aside class="thumb-pane" aria-labelledby="thumb-title"><h1 class="pane-title" id="thumb-title">Präsentationen</h1><div class="deck-list">${thumbnails}</div></aside>
         <section class="canvas-area" aria-labelledby="selected-title">
-          <div class="slide-workspace"><div class="slide-shell"><div class="slide-canvas"><img data-preview-image alt="Große Vorschau: Slide 1" /><a class="big-play" data-play-link href="#">▶ Bildschirmpräsentation</a></div></div></div>
+          <div class="slide-workspace"><div class="slide-shell"><div class="slide-canvas"><img data-preview-image alt="Große Vorschau: Slide 1" /></div></div></div>
           <aside class="notes" aria-label="Notizen"><h2>Notizen</h2><p><strong id="selected-title" data-selected-title></strong><span data-selected-copy></span></p><div class="notes-actions"><a class="open-button" data-notes-play href="#">▶ Präsentation starten</a><button class="tiny-button" data-action="random">🎲 Zufälliges Deck</button><button class="tiny-button" data-action="panic">📝 Panik-Notiz</button></div></aside>
         </section>
       </section>
@@ -176,7 +172,7 @@ const html = `<!DOCTYPE html>
       const title = document.querySelector('[data-selected-title]');
       const copy = document.querySelector('[data-selected-copy]');
       const docTitle = document.querySelector('[data-doc-title]');
-      const playLinks = [document.querySelector('[data-play-link]'), document.querySelector('[data-notes-play]')];
+      const playLinks = [document.querySelector('[data-notes-play]')];
       const statusSlide = document.querySelector('[data-status-slide]');
       const toast = document.querySelector('[data-toast]');
       const easter = document.querySelector('[data-easter]');
@@ -191,7 +187,7 @@ const html = `<!DOCTYPE html>
         title.textContent = deck.title;
         copy.textContent = ' · Slide 1 von ' + (deck.slideCount || 10) + '. ' + deck.description;
         docTitle.textContent = 'PowerPoint Karaoke — ' + deck.title + '.pptx';
-        playLinks.forEach((link) => { link.href = deck.href; });
+        playLinks.forEach((link) => { if (link) link.href = deck.href; });
         statusSlide.textContent = 'Folie 1 von ' + (deck.slideCount || 10);
         easter.textContent = quips[selectedIndex % quips.length];
         if (focus) thumbs[selectedIndex]?.focus();

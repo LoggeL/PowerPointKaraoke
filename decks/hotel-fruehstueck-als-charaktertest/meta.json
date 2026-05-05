@@ -1,6 +1,60 @@
 {
   "title": "Hotel-Frühstück als Charaktertest",
-  "description": "Ein image-first Karaoke-Deck über Buffetmoral, Croissant-Ethik und die Wahrheit am Eierkocher.",
+  "description": "Zehn image-first Karaoke-Folien über Buffetstrategie, Kaffeemaschinenpanik und die moralische Prüfung zwischen Rührei und Mini-Croissant.",
   "emoji": "🥐",
-  "language": "de"
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark corporate satire, hotel breakfast character assessment, baked slide text",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "HOTEL-FRÜHSTÜCK ALS CHARAKTERTEST",
+      "hint": "Eröffne wie ein Psychologe, der seine Studie am Warmhaltebehälter verloren hat."
+    },
+    {
+      "image": "slide-02-erster-gang.png",
+      "title": "DER ERSTE GANG",
+      "hint": "Sprich langsam. Alle im Raum sollen sich an ihren schlimmsten Buffetmoment erinnern."
+    },
+    {
+      "image": "slide-03-buffettypen.png",
+      "title": "BUFFET-ARCHETYPEN",
+      "hint": "Stell sie vor wie Verdächtige in einem sehr deutschen Krimi."
+    },
+    {
+      "image": "slide-04-kaffeemaschine.png",
+      "title": "KAFFEEMASCHINE = ENDGEGNER",
+      "hint": "Mach aus Cappuccino-Auswahl eine Hochrisikosituation."
+    },
+    {
+      "image": "slide-05-miniportionen.png",
+      "title": "MINIPORTIONEN-ÖKONOMIE",
+      "hint": "Hier bitte wie ein Ökonom über sehr kleine Verpackungen dozieren."
+    },
+    {
+      "image": "slide-06-eierkocher.png",
+      "title": "DER EIERKOCHER",
+      "hint": "Behandle den Eierkocher wie einen UNO-Sicherheitsrat mit Dampf."
+    },
+    {
+      "image": "slide-07-tischwahl.png",
+      "title": "TISCHWAHL ALS STATUS",
+      "hint": "Erklär Sitzplätze wie Immobilienlagen mit Frühstücksgeruch."
+    },
+    {
+      "image": "slide-08-hygienetheater.png",
+      "title": "HYGIENE-THEATER",
+      "hint": "Ganz ernst bleiben. Die Brötchenzange ist der dünne Lack der Zivilisation."
+    },
+    {
+      "image": "slide-09-checkoutdruck.png",
+      "title": "CHECK-OUT-DRUCK",
+      "hint": "Steigere die Panik wie bei einem Thriller, aber es geht nur um Saft."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "FAZIT",
+      "hint": "Finale wie ein Gerichtsurteil: Niemand verlässt das Buffet unschuldig."
+    }
+  ]
 }

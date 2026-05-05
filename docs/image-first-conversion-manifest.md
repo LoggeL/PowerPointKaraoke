@@ -18,9 +18,9 @@ Goal: migrate legacy `p*/index.html` decks into `decks/<slug>/` image-first deck
 | `p2` | `decks/streckbank-als-design-thinking-tool/` | Converted | Rewrite torture premise as non-graphic absurd product innovation / medieval design-thinking furniture satire. |
 | `p3` | `decks/schnelles-geld-im-mittelalter-grift-guide/` | Converted | Startup/scam/grift satire; no real instructions, fake medieval hustle taxonomy. |
 | `p10` | `decks/moderne-nervmethoden-spassedition/` | Converted | Rewrite torture title into non-graphic modern annoyance taxonomy / service-design hell. |
-| `p11` | `decks/spa-in-der-hoelle-businessplan/` | Backlog | Dark but non-graphic wellness/business satire; absurd heat, bureaucracy, customer journey. |
-| `p12` | `decks/boese-werden-fuer-fortgeschrittene/` | Backlog | Cartoon villainy / petty bureaucracy satire; avoid real harm guidance. |
-| `p13` | `decks/erbstreit-als-familien-startup/` | Backlog | Family conflict satire, escalation as governance failure; avoid legal advice. |
+| `p11` | `decks/spa-in-der-hoelle-businessplan/` | Converted | Dark but non-graphic wellness/business satire; absurd heat, bureaucracy, customer journey. |
+| `p12` | `decks/buehnen-boesewicht-fuer-fortgeschrittene/` | Converted | Rewritten as harmless theatrical antagonist / petty branding satire; avoids real harm guidance. |
+| `p13` | `decks/erbstreit-als-familien-startup/` | Converted | Family conflict satire, escalation as governance failure; avoid legal advice. |
 | `p14` | `decks/sugar-daddy-akquise-als-cringe-sales-funnel/` | Backlog | Rewrite sexist seduction angle into critique of transactional status dating and bad sales tactics. |
 | `p15` | `decks/bestattungswesen-disruption-lab/` | Backlog | Dark non-graphic funeral innovation satire. |
 | `p16` | `decks/plueschhase-als-co-founder/` | Backlog | Absurd friendship/therapy/startup deck; safe. |
@@ -38,3 +38,5 @@ Goal: migrate legacy `p*/index.html` decks into `decks/<slug>/` image-first deck
 ## Batch log
 
 - 2026-05-04: Converted batch 1: `p2` → `streckbank-als-design-thinking-tool`, `p3` → `schnelles-geld-im-mittelalter-grift-guide`, `p10` → `moderne-nervmethoden-spassedition`. `npm run check` passed.
+
+- 2026-05-04: Converted batch 2: `p11` → `spa-in-der-hoelle-businessplan`, `p12` → `buehnen-boesewicht-fuer-fortgeschrittene`, `p13` → `erbstreit-als-familien-startup`. `npm run check` passed.

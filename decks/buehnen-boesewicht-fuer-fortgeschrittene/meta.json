@@ -1,0 +1,61 @@
+{
+  "title": "Bühnen-Bösewicht für Fortgeschrittene",
+  "description": "Sicherer Rewrite von „Wie werde ich böse?“ als harmlose Theater-/Branding-Satire über dekorative Gemeinheit, KPI-Denken und Compliance.",
+  "emoji": "🦹",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium theatrical villain-brand satire with baked German slide text",
+  "source": "p12",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Bühnen-Bösewicht für Fortgeschrittene",
+      "hint": "Starte mit maximaler Nebelmaschine und minimaler echter Bedrohung."
+    },
+    {
+      "image": "slide-02-mission.png",
+      "title": "Mission Statement",
+      "hint": "„Ärgernis mit Vision“ bitte wie eine McKinsey-Folie vortragen, nur mit Cape."
+    },
+    {
+      "image": "slide-03-branding.png",
+      "title": "Branding",
+      "hint": "Erklär das böse Lachen in Moll als wiedererkennbare akustische Marke."
+    },
+    {
+      "image": "slide-04-mvp.png",
+      "title": "MVP der Gemeinheit",
+      "hint": "Parkplatz blockieren klingt klein. Du nennst es validierten Reibungspunkt."
+    },
+    {
+      "image": "slide-05-lair.png",
+      "title": "Lair Design",
+      "hint": "Verteidige offene Flächen in einer Höhle. Das ist schwer, aber sehr präsentierbar."
+    },
+    {
+      "image": "slide-06-onboarding.png",
+      "title": "Onboarding",
+      "hint": "Sag „kein echtes Chaos vor 10 Uhr“ als wäre es New Work mit Zähnen."
+    },
+    {
+      "image": "slide-07-kpi.png",
+      "title": "KPI: Augenrollen pro Minute",
+      "hint": "Hier bitte Zahlen erfinden, aber mit einem Blick, der Excel einschüchtert."
+    },
+    {
+      "image": "slide-08-krise.png",
+      "title": "Krisenkommunikation",
+      "hint": "„Dramaturgisch so geplant“ ist deine komplette Verteidigungsstrategie."
+    },
+    {
+      "image": "slide-09-grenzen.png",
+      "title": "Grenzen",
+      "hint": "Kling kurz verantwortungsvoll, damit danach wieder Theaterrauch erlaubt ist."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Böse, aber compliancefähig",
+      "hint": "Finale als zertifizierter Störenfried. Formulare machen alles seriöser."
+    }
+  ]
+}

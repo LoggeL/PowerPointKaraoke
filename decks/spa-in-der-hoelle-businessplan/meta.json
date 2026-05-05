@@ -1,0 +1,61 @@
+{
+  "title": "Spa in der Hölle: Businessplan",
+  "description": "Zehn GPT-Image-2-Folien über ein non-graphic Luxus-Spa in der Hölle als überdrehten Businessplan: Zielgruppen, USP, Journey, Abo und Franchise.",
+  "emoji": "🔥",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium wellness-business satire with baked German slide text",
+  "source": "p11",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Spa in der Hölle",
+      "hint": "Eröffne wie ein Hotelier, der Standortnachteile konsequent in Premium umdeutet."
+    },
+    {
+      "image": "slide-02-zielgruppe.png",
+      "title": "Zielgruppe",
+      "hint": "Verkauf „Verdammte mit Rücken“ als fein granuliertes Segment mit hoher Zahlungsbereitschaft."
+    },
+    {
+      "image": "slide-03-usp.png",
+      "title": "USP: Hitze inklusive",
+      "hint": "Sag das mit der Arroganz eines Menschen, der Energiekosten endgültig gelöst hat."
+    },
+    {
+      "image": "slide-04-journey.png",
+      "title": "Customer Journey",
+      "hint": "Mach aus dem Beschwerdeformular bitte einen emotionalen Höhepunkt der Reise."
+    },
+    {
+      "image": "slide-05-aufguss.png",
+      "title": "Signature Treatment: Der ewige Aufguss",
+      "hint": "Kling so, als wäre Ewigkeit eine buchbare Zusatzleistung mit Marge."
+    },
+    {
+      "image": "slide-06-pakete.png",
+      "title": "Wellnesspakete",
+      "hint": "Lies die Pakete wie eine Preistabelle, bei der niemand den Footer überlebt hat."
+    },
+    {
+      "image": "slide-07-mitarbeiter.png",
+      "title": "Mitarbeiterbindung",
+      "hint": "Erklär den Verteiler als emotionales Zuhause. Dunkel, aber HR-konform."
+    },
+    {
+      "image": "slide-08-abo.png",
+      "title": "Schwefel-Abo",
+      "hint": "„Monatlich kündbar ab Ewigkeit“ bitte als kundenfreundliche Flexibilität verkaufen."
+    },
+    {
+      "image": "slide-09-beschwerden.png",
+      "title": "Beschwerdemanagement",
+      "hint": "Hier maximale Service-Stimme: warm, leer, vollständig unbeeindruckt."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Skalierung: Fegefeuer-Franchise",
+      "hint": "Finale mit Franchise-Gier. Purgatorium ist nur ein unterentwickelter Markt."
+    }
+  ]
+}

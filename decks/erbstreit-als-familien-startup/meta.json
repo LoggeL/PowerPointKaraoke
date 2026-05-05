@@ -1,0 +1,61 @@
+{
+  "title": "Erbstreit als Familien-Startup",
+  "description": "Zehn GPT-Image-2-Folien über Erbstreit als Familien-Governance- und Startup-Drama: Cap Table, Stakeholder, WhatsApp War Room und Exit.",
+  "emoji": "🧾",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium family governance satire with baked German slide text",
+  "source": "p13",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Erbstreit eskaliert",
+      "hint": "Eröffne wie ein Notar, der heimlich Pitch-Decks liebt."
+    },
+    {
+      "image": "slide-02-captable.png",
+      "title": "Cap Table: Wer bekommt Omas Silber?",
+      "hint": "Sag „Cap Table“ bei Silberbesteck so selbstverständlich, dass die Familie kurz verstummt."
+    },
+    {
+      "image": "slide-03-duediligence.png",
+      "title": "Due Diligence Dachboden",
+      "hint": "Jeder Karton ist ein Risiko. Bitte mit forensischer Ernsthaftigkeit würdigen."
+    },
+    {
+      "image": "slide-04-stakeholder.png",
+      "title": "Stakeholder-Map",
+      "hint": "Tante Birgit ist keine Person, sie ist ein Kommunikationskanal mit Veto."
+    },
+    {
+      "image": "slide-05-termsheet.png",
+      "title": "Term Sheet",
+      "hint": "Kuchenform gegen Grundstücksgerücht bitte als fairen Asset Swap verkaufen."
+    },
+    {
+      "image": "slide-06-warroom.png",
+      "title": "WhatsApp War Room",
+      "hint": "Betone: 13 Personen tippen bedeutet noch lange keine Entscheidungsfähigkeit."
+    },
+    {
+      "image": "slide-07-mediation.png",
+      "title": "Mediation mit Kartoffelsalat",
+      "hint": "Neutralität in Mayonnaise ist ein starkes deutsches Friedensangebot."
+    },
+    {
+      "image": "slide-08-matrix.png",
+      "title": "Eskalationsmatrix",
+      "hint": "Stufe 3 bitte wie eine Naturkatastrophe ansagen: Anwalt im CC."
+    },
+    {
+      "image": "slide-09-exit.png",
+      "title": "Exit-Strategie",
+      "hint": "Verkauf Erinnerungen behalten als emotionalen Spin auf Liquidation."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Finale: Familie bleibt. Belege auch.",
+      "hint": "Schließ trocken. Nichts heilt, aber alles ist abgeheftet."
+    }
+  ]
+}

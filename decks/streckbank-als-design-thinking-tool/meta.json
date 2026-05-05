@@ -1,0 +1,61 @@
+{
+  "title": "Die Streckbank als Design-Thinking-Tool",
+  "description": "Zehn GPT-Image-2-Folien über die Streckbank als absurd harmloses mittelalterliches Innovationsmöbel: Produktstrategie, UX, Compliance und Franchise-Wahn.",
+  "emoji": "🛠️",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium editorial satire with baked German slide text",
+  "source": "p2",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Die Streckbank als Design-Thinking-Tool",
+      "hint": "Starte maximal seriös. Das ist kein Foltergerät, das ist ein mittelalterliches Innovation Lab mit Kurbel."
+    },
+    {
+      "image": "slide-02-painpoint.png",
+      "title": "Pain Point: Kunden wollen mehr Raum",
+      "hint": "Erklär „mehr Raum“ bitte gleichzeitig körperlich, emotional und steuerlich. Keine Rückfragen zulassen."
+    },
+    {
+      "image": "slide-03-mvp.png",
+      "title": "MVP: Zwei Kurbeln, ein Versprechen",
+      "hint": "Verkauf die Kurbel als radikal fokussierte Produktentscheidung. Alles andere wäre Feature Creep."
+    },
+    {
+      "image": "slide-04-marktsegmente.png",
+      "title": "Marktsegmente",
+      "hint": "Tu so, als hättest du diese Zielgruppen persönlich in zwölf Burgen validiert."
+    },
+    {
+      "image": "slide-05-stretchgoals.png",
+      "title": "Stretch Goals",
+      "hint": "Hier darfst du stolz auf das Wortspiel sein, aber bitte mit der Miene eines CFOs."
+    },
+    {
+      "image": "slide-06-ux-research.png",
+      "title": "UX-Research: Dramatisches Feedback",
+      "hint": "Sag „Feedback“ so, als wäre jedes Geräusch ein valider Datensatz."
+    },
+    {
+      "image": "slide-07-premium.png",
+      "title": "Premium-Ausstattung",
+      "hint": "Mach aus Samtgriffen eine strategische Differenzierung. Lateinischer Haftungsausschluss ist Premium."
+    },
+    {
+      "image": "slide-08-konkurrenz.png",
+      "title": "Konkurrenzanalyse",
+      "hint": "Erklär, warum das Stehpult historisch verloren hat. Fakten sind optional, Haltung nicht."
+    },
+    {
+      "image": "slide-09-risiken.png",
+      "title": "Risiken: Datenschutz, Bandscheiben, HR",
+      "hint": "Werde kurz Compliance-konform und sofort wieder verdächtig optimistisch."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Franchise: Streck & Denk",
+      "hint": "Finale wie ein Gründer, der gerade Ethik als Q4-Problem geparkt hat."
+    }
+  ]
+}

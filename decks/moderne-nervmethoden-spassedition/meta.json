@@ -1,0 +1,61 @@
+{
+  "title": "Moderne Nervmethoden (Spaßedition)",
+  "description": "Sichere Rewrite-Fassung des alten Folterthemas: zehn GPT-Image-2-Folien über moderne Alltags- und Büro-Nervmethoden, non-graphic und absurd-seriös.",
+  "emoji": "🎫",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium editorial satire with baked German slide text",
+  "source": "p10",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Moderne Nervmethoden",
+      "hint": "Stell klar: Das ist keine Gewalt, das ist Service-Design mit schlechtem Karma."
+    },
+    {
+      "image": "slide-02-drucker.png",
+      "title": "Methode 1: Der Drucker",
+      "hint": "Sprich über Papierstau wie über ein spirituelles Prüfverfahren."
+    },
+    {
+      "image": "slide-03-meeting.png",
+      "title": "Methode 2: Meeting ohne Agenda",
+      "hint": "Erklär Agenda-Losigkeit als mutige Offenheit gegenüber kollektiver Zeitvernichtung."
+    },
+    {
+      "image": "slide-04-passwort.png",
+      "title": "Methode 3: Passwortregeln",
+      "hint": "Hier bitte klingen wie IT-Security, die längst jedes Mitgefühl ausgelagert hat."
+    },
+    {
+      "image": "slide-05-teams.png",
+      "title": "Methode 4: Teams-Anruf 17:59",
+      "hint": "Sag „nur kurz“ mit maximaler Bedrohung und minimaler Scham."
+    },
+    {
+      "image": "slide-06-paketbote.png",
+      "title": "Methode 5: Nicht angetroffen",
+      "hint": "Verteidige das System gegen die lächerliche Behauptung, Anwesenheit sei relevant."
+    },
+    {
+      "image": "slide-07-formular.png",
+      "title": "Methode 6: Formular 7B",
+      "hint": "Erklär Feld 7B als letzten Ort, an dem der Staat noch Gefühle zeigen darf."
+    },
+    {
+      "image": "slide-08-kaffee.png",
+      "title": "Methode 7: Entkalkung",
+      "hint": "Mach die Kaffeemaschine zur tragischen Hauptfigur. Sie hat heute auch viel."
+    },
+    {
+      "image": "slide-09-update.png",
+      "title": "Methode 8: Jetzt neu starten",
+      "hint": "Bitte erkläre „Später“ als philosophische Illusion der Moderne."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Finale: Die Hölle ist ein Service Desk",
+      "hint": "Finale mit sakraler Ruhe. Ticketnummer ziehen, Würde abgeben."
+    }
+  ]
+}

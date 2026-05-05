@@ -1,0 +1,61 @@
+{
+  "title": "Schnelles Geld im Mittelalter: Grift Guide",
+  "description": "Zehn image-first Karaoke-Folien über mittelalterliche Startup-Scams, Fake-Innovation und Grifterlogik vor der Regulierung.",
+  "emoji": "🪙",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "dark premium editorial satire with baked German slide text",
+  "source": "p3",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "Schnelles Geld im Mittelalter",
+      "hint": "Eröffne mit Founder-Energie: keine Moral, nur Marktineffizienz mit Kerzenlicht."
+    },
+    {
+      "image": "slide-02-saas.png",
+      "title": "Seelenfrieden-as-a-Service",
+      "hint": "Bitte „monatlich zahlen, ewig hoffen“ wie ein SaaS-Preismodell mit himmlischer Retention verkaufen."
+    },
+    {
+      "image": "slide-03-heucoin.png",
+      "title": "HeuCoin",
+      "hint": "Wenn jemand fragt, was der Coin kann: einfach „Ernteausfall tokenisieren“ wiederholen."
+    },
+    {
+      "image": "slide-04-burgfluencer.png",
+      "title": "Burg-Fluencer",
+      "hint": "Beschreibe Zinnen als Reichweitenkanal. Sag es schlimm genug, dass LinkedIn nervös wird."
+    },
+    {
+      "image": "slide-05-kraeuter-mlm.png",
+      "title": "Kräuter-MLM",
+      "hint": "Wichtig: keine Heilversprechen machen, nur so tun, als wäre die Marge ein Naturgesetz."
+    },
+    {
+      "image": "slide-06-brueckenzoll.png",
+      "title": "Brückenzoll ohne Brücke",
+      "hint": "Asset-light erklären. Je weniger Infrastruktur, desto visionärer musst du klingen."
+    },
+    {
+      "image": "slide-07-drachenversicherung.png",
+      "title": "Drachenversicherung",
+      "hint": "Sag „seltene Schäden, häufige Beiträge“ mit der Ruhe eines Aktuars auf Abwegen."
+    },
+    {
+      "image": "slide-08-siegel.png",
+      "title": "Fälschungssiegel",
+      "hint": "Das Wort „fast“ ist hier das gesamte Geschäftsmodell. Bitte würdigen."
+    },
+    {
+      "image": "slide-09-exit.png",
+      "title": "Exit-Strategie",
+      "hint": "Erklär Nebel als Liquiditätsereignis. Nicht lächeln, sonst merkt man es."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "Fazit: Skalieren",
+      "hint": "Beende triumphal, als wäre Alphabetisierung die einzige echte Bedrohung für Wachstum."
+    }
+  ]
+}

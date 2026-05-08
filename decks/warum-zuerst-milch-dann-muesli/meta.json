@@ -1,0 +1,60 @@
+{
+  "title": "Warum man immer zuerst Milch und dann Müsli in die Schüssel geben sollte",
+  "description": "Zehn image-first Karaoke-Folien über Frühstückshydraulik, Spritzschutz, Knusperfenster und die fragile Zivilisation der richtigen Reihenfolge.",
+  "emoji": "🥣",
+  "language": "de",
+  "model": "openai/gpt-image-2",
+  "style": "premium cinematic editorial satire, fake science, breakfast ideology, baked slide text",
+  "slides": [
+    {
+      "image": "slide-01-cover.png",
+      "title": "WARUM MAN IMMER ZUERST MILCH UND DANN MÜSLI IN DIE SCHÜSSEL GEBEN SOLLTE",
+      "hint": "Eröffne mit der Ruhe eines Menschen, der beim Frühstück eine neue Verfassung schreibt."
+    },
+    {
+      "image": "slide-02-hydraulik.png",
+      "title": "HYDRAULIK DER VERNUNFT",
+      "hint": "Erklär Flüssigkeitsbett und Kornlandung, als hättest du dafür promoviert."
+    },
+    {
+      "image": "slide-03-spritzschutz.png",
+      "title": "SPRITZSCHUTZ ALS CHARAKTERFRAGE",
+      "hint": "Mach aus Milchspritzern ein moralisches Versagen mit Küchenbezug."
+    },
+    {
+      "image": "slide-04-knusperfenster.png",
+      "title": "DAS KNUSPERFENSTER",
+      "hint": "Verkauf 47 Sekunden als international anerkannten Frühstücksstandard."
+    },
+    {
+      "image": "slide-05-mengenhoheit.png",
+      "title": "MENGENHOHEIT",
+      "hint": "Sprich über Schüsselvolumen wie über Staatsrecht. Komplett normal."
+    },
+    {
+      "image": "slide-06-thermodynamik.png",
+      "title": "THERMODYNAMIK DES FRÜHSTÜCKS",
+      "hint": "Wenn du hier ernst klingst, glaubt dir mindestens eine Person die Formel."
+    },
+    {
+      "image": "slide-07-sozialvertrag.png",
+      "title": "DER SOZIALVERTRAG",
+      "hint": "Bitte Schüssel, Löffel und Tisch als gesellschaftliche Akteure behandeln."
+    },
+    {
+      "image": "slide-08-autoritaet.png",
+      "title": "AUTORITÄT AM FRÜHSTÜCKSTISCH",
+      "hint": "Mach Milchgießen zu Leadership. Unangenehm überzeugend bitte."
+    },
+    {
+      "image": "slide-09-gegenargumente.png",
+      "title": "DIE GEGENARGUMENTE",
+      "hint": "Zerlege Kritik mit der Arroganz eines Frühstücksphysikers."
+    },
+    {
+      "image": "slide-10-finale.png",
+      "title": "FAZIT",
+      "hint": "Schließe staatstragend: Es ging nie um Müsli. Es ging um Ordnung."
+    }
+  ]
+}

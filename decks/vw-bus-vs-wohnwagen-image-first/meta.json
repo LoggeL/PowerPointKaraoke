@@ -1,60 +1,60 @@
 {
   "title": "VW-Bus vs. Wohnwagen: Image First",
-  "description": "Zehn image-first Karaoke-Folien über mobile Freiheit, Camping-Status, Bulli-Mythen und die Frage, ob der Grundriss wichtiger ist als die Seele.",
+  "description": "Zehn image-first Karaoke-Folien als edgy Stellplatzkrieg über mobile Freiheit, Komfort, Status, Besitzstand und den unheiligen Frieden des Vorzeltteppichs.",
   "emoji": "🚐",
   "language": "de",
   "model": "openai/gpt-image-2",
-  "style": "dark corporate satire, camping identity war, baked slide text",
+  "style": "premium dark edgy editorial satire, camping identity war, baked slide text",
   "slides": [
     {
       "image": "slide-01-cover.png",
       "title": "VW-BUS VS. WOHNWAGEN",
-      "hint": "Eröffne wie ein Markenstratege auf einem Campingplatz bei Nieselregen."
+      "hint": "Eröffne wie ein Kriegsberichterstatter auf einem Stellplatz mit WLAN-Schwäche."
     },
     {
       "image": "slide-02-freiheit-vs-grundriss.png",
       "title": "FREIHEIT VS. GRUNDRISS",
-      "hint": "Bitte beide Seiten mit gleicher Unfairness behandeln."
+      "hint": "Bitte Freiheit als Marketingbegriff zerlegen, aber mit Campingstuhl-Würde."
     },
     {
       "image": "slide-03-imagekapital.png",
       "title": "IMAGE-KAPITAL",
-      "hint": "Sprich über Imagekapital, als ginge es um eine Assetklasse."
+      "hint": "Sprich über Romantikrendite, als hätte McKinsey gerade den Bulli entdeckt."
     },
     {
       "image": "slide-04-packritual.png",
       "title": "DAS PACKRITUAL",
-      "hint": "Mach aus Packen eine spirituelle Prüfung mit Kabelsalat."
+      "hint": "Mach aus Kabelsalat einen Charaktertest mit Nahtoderfahrung."
     },
     {
       "image": "slide-05-stellplatzpolitik.png",
       "title": "STELLPLATZ-POLITIK",
-      "hint": "Hier bitte soziologisch gnadenlos werden."
+      "hint": "Hier bitte so tun, als wäre jeder Meter Abstand ein geopolitischer Zwischenfall."
     },
     {
       "image": "slide-06-vorzelt.png",
       "title": "DAS VORZELT",
-      "hint": "Verkauf das Vorzelt als geopolitische Zone."
+      "hint": "Verkauf das Vorzelt als feindliche Gebietserweiterung mit Teppichboden."
     },
     {
       "image": "slide-07-bulli-mythos.png",
       "title": "DER BULLI-MYTHOS",
-      "hint": "Entzaubere liebevoll, aber konsequent."
+      "hint": "Entzaubere den Bulli mit Liebe, Rost und leiser Werkstattpanik."
     },
     {
       "image": "slide-08-wohnwagenmacht.png",
       "title": "WOHNWAGEN-MACHT",
-      "hint": "Kling wie jemand, der Komfort erst verachtet und dann heimlich beneidet."
+      "hint": "Kling wie jemand, der Komfort verachtet, bis er nachts aufs Klo muss."
     },
     {
       "image": "slide-09-paartherapie.png",
       "title": "PAARTHERAPIE AUF RÄDERN",
-      "hint": "Jeder Campingurlaub ist ein Assessment-Center mit Mücken."
+      "hint": "Jeder Campingurlaub ist ein Assessment-Center mit Adapterproblem."
     },
     {
       "image": "slide-10-finale.png",
       "title": "FAZIT",
-      "hint": "Finale versöhnlich, aber mit Restgift. Genau wie Camping."
+      "hint": "Finale bitter, würdevoll und mit dem Wissen: Der Vorzeltteppich gewinnt immer."
     }
   ]
 }
